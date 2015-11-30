@@ -1,0 +1,91 @@
+\input{header}
+
+
+% Schmutztitel
+\KOMAoption{twoside}{false}
+\extratitle{
+  ~
+  \begin{center}
+    \huge \textbf{Fakultät für Physik \& Astronomie}
+  \end{center}
+  ~
+  \begin{center}
+    \Large \textbf{Ruprecht-Karls-Universität Heidelberg}
+  \end{center}
+  \vfill
+  \begin{center}
+    \Large \textbf{Bachelor-Arbeit}\\[1ex]
+    im Studiengang Physik\\
+    vorgelegt von \\[1ex]
+    \Large \textbf{Tim Adler}\\[1ex]
+    geboren in Sinsheim
+  \end{center}
+  ~
+  \begin{center}
+    \huge \textbf{2013}
+  \end{center}
+}
+
+\KOMAoption{twoside}{true}
+
+\titlehead{Universität Heidelberg \\
+  Fakultät für Physik \& Astronomie\\
+  Im Neuenheimer Feld 226\\
+  69120 Heidelberg}
+\subject{Bachelor-Arbeit}
+\title{Ein Konverter}
+\author{Tim Adler}
+\date{\today}
+\publishers{Betreut durch Dr.\ Denis Pöhler und Prof.\ Dr.\ Ulrich Platt}
+\uppertitleback{Tim Adler\\Eberlinweg 6\\69121
+  Heidelberg\\tim \{at\} emrys-merlin.de}
+\lowertitleback{
+\textbf{Uniformisierung kompakter Riemannscher Fläche}\\
+Bachelor-Arbeit im Fach Physik\\[\baselineskip]
+Ruprecht-Karls-Universität Heidelberg\\
+Fakultät für Physik \& Astronomie\\
+Institut für Umweltphysik\\[\baselineskip]
+\begin{tabular}[htbp]{l l}
+Betreut durch & Dr.\ Denis Pöhler und Prof.\ Dr.\ Ulrich Platt\\
+Beginn der Arbeit & some day \todo{start- und End-Datum} \\
+Datum der Abgabe & \today\\
+\end{tabular}
+\\[\baselineskip]
+Diese Arbeit wurde mit Hilfe von {\LaTeX} und
+  {\KOMAScript} gesetzt.}
+
+\makeatletter
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfdate={\@date}
+}
+\makeatother
+
+\begin{document}
+
+\pagenumbering{roman}
+\maketitle
+
+\listoftodos
+
+\include{content/Abstract}
+
+\include{content/Erklärung}
+
+\newpage
+% Nur bis section, nicht bis subsection
+\setcounter{tocdepth}{1}
+\tableofcontents
+\cleardoubleoddstandardpage
+\pagenumbering{arabic}
+\include{content/Einführung}
+\cleardoubleoddstandardpage
+\include{appendix}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

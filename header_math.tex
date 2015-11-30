@@ -1,0 +1,113 @@
+% Hier sollten meine wichtigsten Mathe Befehle zu finden sein.
+% Weiter unten sind die spezielleren Befehle, die je nach dem
+% vielleicht auskommentiert oder gelöscht werden sollten.
+
+\usepackage{amssymb}
+\usepackage[]{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\tikzset{node distance=3cm, auto}
+\usepackage{pgfplots}
+
+%Abkürzungen für Standardzahlmengen
+\let\C\relax
+\NewDocumentCommand\R{}{\mathbb{R}}
+\NewDocumentCommand\Q{}{\mathbb{Q}}
+\NewDocumentCommand\N{}{\mathbb{N}}
+\NewDocumentCommand\C{}{\mathbb{C}}
+\NewDocumentCommand\Z{}{\mathbb{Z}}
+\NewDocumentCommand\A{}{\mathcal{A}}
+\NewDocumentCommand\K{}{\mathbb{K}}
+\NewDocumentCommand\p{}{\mathbb{P}}
+\NewDocumentCommand\h{}{\mathbb{H}}
+\NewDocumentCommand\F{}{\mathcal{F}}
+\NewDocumentCommand\D{}{\mathcal{D}}
+\NewDocumentCommand\lie{}{\mathcal{L}}
+\NewDocumentCommand\jo{}{\mathfrak{J}}
+\NewDocumentCommand\hol{}{\mathcal{O}}
+\NewDocumentCommand\mer{}{\mathcal{M}}
+\NewDocumentCommand\diff{}{\mathcal{E}}
+
+% ein Paar Abbildungssachen.
+\NewDocumentCommand\Supp{}{\operatorname{Supp}}
+\NewDocumentCommand\id{}{\operatorname{id}}
+\NewDocumentCommand\supp{}{\operatorname{supp}}
+\NewDocumentCommand\rank{}{\operatorname{rank}}
+\NewDocumentCommand\tr{}{\operatorname{tr}}
+\NewDocumentCommand\ord{}{\operatorname{ord}}
+
+%Pfeile und Stuff
+\NewDocumentCommand\Ra{}{\Rightarrow}
+\NewDocumentCommand\La{}{\Leftarrow}
+\NewDocumentCommand\LRa{}{\Leftrightarrow}
+\NewDocumentCommand\ra{}{\rightarrow}
+\NewDocumentCommand\la{}{\leftarrow}
+
+% Faktorräume
+\NewDocumentCommand\quot{m m}{\left .\raisebox{.2em}{$#1$}\middle/\raisebox{-.2em}{$#2$}\right .}
+
+% richtiges epsilon und phi
+\let\epsilon\relax
+\NewDocumentCommand\epsilon{}{\varepsilon}
+\let\phi\relax
+\NewDocumentCommand\phi{}{\varphi}
+
+% Differential
+\let\d\relax
+\NewDocumentCommand\d{ O{} }{\operatorname{d}\hspace{-0.1em}#1}
+
+%amsthm
+%\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{thm}{Satz}[section]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Korollar}
+%\theoremstyle{definition}
+\newtheorem{defin}[thm]{Definition}
+\newtheorem{bsp}[thm]{Beispiele}
+%\theoremstyle{remark}
+\newtheorem{rem}[thm]{Bemerkung}
+
+% % Differentialgeometrie (Riemannsche Geometrie)
+% \NewDocumentCommand\tang{ O{p} O{M}}{T_{#1}#2}
+% \NewDocumentCommand\cotang{ O{p} O{M}}{T^\ast_{#1}#2}
+% \NewDocumentCommand\del{ O{i} O{x} O{} }{\frac{\partial {#3}}{\partial {#2}^{#1}}}
+% \NewDocumentCommand\delat{ O{p} O{i} O{x} O{} }{\left . \del[#2][#3][#4] \right |_{#1}}
+% \NewDocumentCommand\christ{O{i} O{j} O{k} }{ \Gamma_{#1 #2}^{#3} }
+% \NewDocumentCommand\g{m m}{\langle #1, #2 \rangle}
+% \NewDocumentCommand\diam{}{\operatorname{diam}}
+% \NewDocumentCommand\ric{}{\operatorname{ric}}
+% \NewDocumentCommand\scal{}{\operatorname{scal}}
+% \NewDocumentCommand\arsinh{}{\operatorname{arsinh}}
+
+% % Bachelor-Arbeit
+% \NewDocumentCommand\im{}{\operatorname{im}}
+% \NewDocumentCommand\sm{}{\operatorname{sm}}
+% \NewDocumentCommand\Reg{}{\operatorname{Reg}}
+% \NewDocumentCommand\be{}{\mathfrak{B}}
+% \NewDocumentCommand\pe{}{\mathfrak{P}}
+% \NewDocumentCommand\res{}{\operatorname{res}}
+% \let\S\relax
+% \NewDocumentCommand\S{}{\mathcal{S}}
+% \let\P\relax
+% \NewDocumentCommand\P{}{\mathbb{P}}
+% \NewDocumentCommand\Fix{}{\operatorname{Fix}}
+% \NewDocumentCommand\Mat{}{\operatorname{Mat}}
+% \NewDocumentCommand\SL{}{\operatorname{SL}}
+% \NewDocumentCommand\GL{}{\operatorname{GL}}
+% \NewDocumentCommand\PSL{}{\operatorname{PSL}}
+% \let\Re\relax
+% \NewDocumentCommand\Re{}{\operatorname{Re}}
+% \let\Im\relax
+% \NewDocumentCommand\Im{}{\operatorname{Im}}
+% \NewDocumentCommand\Div{}{\operatorname{Div}}
+% \NewDocumentCommand\Aut{}{\operatorname{Aut}}
+% \NewDocumentCommand\Deck{}{\operatorname{Deck}}
+% \NewDocumentCommand\runge{}{\mathfrak{h}}
+% \NewDocumentCommand\fu{}{\mathfrak{U}}
+% \NewDocumentCommand\dist{}{\mathcal{D}}

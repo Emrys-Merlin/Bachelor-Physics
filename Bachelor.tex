@@ -1,30 +1,33 @@
-\input{header}
+\documentclass[english,twoside,headsepline,titlepage=true]{scrartcl}
+\input{header_std}
+%\input{header_math}
+\input{header_artcl}
 
 
-% Schmutztitel
-\KOMAoption{twoside}{false}
-\extratitle{
-  ~
-  \begin{center}
-    \huge \textbf{Fakultät für Physik \& Astronomie}
-  \end{center}
-  ~
-  \begin{center}
-    \Large \textbf{Ruprecht-Karls-Universität Heidelberg}
-  \end{center}
-  \vfill
-  \begin{center}
-    \Large \textbf{Bachelor-Arbeit}\\[1ex]
-    im Studiengang Physik\\
-    vorgelegt von \\[1ex]
-    \Large \textbf{Tim Adler}\\[1ex]
-    geboren in Sinsheim
-  \end{center}
-  ~
-  \begin{center}
-    \huge \textbf{2013}
-  \end{center}
-}
+% % Schmutztitel
+% \KOMAoption{twoside}{false}
+% \extratitle{
+%   ~
+%   \begin{center}
+%     \huge \textbf{Fakultät für Physik \& Astronomie}
+%   \end{center}
+%   ~
+%   \begin{center}
+%     \Large \textbf{Ruprecht-Karls-Universität Heidelberg}
+%   \end{center}
+%   \vfill
+%   \begin{center}
+%     \Large \textbf{Bachelor-Arbeit}\\[1ex]
+%     im Studiengang Physik\\
+%     vorgelegt von \\[1ex]
+%     \Large \textbf{Tim Adler}\\[1ex]
+%     geboren in Sinsheim
+%   \end{center}
+%   ~
+%   \begin{center}
+%     \huge \textbf{2016}
+%   \end{center}
+% }
 
 \KOMAoption{twoside}{true}
 
@@ -40,14 +43,14 @@
 \uppertitleback{Tim Adler\\Eberlinweg 6\\69121
   Heidelberg\\tim \{at\} emrys-merlin.de}
 \lowertitleback{
-\textbf{Uniformisierung kompakter Riemannscher Fläche}\\
+\textbf{Ein Konverter}\\
 Bachelor-Arbeit im Fach Physik\\[\baselineskip]
 Ruprecht-Karls-Universität Heidelberg\\
 Fakultät für Physik \& Astronomie\\
 Institut für Umweltphysik\\[\baselineskip]
 \begin{tabular}[htbp]{l l}
 Betreut durch & Dr.\ Denis Pöhler und Prof.\ Dr.\ Ulrich Platt\\
-Beginn der Arbeit & some day \todo{start- und End-Datum} \\
+Beginn der Arbeit & some day \\
 Datum der Abgabe & \today\\
 \end{tabular}
 \\[\baselineskip]
@@ -68,20 +71,23 @@ Diese Arbeit wurde mit Hilfe von {\LaTeX} und
 \maketitle
 
 \listoftodos
-
-\include{content/Abstract}
-
-\include{content/Erklärung}
-
 \newpage
+
+\input{content/abstract}
+\newpage
+
 % Nur bis section, nicht bis subsection
 \setcounter{tocdepth}{1}
 \tableofcontents
-\cleardoubleoddstandardpage
+\cleardoubleoddstandardpage{}
 \pagenumbering{arabic}
-\include{content/Einführung}
-\cleardoubleoddstandardpage
-\include{appendix}
+\input{content/intro}
+\cleardoubleoddstandardpage{}
+\input{appendix}
+
+
+\cleardoubleoddstandardpage{}
+\input{content/declaration}
 
 \end{document}
 

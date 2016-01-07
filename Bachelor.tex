@@ -1,7 +1,21 @@
 \documentclass[german,english,twoside,headsepline,titlepage=true]{scrartcl}
 \input{header_std}
-%\input{header_math}
+\input{header_math}
 \input{header_artcl}
+
+
+\usepackage{chemformula}
+\usepackage[exponent-product = \cdot]{siunitx}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% \usepackage{gnuplottex}
+\newfontfamily\nfrac[Fractions=On]{Linux Libertine O}
+
+\usepackage{pgfplots}
+
+\addfontfeature{Fractions=On}
+
 
 
 % Schmutztitel
@@ -73,6 +87,7 @@ Diese Arbeit wurde mit Hilfe von {\LaTeX} und
 \selectlanguage{english}
 
 \listoftodos
+\todo{ToDo-Liste entfernen.}
 \newpage
 
 \input{content/abstract}
@@ -84,6 +99,10 @@ Diese Arbeit wurde mit Hilfe von {\LaTeX} und
 \cleardoubleoddstandardpage{}
 \pagenumbering{arabic}
 \input{content/intro}
+\cleardoubleoddstandardpage{}
+\input{content/theory.tex}
+\cleardoubleoddstandardpage{}
+\input{content/ozone.tex}
 \cleardoubleoddstandardpage{}
 \input{appendix}
 

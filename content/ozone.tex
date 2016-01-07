@@ -1,0 +1,100 @@
+\section{Ozone production}
+\label{sec:ozone}
+
+\subsection{Ozone generator setting}
+\label{sec:ozone-setting}
+
+
+
+\subsection{Measurement}
+\label{sec:ozone-meas}
+
+It is necessary to understand the characterstic of our instrument
+before we use it to convert \ch{NO} to \ch{NO2}. For that we measured
+the time it took to reach a stable production of Ozone and where this
+level lay. 
+
+In figure~\ref{fig:long-stop} one can see the time series of the Ozone
+level of the generator, if the generator had been turned of for a long
+time\footnote{In this case about a week.}. As can be seen the level
+rises rather quickly and reaches a stable plateau after approximately
+\SI{35}{\minute}. The equilibrium lies around 250ppm.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel={Time [\si{\hour}]},
+      ylabel={c(\ch{O3}) [ppb]},
+      no markers,
+      xmin=0,
+      xmax=2,
+      ]
+      \addplot table [col sep=comma] {images/Anschaltkurve2.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Evolution of Ozone after a long full stop of the
+    generator.}
+  \label{fig:long-stop}
+\end{figure}
+
+In a next step we determined the time necessary to get back to the
+equilibrium after shorter stops of the generator. For this we measured
+the time series of the Ozone concentration after a stop of {\nfrac
+  1/2} \si{\hour}, \SI{1}{\hour}, \SI{2}{\hour} and \SI{4}{\hour}. The
+result can be found in figure~\ref{fig:multiple-stop}, which shows
+that the Ozone reaches the saturation level within
+\SI{10}{\minute}. That in this case the saturation level lay around
+200 ppm can be explained by the difference in temperature between the
+two measurements. 
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel={Time [\si{\minute}]},
+      ylabel={c(\ch{O3}) [ppb]},
+      legend entries={\nfrac 1/2\si{\hour}, \SI{1}{\hour}, \SI{2}{\hour},
+        \SI{4}{\hour}},
+      no markers,
+      legend pos=south east,
+      xmin=0,
+      xmax=10,
+      ]
+      \addplot table [col sep=comma] {images/Multiple-stop.csv};
+      \addplot table [col sep=comma,y=1h] {images/Multiple-stop.csv};
+      \addplot table [col sep=comma,y=2h] {images/Multiple-stop.csv};
+      \addplot table [col sep=comma,y=4h] {images/Multiple-stop.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Evolution of the Ozone concentration after a full stop of the
+    generator.}
+  \label{fig:multiple-stop}
+\end{figure}
+
+In a last step we researched the influence of a higher current at the
+Penray lam on the Ozone level. Figure~\ref{fig:lamp} shows that after
+turning on the lamp the saturation level rises from 200 ppm to over
+350 ppm.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel={Time [\si{\minute}]},
+      ylabel={c(\ch{O3}) [ppb]},
+      no markers,
+      xmin=0,
+      xmax=45,
+      ]
+      \addplot table [col sep=comma] {images/2015-12-02-current2.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Ozone level dependence on current of Hg-lamp.}
+  \label{fig:lamp}
+\end{figure}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../Bachelor"
+%%% End: 

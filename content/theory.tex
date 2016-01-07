@@ -1,0 +1,119 @@
+
+\section{Theoretical Background}
+\label{sec:theory}
+
+\subsection{The rate coefficient}
+\label{sec:rate}
+
+\todo{write something about it}
+
+
+\subsection{Ozone Generation}
+\label{sec:theory-ozone}
+
+In this section we will look into a possible way of generating Ozone
+(\ch{O3}) out of ambient air. This step is crucial, as the Ozone is
+central compound in the reaction that transforms \ch{NO} to
+\ch{NO2}. Furthermore it is important to clear the air of laughing
+gas as can be seen in section\todo{write something about it}.
+
+The equations of the following generation cycle ar often referred to
+as the \emph{Chapman-Cycle}\todo{reference}. These equations not only
+describe the production but also the destruction of Ozone.
+
+The starting point is a UV-photon which splits an Oxygen molecule:
+
+\begin{align*}
+  \ch{O2} + h\nu \ch{->[$\lambda<\SI{242}{\nano\meter}$]} \ch{2 O(^3P)}.
+\end{align*}
+
+Together with a particle M for momentum conversation the $\ch{O(^3
+  P)}$ radical can produce ozone as shown in the following formula
+
+\begin{align}
+  \ch{O(^3 P) + O2 + M -> O3 + M}. \label{eq:ozone}
+\end{align}
+
+However, \ch{O3} is not stable, if there is a UV source present. If
+there is light with wavelength under $\SI{310}{\nano\meter}$ then the
+Ozone will be split again
+
+\begin{align}
+  \ch{O3} + h\nu \ch{->[$\lambda<\SI{310}{\nano\meter}$] O(^1 D) +
+  O2}. \label{eq:split}
+\end{align}
+
+In a next step the $\ch{O(^1 D)}$ radical can be reexcited via
+
+\begin{align*}
+  \ch{O(^1 D) + M -> O(^3 P) + M}
+\end{align*}
+
+and thus can reenter into equation~\eqref{eq:ozone}. The other
+possibility for a $\ch{O(^3 P)}$ radical is to either react with
+another radical or an Ozone molecule which would reduce the Ozone
+concentration. In formulas this would take the form
+
+\begin{align*}
+  \ch{2 O(^3 P) + M & -> O2 + M}\\
+  \ch{O(^3 P) + O3 & -> 2 O2}.
+\end{align*}
+
+Thus we see that if we introduce a UV light source with wavelength
+less than \SI{242}{\nano\meter}, we can generate Ozone
+by splitting Oxygen. Some of it will be destroyed again by the split
+in equation~\eqref{eq:split}, so at some point we will enter an
+equilibrium state and thus a stable concentration of \ch{O3} that can
+be used in the later application.
+
+\subsection{Ozone and Nitrogen Oxide}
+\label{sec:o-no}
+
+There are several reactions which are triggered by an abundance of
+\ch{O3}. The for our purpose desired one is the following\todo{find
+  reference for rate coefficients}
+
+\begin{align*}
+  \ch{NO + O3 ->[$k=\SI{1.8e-14}{\hertz}$] NO2 + O2}.
+\end{align*}
+
+Thus we can use the generated Ozone as an easyway to convert \ch{NO}
+to \ch{NO2}. If this were the only reaction, we could use this method
+to determine the \ch{NO} concentration perfectly. However, there are
+more reactions taking place, which make it harder to use the \ch{NO2}
+concentration to conclude the \ch{NO} concentration. For once Ozone
+reacts directly with \ch{NO2}, too. We yield
+
+\begin{align*}
+  \ch{NO2 + O3 ->[$k=\SI{3.5e-17}{\hertz}$] NO3 + O2}.
+\end{align*}
+
+We see that part of the \ch{NO2} will be converted to \ch{NO3}, which
+cannot be detected by our measuring instrument. Even worse, \ch{NO3}
+itslef will react with \ch{NO2} and generate laughing gas, i.e.
+
+\begin{align}
+  \ch{NO2 + NO3
+  <=>[$k=\SI{1.9e-12}{\hertz}$][$k=\SI{2.6e-11}{\hertz}$] N2O5}. \label{eq:laughing}
+\end{align}
+
+Luckily, the equilibrium of equation~\eqref{eq:laughing} lies on the
+side of the educts, so the effect should not be too large.
+
+One last equation that has to be taken into account is
+
+\begin{align}
+  \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz}$] 2 NO2}.\label{eq:back}
+\end{align}
+
+Since it has such a large rate coefficient, we see that the conversion
+of \ch{NO2} to \ch{NO3} can be expected to not be that influential, as
+most of it will degrade to \ch{NO2} again, as long as there is still
+\ch{NO}. So in theory we should be able to adjust the amount of Ozone
+mixed with the sample air in such a way that equation~\eqref{eq:back}
+makes sure that none of the \ch{NO2} is lost.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../Bachelor"
+%%% End: 

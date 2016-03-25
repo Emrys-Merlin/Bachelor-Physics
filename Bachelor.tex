@@ -11,12 +11,13 @@
 
 % \usepackage{gnuplottex}
 \newfontfamily\nfrac[Fractions=On]{Linux Libertine O}
+%\newfontfamily\diagram[Size=.5]{Linux Libertine O}
 
 \usepackage{pgfplots}
 
+\usepackage{ccicons}
+
 \addfontfeature{Fractions=On}
-
-
 
 % Schmutztitel
 \KOMAoption{twoside}{false}
@@ -58,18 +59,25 @@
   Heidelberg\\tim \{at\} emrys-merlin.de}
 \lowertitleback{
 \textbf{Ein Konverter}\\
-Bachelor-Arbeit im Fach Physik\\[\baselineskip]
-Ruprecht-Karls-Universität Heidelberg\\
-Fakultät für Physik \& Astronomie\\
-Institut für Umweltphysik\\[\baselineskip]
+Bachelor Thesis in the degree program Physics (B.\,Sc.)\\[\baselineskip]
+Heidelberg University\\
+Department for Physics and Astronomy\\
+Institute for Environmental Physics\\[\baselineskip]
 \begin{tabular}[htbp]{l l}
-Betreut durch & Dr.\ Denis Pöhler und Prof.\ Dr.\ Ulrich Platt\\
-Beginn der Arbeit & some day \\
-Datum der Abgabe & \today\\
+Advised by & Dr.\ Denis Pöhler, Dr.\ Martin Horbanski and Prof.\ Dr.\ Ulrich Platt\\
+Starting date & 17.\ Januar 2016 \\
+Closing date & \today\\
 \end{tabular}
 \\[\baselineskip]
-Diese Arbeit wurde mit Hilfe von {\LaTeX} und
-  {\KOMAScript} gesetzt.}
+\ccbysa\vspace{0.2cm}\\
+This thesis is licensed under a
+Creative Commons Attribution-ShareAlike 3.0 Unported License. See
+\url{http://creativecommons.org/licenses/by-sa/3.0/} for more information.\\[\baselineskip]
+This work has been set using {\LaTeX} and {\KOMAScript}.\\[\baselineskip]
+\begin{tabular}[htbp]{r l}
+  Main Font: & Linux Libertine O\\
+  Sans Font: & Linux Biolinum O
+\end{tabular}}
 
 \makeatletter
 \hypersetup{
@@ -94,7 +102,7 @@ Diese Arbeit wurde mit Hilfe von {\LaTeX} und
 \newpage
 
 % Nur bis section, nicht bis subsection
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 \cleardoubleoddstandardpage{}
 \pagenumbering{arabic}
@@ -104,8 +112,16 @@ Diese Arbeit wurde mit Hilfe von {\LaTeX} und
 \cleardoubleoddstandardpage{}
 \input{content/ozone.tex}
 \cleardoubleoddstandardpage{}
-\input{appendix}
+\input{content/no.tex}
+\cleardoubleoddstandardpage{}
+\input{content/correlation.tex}
+\cleardoubleoddstandardpage{}
+\input{content/hd.tex}
+\cleardoubleoddstandardpage{}
+\input{content/conclusion.tex}
+\cleardoubleoddstandardpage{}
 
+\input{appendix}
 
 
 \cleardoubleoddstandardpage{}

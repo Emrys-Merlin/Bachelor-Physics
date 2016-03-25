@@ -7,10 +7,11 @@
 
 \usepackage{scrpage2}
 \pagestyle{scrheadings}
-\ofoot{\pagemark}
-\lehead{Ich stehe in header\_artcl unter lehead}
-\rohead{\headmark}
-\automark[section]{section}
+% \ofoot{\pagemark}
+% \lehead{Ich stehe in header\_artcl unter lehead}
+% \rohead{\headmark}
+\automark[subsection]{section}
+%\automark*[subsection]{}
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{biblio.bib}
@@ -20,3 +21,8 @@
 % \NewDocumentCommand\init{m}{\emph{#1}\index{#1}}
 
 % \makeindex
+
+%%% Local Variables:
+%%% mode: plain-tex
+%%% TeX-master: "Bachelor"
+%%% End:

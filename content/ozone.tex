@@ -4,9 +4,46 @@
 \subsection{Ozone generator setting}
 \label{sec:ozone-setting}
 
+The setup of the Ozone generator can be found in
+Figure~\ref{fig:setup}. First we produce Zero Air by filtering lab air
+through a carbon, a silica and then a particle filter. Afterwards we
+irradiate the Zero Air with a Penra UV-lamp~\todo{find out more about
+  lamp. Lines and stuff}. This produces the Ozone as seen in
+Section~\ref{sec:theory}. The Zero Air was not cleansed of laughing
+gas (\ch{N2O5}) which is not possible by a carbon nor a silica
+filter. In the \SI{3}{\meter} teflon tube this laughing gas will react
+with the Ozone and produce \ch{NO_x}, which then will be filtered by
+the following silica gel. The gel filters Ozone, too, however, it
+reaches its Ozone saturation level far quicker than its \ch{NO_x}
+saturation level, thus after a short settling time the gel should not
+hinder the Ozone. Afterwards we should have \ch{NO_x} free air
+with a high concentration of Ozone.
+
+\begin{figure}[htbp]
+  \centering
+  {
+  \def\svgwidth{0.9\linewidth}
+  \input{images/setup.pdf_tex}
+  }
+  \phantom{h}\\
+  \bigskip
+  \includegraphics[width=0.9\linewidth]{setup.jpg}
+  \caption{Ozone generator setup. Schematic and picture.}
+  \label{fig:setup}
+\end{figure}
+
+The measurements are meant to answer the following questions:
+\begin{itemize}
+\item Does the Ozone pass the silica gel?
+\item How much time does it take before the silica gel reaches the
+  saturation level?
+\item Depending on the power of the Penray lamp, how high is the Ozone
+  concentration?
+\item How much \ch{NO_x} is left in the air behind the generator?
+\end{itemize}
 
 
-\subsection{Measurement}
+\subsection{Measurements}
 \label{sec:ozone-meas}
 
 It is necessary to understand the characterstic of our instrument
@@ -93,6 +130,61 @@ turning on the lamp the saturation level rises from 200 ppm to over
   \caption{Ozone level dependence on current of Hg-lamp.}
   \label{fig:lamp}
 \end{figure}
+
+\subsection{Ozone generator setting in a CE-DOAS instrument}
+\label{sec:o3-setting-doas}
+
+After installing the Ozone generator within a CE-DOAS instrument we
+set up an experiment to test its wanted Ozone and its unwanted
+\ch{NO2} production. The setup can be found in
+Figure~\ref{fig:ozone-flow-setup}. We used to zero air catridges. One
+at the zero air input (which also generates the Ozone) and one at the
+sample air input. Thus the sample air is \ch{NO2} and \ch{O3}
+free. The only way to find these trace gases is, if the Ozone
+generater introduced them. Naturally we expect it to produce Ozone
+however, we do not want it to produce Nitrogendioxide, which is why we
+introduced a Silica filter after the generator. To test the effect of
+this filter we took measurements with and without that filter at
+different flows of the generator and checked the concentrations.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.35\textwidth]{ozone_setup.png}
+  \caption{Ozone measurement setup}
+  \label{fig:ozone-flow-setup}
+\end{figure}
+
+The result can be found in Figure~\ref{fig:o3-flow}. We see that
+changing the flow ascendingly or descendingly does not have an
+influence on the \ch{NO2} concentration as long as the silica filter
+is in place. In both cases for flows smaller than
+\SI{0.2}{\liter\per\minute} the concentration is practically
+zero. Only at the very high flow of \SI{0.3}{\liter\per\minute} there
+is \ch{NO2} detectable. The difference to the measurement without
+Silica filter is obvious. Even the smallest stable flow leads to a
+concentration of around \SI{4}{ppb} and for higher flows we soon reach
+a stable plateau of about \SI{14}{ppb}. So we see that the Silica
+filter is very effective in cleaning the generator air fo \ch{NO2}.
+
+Looking at the Ozone levels we see a rise of the concentration with
+the flow as is expected. On strange observation is that both
+measurements \emph{with} Silica filter yield higher concentrations
+than the measurment \emph{without} Silica filter. This seems
+counterintuitive as the Silica gel should also filter some of the
+Ozone before it reaches its saturation level. One possible explanation
+might be that the silica gel adsorbs \ch{NO2} and other trace gases
+fast enough such that they cannot react with the Ozone leading to a
+higher Ozone concentration. \todo{Why is the ozone level without filter lower?}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\textwidth]{O3.png}
+  \hfill
+  \includegraphics[width=0.45\textwidth]{NO2.png}
+  \caption{\ch{O3} and \ch{NO2} concentration over generator flow.}
+  \label{fig:o3-flow}
+\end{figure}
+
 
 %%% Local Variables: 
 %%% mode: latex

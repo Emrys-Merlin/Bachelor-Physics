@@ -1,6 +1,7 @@
-
-\section{Theoretical Background}
+\section{Theoretical background}
 \label{sec:theory}
+
+\todo{reference old bachelor thesis}
 
 \subsection{The rate coefficient}
 \label{sec:rate}
@@ -74,7 +75,7 @@ There are several reactions which are triggered by an abundance of
   reference for rate coefficients}
 
 \begin{align*}
-  \ch{NO + O3 ->[$k=\SI{1.8e-14}{\hertz}$] NO2 + O2}.
+  \ch{NO + O3 & ->[$k=\SI{1.8e-14}{\hertz\per\cubic\centi\meter}$] NO2 + O2}.
 \end{align*}
 
 Thus we can use the generated Ozone as an easyway to convert \ch{NO}
@@ -85,7 +86,7 @@ concentration to conclude the \ch{NO} concentration. For once Ozone
 reacts directly with \ch{NO2}, too. We yield
 
 \begin{align*}
-  \ch{NO2 + O3 ->[$k=\SI{3.5e-17}{\hertz}$] NO3 + O2}.
+  \ch{NO2 + O3 ->[$k=\SI{3.5e-17}{\hertz\per\cubic\centi\meter}$] NO3 + O2}.
 \end{align*}
 
 We see that part of the \ch{NO2} will be converted to \ch{NO3}, which
@@ -94,7 +95,7 @@ itslef will react with \ch{NO2} and generate laughing gas, i.e.
 
 \begin{align}
   \ch{NO2 + NO3
-  <=>[$k=\SI{1.9e-12}{\hertz}$][$k=\SI{2.6e-11}{\hertz}$] N2O5}. \label{eq:laughing}
+  <=>[$k=\SI{1.9e-12}{\hertz\per\cubic\centi\meter}$][$k=\SI{2.6e-11}{\hertz\per\cubic\centi\meter}$] N2O5}. \label{eq:laughing}
 \end{align}
 
 Luckily, the equilibrium of equation~\eqref{eq:laughing} lies on the
@@ -103,7 +104,7 @@ side of the educts, so the effect should not be too large.
 One last equation that has to be taken into account is
 
 \begin{align}
-  \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz}$] 2 NO2}.\label{eq:back}
+  \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz\per\cubic\centi\meter}$] 2 NO2}.\label{eq:back}
 \end{align}
 
 Since it has such a large rate coefficient, we see that the conversion
@@ -112,6 +113,329 @@ most of it will degrade to \ch{NO2} again, as long as there is still
 \ch{NO}. So in theory we should be able to adjust the amount of Ozone
 mixed with the sample air in such a way that equation~\eqref{eq:back}
 makes sure that none of the \ch{NO2} is lost.
+
+
+\subsection{The physics behind CE-DOAS}
+\label{sec:ce-doas-physics}
+
+In the following sections we will discuss the physical concepts
+necessary to understand the Cavity Enhance Diffirential Absorption
+Spectroscopy (CE-DOAS). First, we will investigate the Lambert-Beer
+Law. This leads directly to the so called \emph{Longpath}-DOAS
+instrument. As the name already indicates, those need a long
+lightpath, since normally the absorption crosssections are very
+small. Thus lastly we introduce the \emph{cavity enhancement} to
+overcome this restriction.
+
+The presentation follows mostly~\cite{fp58} with a few inspirations
+taken from~\cite{platt2008differential}.
+
+\subsubsection{The Lambert-Beer Law}
+\label{sec:lambert-beer}
+
+Behind the DOAS method stands an easily understood concept, the so
+called \emph{Lambert-Beer Law}. We take a narrow ligth source emitting a
+wavelength dependent intensity $I_0(\lambda)$ and ask ourselves the
+question how the intensity will behave in a distance $L$. If we
+neglect broadening of the light beam the intensity should mainly
+depend on the absorption behaviour of the matter it passes. If we can
+make the further assumption that our matter is isotropic then it makes
+only sense that the decrease of the intensity only depends on the
+intensity itself, but not on the exact location on the path. Thus we
+yield a very well known differential equation
+
+\begin{align*}
+  \frac{\partial I}{\partial L}(\lambda, L) = - \epsilon(\lambda)
+  \cdot I(L, \lambda),
+\end{align*}
+where $\epsilon$ is called the absorption coefficient, which is of
+course wave length dependent. Integrating this equation, using $I_0$
+as initial value, we get the standard form of the Lambert-Beer Law
+
+\begin{align}
+  I(\lambda, L) = I_0(\lambda) \cdot \exp[-\epsilon(\lambda) \cdot
+  L]. \label{eq:lb-easy}
+\end{align}
+
+This law describes the absorption behaviour of light very well for our
+purposes. However, in this form it the connection to the trace gas
+abundance is not completely clear, but that is what we are interested
+in in the end.
+
+The concentration dependence is hidden in the $\epsilon$. It seems
+natural, that the absorption should be proportional to the
+concentratoin of the matter. So we can write
+
+\begin{align*}
+  \epsilon(\lambda) = \sigma(\lambda) \cdot c,
+\end{align*}
+
+where proporitonality constant $\sigma$ is denoted \emph{absorption
+  corsssection} and $c$ is the concentration. To be even more precise
+we should write
+
+\begin{align}
+  \epsilon(\lambda) = \sum_{i=1}^n \sigma_i(\lambda) \cdot c_i, \label{eq:lb-abs}
+\end{align}
+
+where we have $n$ different trace gases we want to consider in the
+absorption process. 
+
+Equations~\eqref{eq:lb-easy} and~\eqref{eq:lb-abs} now contain the central idea for our
+spectroscopic method. We can measure the intensity spectra $I$ and
+$I_0$, we can also determine the pathlength $L$. If we now want to
+compute the concentration of our trace gases, we only need the
+absorption crosssections, which can be found in the
+literature.\todo{cite} Thus lastly we introduce the \emph{Optical
+  Density} 
+
+\begin{align*}
+  D(\lambda) = \ln \left(\frac{I(\lambda)}{I_0(\lambda)}\right) = - L
+  \cdot \sum_{i=1}^n \sigma_i(\lambda) c_i,
+\end{align*}
+
+which contains all the necessary information.
+
+\subsubsection{The DOAS method}
+\label{sec:doas}
+
+\todo{write something about units?}
+
+Differential Optical Absorption Spectroscopy uses the Lambert-Beer Law
+to compute the concentrations of trace gases in the air. There are a
+few more technicalities we need to respect. First of all, we must have
+a look at the absorption crosssections of different trace gases. If we
+want to be able to discern different gases and even compute their
+concentration, we need the crosssections to be sufficiently
+different.
+\todo{used in section 3.1 or something}
+
+As can be seen in Figure\todo{include picture of crosssection}  the
+crosssections can be separated into two parts: One only weakly
+wavelength dependent and similar for all gases and a narrowband
+structure on top which differs strongly for different species. This
+narrowband structure is what will allow us to discern the gases. It is
+called the \emph{differential spectrum}. Hence the name of the
+method. In the actual fitting process we will first remove the
+broadband structure, to be only left with the differentials.
+
+However, there are still two effects we need to take into
+account. Absorption is not the only effect that decreases the
+intensity of our light beam in air. There are also scattering
+processes taking place. Namely Rayleigh and Mie scattering. These
+continous effects can be accounted for by adding wavelength dependent
+polynomial to the fit function. Thus we fit
+
+\begin{align*}
+  f(\lambda) = - \sum_{i=1}^n c_i \cdot L \cdot \sigma_i(\lambda) +
+  \sum_k a_k \lambda^k
+\end{align*}
+
+to the Optical Density, where the concentrations $c_i$ and the polynomial
+coefficients $a_k$ are to be determined.
+
+\todo{write something about instrument function}
+
+\subsubsection{The CE-DOAS method}
+\label{sec:ce-doas}
+
+Since the absorption coefficents $\epsilon$ are so small, we need a
+very long pathlength $L$ to see a signal in the DOAS method. One
+possibility is to really use a very long geometrical pathlength using
+mirrors and telescopes. With this we are able to obtain pathlengths
+between \num{1} and \SI{10}{\kilo\meter}\todo{cite}. These so called
+\emph{Longpath-DOAS} instruments have advantages, but also a few
+disadvantages one of them clearly being that we need a lot of space
+and in the process we average the concentration of our trace gases
+over a large area.
+
+An alternative approach is to increase the lightpath by the use of
+optical instruments, i.\,e.\ mirrors. Using two highly reflective
+mirrors we can obtain very large optical pathlengths, while still
+having a managable geometrical pathlength. The price we pay by taking
+this approach lies in the fact that now our pathlength becomes
+wavelength dependent as this is true for the reflectivity of all
+highly reflecting mirrors. 
+
+In this paragraph we will generalize the DOAS approach keeping in mind
+that our pathlength is not constant anymore. On the way we try to
+separate two effects on the pathlength. First the shortening due to
+the absorption by the trace gases and secondly the influence by the
+reflectivity.
+
+The CE-DOAS method was used for the measurements in
+Sections~\ref{sec:o3-setting-doas} to~\ref{sec:vehicle}. 
+
+The geometrical setup is the following:\todo{setup}
+
+where we have two mirrors with reflectivity $R_i$, transmittance $T_i$
+and absorption $A_i$. We have
+
+\begin{align*}
+  R_i + T_i + A_i = 1 \quad i \in{1,2}.
+\end{align*}
+
+Furthermore we have the transmittance $T_g$ of the gas in the
+cavity. For this we get from the Lamert-Beer law
+
+\begin{align*}
+  T_g = \exp(-\epsilon d),
+\end{align*}
+
+where $d$ is the length of our cavity. If we take some intensity
+$I_{\text{in}}$ entering the cavity and we want to compute the outgoing
+intesity $I_{\text{out}}$ we get a geometric series
+
+\begin{align*}
+  I_{\text{out}} & = I_{\text{in}} T_1 T_2 T_g \sum_{n=0}^\infty R_1^n R_2^n T_g^{2n}\\
+  & = I_{\text{in}} T_1 T_2 T_g \cdot \frac{1}{1 - R_1R_2T_g^2},
+\end{align*}
+
+where for the last equation we need $R_1R_2T_g^2 < 1$ to hold, which
+is clearly true since all entering variables lay between 0 and 1.
+
+With this formula we are able to compute the sample air intensity $I$
+as well as the zero air (i.\,e.\ the trace gas free) intensity $I_0$
+depending on the different reflectivities and transmittances. To do
+this we will use a few approximations, which are listed in the
+following
+
+\begin{enumerate}
+\item $I_{\text{in}}$ is the same for both $I$ and $I_0$. This means
+  we are neglecting any fluctuations in the light source intensity
+  coming from temperature instabilities or other optomechanic effects.
+\item We assume $R_1 \approx R_2 \eqqcolon R \approx 1$, meaning $(R -
+  1) \ll 1$. Since we use hihgly reflective mirrors this assumption
+  seems reasonable.
+\item We assume $\epsilon \cdot d \ll 1$ for both sample and zero
+  air. Furthermore we assume the transmittances for both zero air and
+  sample air to be equal to first order. We write $T_g \approx
+  T_{g,0}$. This seems also reasonable as the absorption in air is
+  comparativly weak and our geometrical pathlength is in the order of
+  magnitude of \SI{1}{\meter}.
+\item We assume  $(R - 1) + \epsilon d \ll 1$, too. This is only a
+  lightly stronger condition then the above mentioned two, but
+  necessary. 
+\item We assume to be allowed to neglect higher order monomials of the
+  form $(R-1)^i(\epsilon d)^j$  with $i+j \geq 2$, $i,j \in \N_0$.
+\end{enumerate}
+
+In the following we will always refer to the number of the above
+mentioned assumptions, when used.
+
+The information of our trace gas concentration should in this setup
+still be obained by comparing $I$ and $I_0$. We still expect an
+exponential factor between the two so we introduce the \emph{Cavity
+  Enhanced Optical Density} $D_{\text{CE}}$ by
+
+\begin{align}
+  I(\lambda) = I_0(\lambda) \cdot \exp(- D_{\text{CE}}) = I_0(\lambda)
+  \cdot \exp(-\delta(\lambda) \cdot L_{\text{eff}}(\lambda)),
+\end{align}
+
+where $\delta \coloneqq \epsilon - \epsilon_0$ is the difference
+between the absorption coefficients of sample and zero air, i.\,e.\ the
+absorption coefficient of the trace gases and $L_{\text{eff}}$ is the
+wavelength dependent \emph{effective pathlength} of the system. Next
+we will take a closer look at $D_{\text{CE}}$.
+
+\begin{align}
+  D_{\text{CE}}(\lambda) & \coloneqq \ln\left(
+                           \frac{I_0(\lambda)}{I(\lambda)}\right)\nonumber\\
+                         & = \ln\left ( \frac{I_{\text{in}}T_1T_2T_{g,0}(1 -
+                           (RT_{g,0})^2)^{-1}}{I_{\text{in}}T_1T_2T_g(1 -
+                           (RT_g)^2)^{-1}}\right)\nonumber\\
+                         & \stackrel{3.}{\approx} \ln\left( \frac{1 -
+                           (RT_g)^2}{1 - (RT_{g,0})^2}\right)\label{eq:d_ce},
+\end{align}
+
+where the wavelenght dependencies were dropped after the first
+equation to preserve clarity. 
+
+To evaluate this expression further we
+first have a look at the separate expression $(RT)^2$:
+
+\begin{align}
+  [RT]^2 & = [R \exp(-\epsilon d)]^2 \nonumber\\
+         & \stackrel{3.}{\approx} [R \cdot(1 - \epsilon d)]^2 \nonumber\\
+         & = [(1 + (R - 1))\cdot (1 - \epsilon d)]^2 \nonumber\\
+         & \stackrel{5.}{\approx} [1 - (1 - R + \epsilon d)]^2 \nonumber\\
+         & \stackrel{4.}{\approx} 1 - 2 \cdot (1 - R + \epsilon d)\label{eq:rt}.
+\end{align}
+
+Inserting Equation~\eqref{eq:rt} into Equation~\eqref{eq:d_ce} we
+yield
+
+\begin{align}
+  D_{\text{CE}} & \approx \ln \left ( \frac{1 - (1 - 2\cdot ( 1- R +
+  \epsilon d))}{1 - (1 - 2 \cdot (1 - R + \epsilon_0 d))}\right)\\
+  & = \ln \left ( \frac{1 - R + \epsilon d}{1 - R + \epsilon_0
+    d}\right) \\
+  & = \ln \left ( 1 + \frac{ \delta d}{1 - R + \epsilon_0 d}\right) \quad
+    \text{with } \delta \coloneqq \epsilon - \epsilon_0.
+\end{align}
+
+This last equation can be reformulated to
+
+\begin{align}
+  \exp(D_{\text{CE}}(\lambda)) - 1 = \frac{I_0(\lambda)}{I(\lambda)} -
+  1 = \frac{d}{1 - R(\lambda) + \epsilon_0(\lambda) d} \cdot
+  \delta(\lambda)\label{eq:i-1}, 
+\end{align}
+
+where all the trace gas information is bundled in $\delta(\lambda)$
+and the other right hand side parts are trace gas independent.
+
+In a next step we want anlogously $D_{\text{CE}}$ to be given by a
+pathlength multiplied by $\delta$. Thus we define
+
+\begin{align}
+  L_{\text{eff}}(\lambda) \coloneqq \frac{D_{\text{CE}}(\lambda)}{\delta(\lambda)}.
+\end{align}
+
+In this equation we can enter Equation~\ref{eq:i-1} solved for
+$\delta$ and get
+
+\begin{align}
+  L_{\text{eff}} = \frac{D_{\text{CE}}}{\exp(D_{\text{CE}}) - 1} \cdot
+  \underbrace{\frac{d}{1 - R + d\epsilon_0}}_{\eqqcolon L_0}.
+\end{align}
+
+We see that with this definition of $L_0$ it is completely independent
+of any trace gas influence and hence all the trace gas dependence is
+restricted to the first term. Furthermore we see that $L_0$ directly
+depends on the mirror reflectivity. All in all $L_0$ depends only on
+the geometry of our setup (if we assume $\epsilon_0$ to be fixed) and
+we have reached the desired separation of $L_{\text{eff}}$.
+
+Looking only at the definition of $L_0$ and comparing it to
+Equation~\eqref{eq:i-1}, we yield
+
+\begin{align}
+  \delta \cdot L_0 = \frac{I_0}{I} - 1 \eqqcolon D_{\text{eff}}, \label{eq:ce-central}
+\end{align}
+
+where $D_{\text{eff}}$ is calle \emph{Effective Optical Density}.This
+is the central equation for the CE-DOAS evaluation. $I$ and $I_0$ are
+measured $L_0$ only depends on the geometry, so the only place, where
+the trace gas concentrations enter are through $\delta$, which makes
+it very easy for us to fit the concentrations.
+
+In addition this equation also allows us to determine the pathlength
+$L_0$. Using Helium as sample air we have a rather large difference
+and well known $\delta$, which we can then use to fit
+$L_0$.\todo{Platt 2009 und Fiedler 2003 aufnehmen}
+
+In the actual evaluation we then take, as in the DOAS evaluation, the fit function
+
+\begin{align*}
+  f(\lambda) \coloneqq L_0(\lambda)\cdot\sum_{j=1}^n \sigma_j(\lambda)
+  \cdot c_j + \sum_i a_i \lambda^i,
+\end{align*}
+
+where the parameters $c_j$ and $a_i$ are fitted to
+$D_{\text{eff}}$. This is done using the leas square methods. The
+polynomial is again added to compensate for broadband structure.
 
 %%% Local Variables: 
 %%% mode: latex

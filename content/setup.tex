@@ -1,0 +1,86 @@
+\section{Converter setup}
+\label{sec:setup}
+
+\subsection{Ozone generator setup}
+\label{sec:ozone-setup}
+
+As a proof of concept we built the Ozone generator on a wooden board
+as can be seen in Figure~\ref{fig:setup}. As described in
+Section~\ref{sec:requirements}, the lab air was first filtered and
+then sent through an alluminium coated tube containting a Pen-Ray
+Hg-Lamp\todo{find out more about it}. To make sure the superfluous
+\ch{NO} is completely to \ch{NO2}, we introduce a \SI{3}{\meter}
+teflon tube. Afterwards the Ozone enriched air passed another Silica
+gel filter and is expected to then be \ch{NO_x} free.
+
+To be able to measure the Ozone production after the last filter a
+cuvette was added, which could be entered in the light path of a
+longpath DOAS instrument (cf.\ Fig.~\ref{fig:cuvette}). The length of
+the lightpath through the cuvette is \SI{10}{\centi\meter}. 
+
+The Pen-Ray power source could switch the current between
+\SI{}{\ampere} and \SI{}{\ampere}\todo{find out used
+currents}. Furthermore the Flow $\Phi_{\ch{O 3}}$ could be set via the
+flowmeter between \num{0} and \SI{0.3}{\liter\per\minute}. The lowest
+stable flow higher than \SI{0}{\liter\per\minute} was
+\SI{0.03}{\liter\per\minute}.nn
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/cuvette.jpg}
+  \caption{Cuvette together with styrofoam mount on an optical
+    rack. The outermost riders are the mounts for the optical
+    fibers. The riders within consist of two collimators.}
+  \label{fig:cuvette}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  {
+  \def\svgwidth{0.9\linewidth}
+  \input{images/setup.pdf_tex}
+  }
+  \phantom{h}\\
+  \bigskip
+  \includegraphics[width=0.9\linewidth]{setup.jpg}
+  \caption{Ozone generator setup. Schematic and picture.}
+  \label{fig:setup}
+\end{figure}
+
+\subsection{Inclusion into a CE-DOAS instrument}
+\label{sec:inclusion}
+
+After the above setup was tested the converter was added to an
+existing CE-DOAS instrument (EnviMeS SN:2014002)\todo{technical data
+  of envimes}. The instrument was already supplied with an \ch{O3}
+generator, but lacked a Silica gel filter, which was added. The inside
+of the instrument can be seen in Figure~\ref{fig:envimes}. Since it
+was optimized for space, it is difficult if not impossible to extract
+the setup from this view. Therefore Figure~\ref{fig:envimes-schematic}
+contains a slightly simplified schematic view of the instrument. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/envimes_up.jpg}
+  \caption{EnviMeS CE-DOAS instrument with \ch{NO} to \ch{NO2}
+    converter. On the upper left part the Pen-Ray lamp with
+    powersupply can be seen. Below the powersupply partly covered by
+    styrofoam is the additional Silica gel filter. In the lower half
+    one can see the cavity with spectrometer and \SI{10}{\meter}
+    reaction path rolled up.}
+  \label{fig:envimes}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/envimes_setup.png}
+  \caption{Schematic of EnviMeS CE-DOAS instrument with \ch{NO} to
+    \ch{NO2} converter.}
+  \label{fig:envimes-schematic}
+\end{figure}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Bachelor"
+%%% End:

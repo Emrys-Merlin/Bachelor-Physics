@@ -1,119 +1,282 @@
 \section{Theoretical background}
 \label{sec:theory}
 
-\todo{reference old bachelor thesis}
 
-\subsection{The rate coefficient}
+\subsection{Ozone chemistry and \ch{NO} to \ch{NO2} conversion}
+\label{sec:chemistry}
+
+This section lays the chemical groundwork for the construction of our
+\ch{NO} to \ch{NO2} converter. First we will introduce the rate
+coefficient to get a measure for the speed of a
+reaction. Afterwards we will have a look at possible ways to generate
+Ozone out of ambient air and then describe Ozone induced reactions
+concerning Nitrogenoxides. This section is mainly inspired by and
+taken from~\cite{bsc}.
+
+\subsubsection{The rate coefficient}
 \label{sec:rate}
 
-\todo{write something about it}
+During our conversion we will have many chemical reactions of the form
 
+\begin{align*}
+  \ch{A + B -> C + D}.
+\end{align*}
 
-\subsection{Ozone Generation}
+Some of them will have positive, wanted effects, others describe side
+effects and we want to suppress them as much as possible. However we
+have only two parameters we can vary. The first is the Ozone
+concentration, which we can vary slighty and very roughly and the
+other one is the reaction pathlength and by that the reaction
+time. Thus our best chance to select certain reactions is to set ther
+reaction time to a value that corresponds to the different reaction
+speeds of the equations, making sure that wanted reactions have enough
+time to happen while simultaneously having the time too short for
+unwanted reactions. Of cours this is only possible, if the wanted
+reactions run faster than the unwanted ones. 
+
+With this motivation in mind, we need a measure for the reaction
+speed. Thinking of speed in this setting means to think of change of
+compound concentration. In this section we will use $c$ to denote
+concentrations. Using the above mentioned prototypic equation, we can
+see that the change of concentration, i.\,e. $\dot c$, of the
+different species are related by:
+\begin{align*}
+  -\dot c(A) = - \dot c(B) = \dot c(C) = \dot c(D).
+\end{align*}
+
+Lastly we want to get a connection of these derivatives to the educt
+concentration. The probability for a reaction to take place should be
+proportional both to $c(A)$ and $c(B)$ as the two particles need to
+`meet'. Thus we expect
+\begin{align}
+  -\dot c(A) = - \dot c(B) = k \cdot c(A) \cdot c(B), \label{eq:rate}
+\end{align}
+
+where the proportionality constant $k$ ist called \emph{rate
+  coefficient}. It is often given in units of
+\si{\hertz\per\cubic\centi\meter}. This $k$ is our desired reaction
+speed measure, as it describes concentration independently the
+reaction time. 
+
+In our case the Ozone concentration will often far exceed the
+concentration of the other trace gases. This allows us to think of its
+concentration as approximately constant. If we set $c(B)$ constant in
+Equation~\eqref{eq:rate}, then we get a well known ordinary first
+order differential equation with solution
+\begin{align*}
+  c(A,t) = c(A,0)\exp(kc(B)\cdot t).
+\end{align*}
+
+In this limiting case we see that the decay time is given by $\tau =
+(kc(B))^{-1}$, such that the connection of $k$ to the reaction speed
+becomes obvious.
+
+\subsubsection{Ozone Generation}
 \label{sec:theory-ozone}
 
-In this section we will look into a possible way of generating Ozone
-(\ch{O3}) out of ambient air. This step is crucial, as the Ozone is
-central compound in the reaction that transforms \ch{NO} to
-\ch{NO2}. Furthermore it is important to clear the air of laughing
-gas as can be seen in section\todo{write something about it}.
+In this section we will discuss the generation of Ozone (\ch{O3}) out of ambient
+air. The main idea comes from the observation that stratospheric
+\ch{O3} protects us from ultraviolet (UV) light. Thus Ozone needs to
+have absorption bands there. Furthermore normally the Ozone layer is
+not depleted, but regenerates itself, so there needs to be a reaction
+cycle building Ozone out of ordinary Oxigen molecules (\ch{O2}).
 
-The equations of the following generation cycle ar often referred to
-as the \emph{Chapman-Cycle}\todo{reference}. These equations not only
-describe the production but also the destruction of Ozone.
+The following equations describe the processes using UV photons to
+generate and destroy Ozone. The cycle is ofthen referred to as
+\emph{Chapman-Cycle}\todo{cite}. In some of the reactions an
+additional molecule is necessary to assure momentum conservation. This
+inert reaction participant is always denoted \ch{M}.
 
-The starting point is a UV-photon which splits an Oxygen molecule:
-
-\begin{align*}
-  \ch{O2} + h\nu \ch{->[$\lambda<\SI{242}{\nano\meter}$]} \ch{2 O(^3P)}.
-\end{align*}
-
-Together with a particle M for momentum conversation the $\ch{O(^3
-  P)}$ radical can produce ozone as shown in the following formula
+The first part of the cycle contains the reactions, that generate
+\ch{O3} out of \ch{O2}
 
 \begin{align}
-  \ch{O(^3 P) + O2 + M -> O3 + M}. \label{eq:ozone}
+  \ch{O2} + h\nu &\ch{-> 2 O(^3P)},\nonumber\\
+  \ch{O(^3 P) + O2 + M} &\ch{-> O3 + M}. \label{eq:ozone}
 \end{align}
 
-However, \ch{O3} is not stable, if there is a UV source present. If
-there is light with wavelength under $\SI{310}{\nano\meter}$ then the
-Ozone will be split again
+We see that a photon splits an Oxygen molecule and the excited
+Oxygen atom reacts with another \ch{O2} molecule to form Ozone. For
+the first reaction to take place we need for the wavelength of the
+photon $\lambda < \SI{242}{\nano\meter}$ to hold, i.\,e.\ we need a UV
+photon. 
+
+The next part of the cycle shows, how another UV photon can destroy
+Ozone and create a ground state Oxygen atom. This Oxygen atom will
+then be reexcited:
 
 \begin{align}
-  \ch{O3} + h\nu \ch{->[$\lambda<\SI{310}{\nano\meter}$] O(^1 D) +
-  O2}. \label{eq:split}
+  \ch{O3} + h\nu \ch{&-> O(^1 D) +
+  O2}, \label{eq:split}\\
+  \ch{O(^1 D) + M & -> O(^3 P) + M}.\nonumber
 \end{align}
 
-In a next step the $\ch{O(^1 D)}$ radical can be reexcited via
+After this reaction there are two possible parts. Firt the $\ch{O}(^3
+P)$ can reenter into Equation~\eqref{eq:ozone}, such that there is no
+net change in Ozone or it could react to form \ch{O2} by the
+following mechanisms
 
 \begin{align*}
-  \ch{O(^1 D) + M -> O(^3 P) + M}
+  \ch{2 O(^3 P) + M & -> O2 + M} \quad \text{and}\\
+  \ch{O(^3 P) + O3 & -> 2 O2},
 \end{align*}
 
-and thus can reenter into equation~\eqref{eq:ozone}. The other
-possibility for a $\ch{O(^3 P)}$ radical is to either react with
-another radical or an Ozone molecule which would reduce the Ozone
-concentration. In formulas this would take the form
+leading to a net loss of Ozone. Introducing a UV light source with
+wavelength less than \SI{242}{\nano\meter} will start the above
+cycle. Since it contains sources and sinks for Ozone, we will reach an
+equilibrium state with a limiting Ozone concentration. This
+concentration will depend on multiple factors, which influence the
+reaction speeds. First and foremost the intensity of the light source
+at different wavelength segments determines if more Ozone is generated
+than destroyed or not. An in depth analysis of this reaction system
+has been carried out by\todo{cite}. For this work the main conclusion
+is sufficient that using a Pen-Ray Hg-lamp within an alluminium coated
+tube shifts the equilibrium in the above equations to a point where
+there is enought Ozone generated for our purposes. The exact
+characteristics of our generator were determined experimentally and
+the results can be found in Section~\ref{sec:ozone}. 
 
-\begin{align*}
-  \ch{2 O(^3 P) + M & -> O2 + M}\\
-  \ch{O(^3 P) + O3 & -> 2 O2}.
-\end{align*}
-
-Thus we see that if we introduce a UV light source with wavelength
-less than \SI{242}{\nano\meter}, we can generate Ozone
-by splitting Oxygen. Some of it will be destroyed again by the split
-in equation~\eqref{eq:split}, so at some point we will enter an
-equilibrium state and thus a stable concentration of \ch{O3} that can
-be used in the later application.
-
-\subsection{Ozone and Nitrogen Oxide}
+\subsubsection{Ozone triggerd Nitrogenoxide reactions}
 \label{sec:o-no}
 
-There are several reactions which are triggered by an abundance of
-\ch{O3}. The for our purpose desired one is the following\todo{find
-  reference for rate coefficients}
+In this section we will have a look at all reactions concerning
+chemicals consisting of Nitrogen and Oxygen. Our aim is to convert
+100\% of the Nitrogenmonoxide (\ch{NO}) to Nitrogendioxide
+(\ch{NO2}). However introducing Ozone to the sample air can trigger
+other reactions. If these lead to a net change of \ch{NO2} we have
+additional effects to correct, if we want to determine the \ch{NO}
+concentration. All reactions are given with their corresponding rate
+coefficient $k$ which were taken from~\cite{bsc}. In section
+\todo{write section} we will discuss the implications of the reactions
+here on the setup of our converter.
+
+The reaction we are mainly interested in and we want to be dominant is
+the following
 
 \begin{align*}
   \ch{NO + O3 & ->[$k=\SI{1.8e-14}{\hertz\per\cubic\centi\meter}$] NO2 + O2}.
 \end{align*}
 
-Thus we can use the generated Ozone as an easyway to convert \ch{NO}
-to \ch{NO2}. If this were the only reaction, we could use this method
-to determine the \ch{NO} concentration perfectly. However, there are
-more reactions taking place, which make it harder to use the \ch{NO2}
-concentration to conclude the \ch{NO} concentration. For once Ozone
-reacts directly with \ch{NO2}, too. We yield
+If this were the only reaction, we would have a one to one conversion
+from \ch{NO} to \ch{NO2}. We would only have to make certain that
+there is enough Ozone. However this is not the only reaction taking
+place. Nitrogendioxide itself can be oxidized by Ozone to generate
+Nitrogentrioxide (\ch{NO3}):
 
 \begin{align*}
   \ch{NO2 + O3 ->[$k=\SI{3.5e-17}{\hertz\per\cubic\centi\meter}$] NO3 + O2}.
 \end{align*}
 
-We see that part of the \ch{NO2} will be converted to \ch{NO3}, which
-cannot be detected by our measuring instrument. Even worse, \ch{NO3}
-itslef will react with \ch{NO2} and generate laughing gas, i.e.
+Luckily, we see that the rate coefficients of the two reactions are
+very different and the first ony is approximately three orders of
+magnitude faster than the second one. Furthermore \ch{NO3} is again
+not detectible by our measurement instrument. Also \ch{NO3} can react
+again with \ch{NO2} to generate laughing gas
 
 \begin{align}
-  \ch{NO2 + NO3
-  <=>[$k=\SI{1.9e-12}{\hertz\per\cubic\centi\meter}$][$k=\SI{2.6e-11}{\hertz\per\cubic\centi\meter}$] N2O5}. \label{eq:laughing}
+  \ch{NO2 + NO3 + M
+  <=>[$k=\SI{1.9e-12}{\hertz\per\cubic\centi\meter}$][$k=\SI{2.6e-11}{\hertz\per\cubic\centi\meter}$]
+  N2O5 + M}. \label{eq:laughing}
 \end{align}
 
-Luckily, the equilibrium of equation~\eqref{eq:laughing} lies on the
-side of the educts, so the effect should not be too large.
-
-One last equation that has to be taken into account is
+As we can see the equilibrium of Equation~\eqref{eq:laughing} lies on the
+side of the educts, so the effect should not be too large, if the
+\ch{NO3} concentration can be kept low. In addition there is another
+very fast reaction using \ch{NO3}
 
 \begin{align}
   \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz\per\cubic\centi\meter}$] 2 NO2}.\label{eq:back}
 \end{align}
 
-Since it has such a large rate coefficient, we see that the conversion
-of \ch{NO2} to \ch{NO3} can be expected to not be that influential, as
-most of it will degrade to \ch{NO2} again, as long as there is still
-\ch{NO}. So in theory we should be able to adjust the amount of Ozone
-mixed with the sample air in such a way that equation~\eqref{eq:back}
-makes sure that none of the \ch{NO2} is lost.
+Thus, if we keep the Nitrogentrioxide concentration low to begin with,
+the above reaction implies that basically all of it should react with
+\ch{NO} to form \ch{NO2}. Since \ch{NO3} is quickly destroyed by
+photolysis, we can assume our measurement air to be \ch{NO3} free (at
+least during day time measurements). Thus the molecules come either
+from oxidizes \ch{NO2} or from twice oxidized \ch{NO}. In both cases
+Equation~\eqref{eq:back} makes sure that our measurement is not distorted.
 
+\subsubsection{Technical requirements for the converter}
+\label{sec:requirements}
+
+The above considerations lead to some technical requirements in the
+construction of our converter. First and obviously we need to use well
+filtered air in the Ozone generator as not to introduce other trace
+gases which would disturb the measurement. The normal procedure
+consists in using an activated charcoal, a silica gel and a particle
+filter. However, one problem is that \ch{NO} is hardly soluble in
+water and thus passes all these filter barriers. After the Ozone
+generation it will react with it and lead to an additional \ch{NO2}
+signal, which cannot be neglected. To remove this signal, one can add
+another silica gel filter after the generation. \ch{NO2} is well
+adsorbed within, which should lead to the desired reduction of the
+error. However, Ozone is also adsorbed in Silica. Luckily, the
+adsorption capacity for Ozone is much worse than for Nitrogen
+Dioxide. So we would expect the filter to be quickly saturated by
+Ozone, so that it can pass, while still blocking \ch{NO2}. To make
+this work, we also have to add some extra pathlength after the
+generator to make sure that the oxidization took place before we add
+the filter.
+
+The next restriction comes from Section~\ref{sec:o-no}. Using the rate
+coefficients we need an appropriate reaction pathlength, such that
+almost all \ch{NO} is converted to \ch{NO2}, but the higher
+oxidizations are still suppressed. The Ozone generator will supply an
+overabundance of \ch{O3}, so we can use the linear ordinary
+differential equation approximation introduced in
+Section~\ref{sec:rate}. Thus the conversion ratio is
+just given by
+\begin{align*}
+  \exp(kc(\ch{O3})\cdot t),
+\end{align*}
+where $t$ is the allowed reaction time and $1$ stands for no
+conversion at all (i.\,e.\ no decrease in the educt concentration) and
+$0$ stands for complete conversion. Since we have a constant flow
+$\Phi = \SI{2}{\liter\per\minute}$ and we know the cross section of
+our tubes, $t$ can be converted to a reaction pathlength. Assuming an
+Ozone concentration of
+\begin{align*}
+  c(\ch{O3}) = \SI{4}{ppm} = \SI{9.992e13}{\per\cubic\centi\meter},
+\end{align*}
+we get the following natural time scales for the reactions \ch{NO ->
+  NO2} and \ch{NO2 -> NO3}:
+\begin{align*}
+  \tau_1^{-1} & = k_1 c(\ch{O3}) = \SI{1.79}{\hertz} \quad \text{and}\\
+  \tau_2^{-1} & = k_2 c(\ch{O3}) = \SI{3.47}{\milli\hertz}.
+\end{align*}
+
+The results for the conversion ratio for different reaction
+pathlengths can be found in Tabel~\ref{tab:pathlength}.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{
+    S[table-format = 2.0]
+    S[table-format = 2.2]
+    S[table-format = 1.1e2]
+    S[table-format = 1.2]}
+    \toprule
+    {Pathlength} & {Time} & {Conversion ratio} & {Conversion ratio}\\
+    {\si{\meter}} & {\si{\second}} & {\ch{NO -> NO2}} & {\ch{NO2 -> NO3}}\\
+    \midrule
+     5 & 4.25 & 5.0e-4 & 0.99\\
+    10 & 8.49 & 2.5e-7 & 0.97\\
+    15 & 12.74 & 1.3e-10 & 0.96\\
+    \bottomrule
+  \end{tabular}
+  \caption{Conversion ratio of the reactions \ch{NO + O3 -> NO2 + O2}
+    and \ch{NO2 + O3 -> NO3 + O2} depending on reaction pathlength or
+    reaction time. $\Phi = \SI{2}{\liter\per\minute}$, $c(\ch{O3}) =
+    \SI{4}{ppm}$ and tube diameter $d = \SI{6}{\milli\meter}$.}
+  \label{tab:pathlength}
+\end{table}
+
+We see that by using a pathlength of \SI{10}{\meter}, we should expect
+to convert basically all \ch{NO} to \ch{NO2} while converting about
+3\% of the \ch{NO2} to \ch{NO3}. This seems a workable
+setting. Lengthening the path only leads to more \ch{NO3} Shorter
+pathlengths have the disadvantage of not converting enough \ch{NO},
+although the error should still be in the promille area.
 
 \subsection{The physics behind CE-DOAS}
 \label{sec:ce-doas-physics}
@@ -128,58 +291,49 @@ small. Thus lastly we introduce the \emph{cavity enhancement} to
 overcome this restriction.
 
 The presentation follows mostly~\cite{fp58} with a few inspirations
-taken from~\cite{platt2008differential}.
+taken from~\cite{bsc} and~\cite{platt2008differential}.
 
 \subsubsection{The Lambert-Beer Law}
 \label{sec:lambert-beer}
 
-Behind the DOAS method stands an easily understood concept, the so
-called \emph{Lambert-Beer Law}. We take a narrow ligth source emitting a
-wavelength dependent intensity $I_0(\lambda)$ and ask ourselves the
-question how the intensity will behave in a distance $L$. If we
-neglect broadening of the light beam the intensity should mainly
-depend on the absorption behaviour of the matter it passes. If we can
-make the further assumption that our matter is isotropic then it makes
-only sense that the decrease of the intensity only depends on the
-intensity itself, but not on the exact location on the path. Thus we
-yield a very well known differential equation
-
-\begin{align*}
-  \frac{\partial I}{\partial L}(\lambda, L) = - \epsilon(\lambda)
-  \cdot I(L, \lambda),
-\end{align*}
-where $\epsilon$ is called the absorption coefficient, which is of
-course wave length dependent. Integrating this equation, using $I_0$
-as initial value, we get the standard form of the Lambert-Beer Law
+The \emph{Labert-Beer Law} ist the underlying principle behind the
+main measurement method used in this work. It concerns itself with the
+evolution of the light intensity $I_0$ which propagates a certain
+distance $L$ through air. It assumes an exponential decay over $L$, so
+we can write
 
 \begin{align}
   I(\lambda, L) = I_0(\lambda) \cdot \exp[-\epsilon(\lambda) \cdot
-  L]. \label{eq:lb-easy}
+  L], \label{eq:lb-easy}
 \end{align}
 
-This law describes the absorption behaviour of light very well for our
-purposes. However, in this form it the connection to the trace gas
-abundance is not completely clear, but that is what we are interested
-in in the end.
-
-The concentration dependence is hidden in the $\epsilon$. It seems
-natural, that the absorption should be proportional to the
-concentratoin of the matter. So we can write
+where $\epsilon$ is called \emph{absorption coefficient}. This
+coefficient contains all the influences of the matter on the
+absorption and can thus be split to account for the different
+absorption and scattering mechanisms:
 
 \begin{align*}
-  \epsilon(\lambda) = \sigma(\lambda) \cdot c,
+  \epsilon = \epsilon_a + \epsilon_R + \epsilon_M,
 \end{align*}
 
-where proporitonality constant $\sigma$ is denoted \emph{absorption
-  corsssection} and $c$ is the concentration. To be even more precise
-we should write
+where $\epsilon_a$ denotes the absorption and scattering due to the
+trace gases, $\epsilon_R$ denotes Rayleigh scattering and $\epsilon_M$
+Mie scattering. Next we want to understand the influence of the trace
+gases on $\epsilon_a$ a little better. The absorption should be
+proportional to the concentration of the gases, so we write
 
 \begin{align}
-  \epsilon(\lambda) = \sum_{i=1}^n \sigma_i(\lambda) \cdot c_i, \label{eq:lb-abs}
+  \epsilon_a(\lambda) = \sum_{i=1}^n \sigma_i(\lambda) \cdot \bar c_i, \label{eq:lb-abs}
 \end{align}
 
-where we have $n$ different trace gases we want to consider in the
-absorption process. 
+where $i$ sums over all the trace gases present in the penetrated
+air, $\bar c_i$ is the associated average concentration and $\sigma_i$
+is calld \emph{absorption crosssection}. For the above formula to be
+useful to determine the concentration of our trace gases, we need to
+have a very homogenous air sample, so that we can assume that the
+concentration within it is constant. As we will see this assumption is
+sensible vor CE-DOAS, if one works with Longpath-DOAS measurements one
+has to work with other parameters, e.\,g.\ the collon density.
 
 Equations~\eqref{eq:lb-easy} and~\eqref{eq:lb-abs} now contain the central idea for our
 spectroscopic method. We can measure the intensity spectra $I$ and
@@ -208,33 +362,64 @@ a look at the absorption crosssections of different trace gases. If we
 want to be able to discern different gases and even compute their
 concentration, we need the crosssections to be sufficiently
 different.
-\todo{used in section 3.1 or something}
 
 As can be seen in Figure\todo{include picture of crosssection}  the
-crosssections can be separated into two parts: One only weakly
-wavelength dependent and similar for all gases and a narrowband
-structure on top which differs strongly for different species. This
-narrowband structure is what will allow us to discern the gases. It is
-called the \emph{differential spectrum}. Hence the name of the
-method. In the actual fitting process we will first remove the
-broadband structure, to be only left with the differentials.
-
-However, there are still two effects we need to take into
-account. Absorption is not the only effect that decreases the
-intensity of our light beam in air. There are also scattering
-processes taking place. Namely Rayleigh and Mie scattering. These
-continous effects can be accounted for by adding wavelength dependent
-polynomial to the fit function. Thus we fit
+crosssections can be separated into two parts: 
 
 \begin{align*}
-  f(\lambda) = - \sum_{i=1}^n c_i \cdot L \cdot \sigma_i(\lambda) +
-  \sum_k a_k \lambda^k
+  \sigma = \sigma^b + \sigma'.
 \end{align*}
 
-to the Optical Density, where the concentrations $c_i$ and the polynomial
-coefficients $a_k$ are to be determined.
+One ($\sigma^b$) only weakly
+wavelength dependent and similar for all gases and a narrowband
+structure ($\sigma'$) on top which differs strongly for different species. This
+narrowband structure is what will allow us to discern the gases. It is
+called the \emph{differential band}. Hence the name of the
+method. Putting what we used so far into the Lambert-Beer equation we
+yield
 
-\todo{write something about instrument function}
+\begin{align*}
+  I(\lambda, L) & = I_0(\lambda) \exp \left ( \sum_{i=1}^n L \cdot
+                  (\sigma^b_j(\lambda) + \sigma'_j(\lambda))\cdot c_j + L[\epsilon_R +
+                  \epsilon_M]\right) \\
+                & = I'_0(\lambda) \exp \left( \sum_{i=1}^n L \cdot
+                  \sigma'_j(\lambda) \cdot c_j \right),
+\end{align*}
+
+where we collected all the broadband structure within $I'_0$. This
+makes sense, as our $I_0$ spectrum will never be free of the Rayleigh
+and Mie scattering processes and thus are already taken into
+account. Furthermore can residual broadband structure be handled in
+the fitting process by adding a polynomial function. Thus we fit
+
+\begin{align}
+  f(\lambda) = - \sum_{i=1}^n c_i \cdot L \cdot \sigma'_i(\lambda) +
+  \sum_k a_k \lambda^k \label{eq:doas-fit}
+\end{align}
+
+to the Optical Density, where the concentrations $c_i$ and the polynomial
+coefficients $a_k$ are to be determined. 
+
+One other technical aspect we have to keep in mind, is how to get the
+absorption crosssections. They have been determined by various
+methods. Some have been computed theoretically other have been
+measured with a very high resolution. So we are given the
+crosssections, however, we need to adapt them to the spectrometer used
+in our measurement instrument, since it has a far lower
+resolution. The effect of this lower resolution is that narrow
+emission lines are smeared out. This smearing out is called
+\emph{instrument function}. To determine it, we can measure the
+spectrum of an \ch{Hg}-lamp and use one of the
+(normally very narrow) emission lines as a convolution kernel. The
+narrow line is broadened and we can assume that all other used
+measurements are broadened by the same amount. So if we convolute our
+crosssections with this measured \ch{Hg}-line, we will compensate for
+the lower resolution. This step has to be done before the actual fit
+and in Equation~\eqref{eq:doas-fit} the convoluted crosssections have
+to be used.
+
+This plain DOAS method is used as measurement method on
+Section~\ref{sec:ozone-setting}. 
 
 \subsubsection{The CE-DOAS method}
 \label{sec:ce-doas}
@@ -292,7 +477,7 @@ intesity $I_{\text{out}}$ we get a geometric series
 \end{align*}
 
 where for the last equation we need $R_1R_2T_g^2 < 1$ to hold, which
-is clearly true since all entering variables lay between 0 and 1.
+is clearly true since all entering variables lie between 0 and 1.
 
 With this formula we are able to compute the sample air intensity $I$
 as well as the zero air (i.\,e.\ the trace gas free) intensity $I_0$
@@ -314,7 +499,7 @@ following
   comparativly weak and our geometrical pathlength is in the order of
   magnitude of \SI{1}{\meter}.
 \item We assume  $(R - 1) + \epsilon d \ll 1$, too. This is only a
-  lightly stronger condition then the above mentioned two, but
+  slightly stronger condition then the above mentioned two, but
   necessary. 
 \item We assume to be allowed to neglect higher order monomials of the
   form $(R-1)^i(\epsilon d)^j$  with $i+j \geq 2$, $i,j \in \N_0$.

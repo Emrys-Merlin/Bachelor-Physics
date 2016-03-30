@@ -1,26 +1,31 @@
 \subsection{Startup behaviour of the Ozone generator}
 \label{sec:ozone}
 
-The measurements are meant to answer the following questions:
-\begin{itemize}
-\item Does the Ozone pass the silica gel?
-\item How much time does it take before the silica gel reaches the
-  saturation level?
-\item Depending on the power of the Penray lamp, how high is the Ozone
-  concentration?
-\item How much \ch{NO_x} is left in the air behind the generator?
-\end{itemize}
+These are the first experiments conducted using the setup described in
+Section~\ref{sec:ozone-setup}. The first goal was to see whether our
+setup produced any Ozone at all, i.\,e.\ whether the Silica gel became
+permeable for Ozone or not. In a second step we researched the startup
+behaviour of our system, as it is important to know the startup time
+necessary before our generator reaches a stable Ozone output. Lastly
+we checked the influence of the Pen-Ray lamp power on the Ozone
+concentration. Using this setup it was impossible to test the
+filtering effects on \ch{NO2} produced by the generator. Since the
+concentration should be around the \ch{NO_x} concentration in ambient
+lab air, it should be no more than a few \si{ppb}. This is far below
+the detection limit of a longpath DOAS instrument with a pathlength of
+\SI{10}{\centi\meter}. 
 
-It is necessary to understand the characterstic of our instrument
-before we use it to convert \ch{NO} to \ch{NO2}. For that we measured
-the time it took to reach a stable production of Ozone and where this
-level lay. 
-
-In figure~\ref{fig:long-stop} one can see the time series of the Ozone
-level of the generator, if the generator had been turned of for a long
-time\footnote{In this case about a week.}. As can be seen the level
-rises rather quickly and reaches a stable plateau after approximately
-\SI{35}{\minute}. The equilibrium lies around 250ppm.
+Turning on the generator very quickly produced an Ozone signal. Thus
+we started a more in depth analysis. Turning of the generator for
+about a week and then taking measurements right after turning it on,
+we yielded Figure~\ref{fig:long-stop}. As can be seen the generator
+takes about \SI{35}{\minute} before it reaches its stable plateau of
+around \SI{250}{ppb} Ozone. During this experiment the flow was
+constantly set to $\Phi_{\ch{O_3}} = \SI{0.03}{\liter\per\minute}$. It
+stands to argue that the startup time could be shortened by increasing
+the flow and returning to a lower value later, when the actual \ch{NO_x}
+measurements are performed. Furthermore the Hg-lamp power supply was
+set\todo{find out current} to \SI{}{A}.
 
 \begin{figure}[htbp]
   \centering
@@ -40,15 +45,21 @@ rises rather quickly and reaches a stable plateau after approximately
   \label{fig:long-stop}
 \end{figure}
 
-In a next step we determined the time necessary to get back to the
-equilibrium after shorter stops of the generator. For this we measured
-the time series of the Ozone concentration after a stop of {\nfrac
-  1/2} \si{\hour}, \SI{1}{\hour}, \SI{2}{\hour} and \SI{4}{\hour}. The
-result can be found in figure~\ref{fig:multiple-stop}, which shows
-that the Ozone reaches the saturation level within
-\SI{10}{\minute}. That in this case the saturation level lay around
-200 ppm can be explained by the difference in temperature between the
-two measurements. 
+Next we were interested in the short term startup behaviour of the
+system. We stopped the generator after it had reached a stable level
+and restarted it after a fixed time period. The result can be found in
+Figure~\ref{fig:multiple-stop}. Since the time resolution of the DOAS
+instrument is rather coarse the only safe statement is, that even
+after a \SI{4}{\hour} stop the concentration climbed back up to around
+\SI{200}{ppb} after \SI{5}{\minute}. So it stands to reason, that if
+the device is used regularly the a prolonged startup time should not
+be an issue, even if one sticks to the constant flow of
+$\Phi_{\ch{O3}} = \SI{0.03}{\liter\per\minute}$. As compared to the
+Ozone level in Figure~\ref{fig:long-stop}, the plateau seems to lie
+slightly lower in this second experiment. The reason for this lies
+most probably in outer conditions such as temperature in the
+laboratory, which changed rather drastically from day to day, as the
+experiments were conducted in November and December.
 
 \begin{figure}[htbp]
   \centering
@@ -74,11 +85,6 @@ two measurements.
   \label{fig:multiple-stop}
 \end{figure}
 
-In a last step we researched the influence of a higher current at the
-Penray lam on the Ozone level. Figure~\ref{fig:lamp} shows that after
-turning on the lamp the saturation level rises from 200 ppm to over
-350 ppm.
-
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
@@ -92,9 +98,26 @@ turning on the lamp the saturation level rises from 200 ppm to over
       \addplot table [col sep=comma] {images/2015-12-02-current2.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{Ozone level dependence on current of Hg-lamp.}
+  \caption{Ozone level dependence on current of Hg-lamp. The steep
+    flank occured after a change of the current from to.}
   \label{fig:lamp}
 \end{figure}
+\todo{enter current in caption}
+
+After having analyzed the startup procedure, we wanted to at least get
+the qualitative influence of the power supply current of the Pen-Ray
+lamp on the Ozone concentration. Beforehand it was not clear whether a
+higher current would increase or decrease the Ozone production rate,
+as, as was described in Section~\ref{sec:theory-ozone}, we did not
+know how a change in power would transform the power distribution on
+the different Mercury lines. We recorded a timeseries while switching
+between the two possible currents and yielded
+Figure~\ref{fig:lamp}. From this we see that we still work in a regime
+where higher power leads to more Ozone. This is interesting to know,
+however, since \SI{200}{ppb} is already more than enough Ozone for our
+purposes, in the practical application we just used the current
+which was easiest to set up\footnote{The currents of all used supplies
+  lay in the same region.}.
 
 \subsection{Silica gel influence on \ch{O3} and \ch{NO2} concentration}
 \label{sec:silica}

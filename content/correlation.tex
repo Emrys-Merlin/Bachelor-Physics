@@ -1,5 +1,37 @@
-\subsection{Comparison to Chemoluminescence measurement}
+\subsection{Comparison to chemiluminescence measurement}
 \label{sec:cld}
+
+After having assured the functionality of our converter in the lab
+setting, we wanted to use it in ambient air. There we had to struggle
+with additional challenges. First and foremost the concept our setup
+allows us only to measure \ch{NO2} or \ch{NO_x} directly, but not
+\ch{NO}. Only in our very special \ch{NO2} free setting, could we
+determine the Nitrogen Monoxide concentration directly. In this more
+general setting we chose the strategy of measuring \ch{NO2} and
+\ch{NO_x} alternatingly, i.\,e.\ we measured a \ch{NO2} spectrum, then
+added Ozone to the sample air, waited for \SI{30}{\second} to make
+sure the cavity was purged, took a \ch{NO_x} spectrum, switched of the
+Ozone stream and purged again for \SI{30}{\second}. In the evaluation
+step we then interpolated the \ch{NO2} concentrations and subtract
+them from the \ch{NO_x} concentration. 
+
+This procedure drastically reduces the time resolution and leads to
+ohter complications. Depending on the location the \ch{NO_x}
+concentration and composition can fluctuate strongly during
+\SI{30}{\second}. This contests the validity of our algorithm and
+indeed repeatedly lead to `negative' \ch{NO} concentrations. One
+loophole is to increase the averaging time further and only compare
+\SI{30}{\minute} averages of \ch{NO_x} and \ch{NO2}. Depending on the
+circumstances this can be acceptable for stationary measurements, however
+
+
+\subsubsection{Setup}
+\label{sec:cld-setup}
+
+\subsubsection{Results}
+\label{sec:cld-results}
+
+
 
 
 %%% Local Variables:

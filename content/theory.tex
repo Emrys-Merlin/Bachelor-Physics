@@ -398,10 +398,106 @@ the dwell time of our gases.
 \subsubsection{Diffusion}
 \label{sec:diffusion}
 
+As was shown in the previous section, the gas flows laminarly through
+our instrument. Thus the only mechanism by which gas mixing can occur
+is \emph{diffusion}. Therefore we we want an estimate for the time it
+takes for diffusion to take place. This exposition drew inspiration
+from~\cite{fluid}.
 
+We are interested in the evolution of the concentration $n$ of a
+species. Fick's first law states that the flow $\Phi$ of the species
+is proprotional to the concentration gradient $\nabla n$ and that the
+species flows from higher to lower concentration. We yield
+
+\begin{align*}
+  \Phi = - D \nabla n,
+\end{align*}
+where $D > 0$ is called the \emph{diffusion constant}. Assuming no
+sources and sinks and using the continuity equation for fluids, we
+arrive at Fick's second law
+
+\begin{align*}
+  \dot n = - \nabla \Phi = \nabla (D \nabla n) = D \cdot \Delta n,
+\end{align*}
+where for the last equation we assumed and istotrope medium, i.\,e.\
+$\nabla D = 0$. This is a second order linear partial differential
+equation and for arbitrary boundary conditions it can become
+arbitrarily hard to solve. Since we are mostly interested in the
+diffusion of species at small time scales, we can assume our vessel
+inifinitely large. With this the equation becomes accessible via
+Fourieranalysis. Let
+
+\begin{align*}
+  \hat n(k,t) = \mathcal{F}[n](k,t)
+\end{align*}
+be the fouriertransform of $n$ with regard to the three spatial
+coordinates $x$. Using the known relation $\mathcal{F}[\partial_{x_j}
+n](k,t) = -ik_j \hat n(k,t)$, we can transform the equation to
+
+\begin{align*}
+  \partial_t \hat n(k,t) =  - Dk^2 \hat n(k,t)
+\end{align*}
+
+an linar first order ordinary differential equation, with the well
+known solution
+
+\begin{align}
+  \hat n(k,t) = c(k) \cdot \exp(-Dk^2 t). \label{eq:sol-ft}
+\end{align}
+
+To determine $c(k)$, we need to introduce an initial value. We again
+work with an idealistic model. We will later on be interested in the
+diffusion of one molecule. Therefore we work with the initial
+condition
+\begin{align*}
+  n(x,0) = n_0 \delta(x),
+\end{align*}
+i.\,e.\ all the species (or for $n_0 = 1$: the particle) is localized
+at one point for $t = 0$. We can fourietransform this initial
+condition, too, and yield
+
+\begin{align*}
+  \hat n(k,0) = n_0.
+\end{align*}
+Plugging this into Equation~\eqref{eq:sol-ft}, we get
+
+\begin{align*}
+  \hat n(k,t) = n_0 \exp(-Dt \cdot k^2).
+\end{align*}
+This is a Gaußian function with regard to the variable $k$. If we want
+the solution in terms of $x$ we need the inverse Fourier transform of
+$\hat n$. However, we know that the Gauß function is an Eigenfunction
+of the Fouriertransform (and its invers). Additionally the total
+concentration needs to be the same for all times $t$. Thus we yield
+
+\begin{align*}
+  n(x,t) = \frac{n_0}{(2\pi \cdot 2Dt)^{3/2}} \cdot \exp \left(
+  -\frac{1}{2} \cdot \frac{x^2}{2Dt} \right).
+\end{align*}
+We have found the solution to Fick's second law. This allows us to
+describe the statistic behaviour of a particle undergoing
+diffusion. Setting $n_0 = 1$, we arrive at the probability
+distribution for the particle, which is just a Gaußian distribution
+with a timedependent variance. We see that the expectation value of
+the position $\langle x \rangle$ is always 0. However the standard
+deviation $\sigma = \sqrt{2Dt}$
+grows larger over time, such that vor the \emph{mean squared
+  displacement}, we yield the following relation
+
+\begin{align}
+  \langle x^2 \rangle = \sum_{j=1}^3 \langle
+  x_j^2 \rangle = \sum_{j=1}^3 \sigma^2 = 3 \cdot 2Dt, \label{eq:mqd}
+\end{align}
+
+where we used $\langle x \rangle = 0$. This mean squared displacement
+can now be used as a measure to gauge the distance travelled by a
+molecule. We will apply it to gauge the time needed for a new gas
+species (in our case Ozone) to fill a volume sufficiently for the
+chemical reactions to take place.
 
 \subsubsection{Adsorption}
 \label{sec:adsorption}
+\todo{find something out and write something about diffusion}
 
 \subsection{The physics behind CE-DOAS}
 \label{sec:ce-doas-physics}

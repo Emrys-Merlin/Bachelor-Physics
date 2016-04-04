@@ -315,11 +315,11 @@ average velocity of the gas and $\eta$ its viscosity. As a rule of
 thumb the flow in a cylinder will be laminar, if the Renold's number
 is smaller than the critical Reynold's number
 $\operatorname{Re}_{\text{c}} = 2300$ and the flow will be turbulent
-if the number is higher than $4000$ (c.\,f.~\cite{gerthsen}). In our
+if the number is higher than $3000$ (c.\,f.~\cite{maschbau}). In our
 system we have $d = \SI{4}{\milli\meter}$, $\rho \approx
 \SI{1.2}{\kilo\gram\per\cubic\meter}$ and $\eta \approx
-\SI{17.1}{\micro\pascal\second}$. Further more we work with a flow of
-$\Phi = \SI{2}{\liter\per\minute}$, with the above diameter this
+\SI{17.1}{\micro\pascal\second}$. Furthermore we work with a flow of
+$\Phi = \SI{2}{\liter\per\minute}$. With the above diameter this
 leads to an average velocity of $\bar v =
 \SI{2.7}{\meter\per\second}$. Using this data we compute the Reynold's
 number to be
@@ -328,10 +328,77 @@ number to be
   \operatorname{Re} \approx 760 < 2300.
 \end{align*}
 
-Thus we see that we work solely in the laminar setting. 
+Thus we see that we work solely in the laminar setting and we need to
+understand the velocity distribution in this case in order to allow
+enough time for mixing and the chemical reactions to take place. The
+law behind the flow in a cylindric tube is called
+\emph{Hagen-Poiseulle} and we follow the exposition used
+in~\cite{gerthsen} to derive it.
+
+Denote by $r_0$ the inner radius of our tube and by $l$ its length. We
+assume that we are in the equilibrium state, such that all forces need
+to add to zero. We look at a cylinder with radius $0 \leq r \leq
+r_0$. To have a nonzero flow, we need a pressure difference at the two
+ends of the tube dentode $\Delta p$. The force exerted on the cylinder
+by the pressure is given by
+\begin{align*}
+  F_b = - \pi r^2 \Delta p,
+\end{align*}
+
+where the minus sign is introduced because the force points in the
+opposite direction of the pressurre gradient. On the boundary of our
+cylinder we have friction. The force exerted by 
+it is proportional to the area of friction, i.\,e.\ the cylinder
+barrel and to difference in velocity between the fluid within the
+cylinder and without, since we have to look at an infinitesimal anulus
+around the boundary, we get a proportionality to the velocity gradient
+$\frac{\d[v]}{\d[r]}$. Thus the force of friction takes the form
+
+\begin{align*}
+  F_f = \eta \cdot 2\pi r \cdot l \cdot \frac{\d[v]}{\d[r]}.
+\end{align*}
+
+We are at an equilibrium state, thus we need $F_b = F_f$ for all
+possible $r$ to hold. This leads us to the following differential
+equatio for the velocity
+
+\begin{align*}
+  \frac{\d[v]}{\d[r]} = - \frac{\Delta p}{2l\eta} r
+\end{align*}
+ 
+whic can be directly integrated. Using the boundary condition $v(r_0)
+= 0$, i.\,e.\ the fluid sticks at the wall of the tube, we yield
+
+\begin{align}
+  v(r) = v_0 \left ( 1 - \left( \frac{r}{r_0} \right)^2 \right) \quad
+  \text{with }\ v_0 \coloneqq \frac{\Delta p r_0^2}{4 l \eta}. \label{eq:v}
+\end{align}
+
+This can be further integrated to yield the flow $\Phi$ of the system
+
+\begin{align*}
+  \Phi = \int_A v(r) \d[A] = 2\pi \int_0^{r_0} v(r)r \d[r] = \frac{\pi
+  r_0^4}{8\eta l} \cdot \Delta p.
+\end{align*}
+
+This is the standard form of the Hagen-Poiseulle law. One remarkabel
+obersvation is that there is a power four law between the radius of
+the tube and the flow. More interesting for us is the relation between
+the average velocity $\bar v$ and the maximum velocity $v_0$ at the
+center of the pipe
+
+\begin{align*}
+  \bar v = \frac{\Phi}{\pi r_0^2} = \frac{\Delta p r_0^2}{8\eta l} \stackrel{\eqref{eq:v}}{=} \frac{v_0}{2}.
+\end{align*}
+
+So we see that at the center the the velocity is twice as large as the
+average. We need to keep this effect in mind when it comes to compute
+the dwell time of our gases.
 
 \subsubsection{Diffusion}
 \label{sec:diffusion}
+
+
 
 \subsubsection{Adsorption}
 \label{sec:adsorption}

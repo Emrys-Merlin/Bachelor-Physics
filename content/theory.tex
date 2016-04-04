@@ -145,9 +145,9 @@ chemicals consisting of Nitrogen and Oxygen. Our aim is to convert
 other reactions. If these lead to a net change of \ch{NO2} we have
 additional effects to correct, if we want to determine the \ch{NO}
 concentration. All reactions are given with their corresponding rate
-coefficient $k$ which were taken from~\cite{bsc}. In section
-\todo{write section} we will discuss the implications of the reactions
-here on the setup of our converter.
+coefficient $k$ which were taken from~\cite{bsc}. In
+Section~\ref{sec:requirements} we will discuss the implications of the
+reactions here on the setup of our converter.
 
 The reaction we are mainly interested in and we want to be dominant is
 the following
@@ -195,87 +195,6 @@ least during day time measurements). Thus the molecules come either
 from oxidizes \ch{NO2} or from twice oxidized \ch{NO}. In both cases
 Equation~\eqref{eq:back} makes sure that our measurement is not distorted.
 
-\subsubsection{Technical requirements for the converter}
-\label{sec:requirements}
-
-The above considerations lead to some technical requirements in the
-construction of our converter. First and obviously we need to use well
-filtered air in the Ozone generator as not to introduce other trace
-gases which would disturb the measurement. The normal procedure
-consists in using an activated charcoal, a silica gel and a particle
-filter. However, one problem is that \ch{NO} is hardly soluble in
-water and thus passes all these filter barriers. After the Ozone
-generation it will react with it and lead to an additional \ch{NO2}
-signal, which cannot be neglected. To remove this signal, one can add
-another silica gel filter after the generation. \ch{NO2} is well
-adsorbed within, which should lead to the desired reduction of the
-error. However, Ozone is also adsorbed in Silica. Luckily, the
-adsorption capacity for Ozone is much worse than for Nitrogen
-Dioxide. So we would expect the filter to be quickly saturated by
-Ozone, so that it can pass, while still blocking \ch{NO2}. To make
-this work, we also have to add some extra pathlength after the
-generator to make sure that the oxidization took place before we add
-the filter.
-
-The next restriction comes from Section~\ref{sec:o-no}. Using the rate
-coefficients we need an appropriate reaction pathlength, such that
-almost all \ch{NO} is converted to \ch{NO2}, but the higher
-oxidizations are still suppressed. The Ozone generator will supply an
-overabundance of \ch{O3}, so we can use the linear ordinary
-differential equation approximation introduced in
-Section~\ref{sec:rate}. Thus the conversion ratio is
-just given by
-\begin{align*}
-  \exp(kc(\ch{O3})\cdot t),
-\end{align*}
-where $t$ is the allowed reaction time and $1$ stands for no
-conversion at all (i.\,e.\ no decrease in the educt concentration) and
-$0$ stands for complete conversion. Since we have a constant flow
-$\Phi = \SI{2}{\liter\per\minute}$ and we know the cross section of
-our tubes, $t$ can be converted to a reaction pathlength. Assuming an
-Ozone concentration of
-\begin{align*}
-  c(\ch{O3}) = \SI{4}{ppm} = \SI{9.992e13}{\per\cubic\centi\meter},
-\end{align*}
-we get the following natural time scales for the reactions \ch{NO ->
-  NO2} and \ch{NO2 -> NO3}:
-\begin{align*}
-  \tau_1^{-1} & = k_1 c(\ch{O3}) = \SI{1.79}{\hertz} \quad \text{and}\\
-  \tau_2^{-1} & = k_2 c(\ch{O3}) = \SI{3.47}{\milli\hertz}.
-\end{align*}
-
-The results for the conversion ratio for different reaction
-pathlengths can be found in Tabel~\ref{tab:pathlength}.
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{
-    S[table-format = 2.0]
-    S[table-format = 2.2]
-    S[table-format = 1.1e2]
-    S[table-format = 1.2]}
-    \toprule
-    {Pathlength} & {Time} & {Conversion ratio} & {Conversion ratio}\\
-    {\si{\meter}} & {\si{\second}} & {\ch{NO -> NO2}} & {\ch{NO2 -> NO3}}\\
-    \midrule
-     5 & 4.25 & 5.0e-4 & 0.99\\
-    10 & 8.49 & 2.5e-7 & 0.97\\
-    15 & 12.74 & 1.3e-10 & 0.96\\
-    \bottomrule
-  \end{tabular}
-  \caption{Conversion ratio of the reactions \ch{NO + O3 -> NO2 + O2}
-    and \ch{NO2 + O3 -> NO3 + O2} depending on reaction pathlength or
-    reaction time. $\Phi = \SI{2}{\liter\per\minute}$, $c(\ch{O3}) =
-    \SI{4}{ppm}$ and tube diameter $d = \SI{6}{\milli\meter}$.}
-  \label{tab:pathlength}
-\end{table}
-
-We see that by using a pathlength of \SI{10}{\meter}, we should expect
-to convert basically all \ch{NO} to \ch{NO2} while converting about
-3\% of the \ch{NO2} to \ch{NO3}. This seems a workable
-setting. Lengthening the path only leads to more \ch{NO3} Shorter
-pathlengths have the disadvantage of not converting enough \ch{NO},
-although the error should still be in the promille area.
 
 \subsection{Basics of fluid dynamics}
 \label{sec:fluid}
@@ -499,6 +418,124 @@ chemical reactions to take place.
 \label{sec:adsorption}
 \todo{find something out and write something about diffusion}
 
+\subsection{Technical requirements for the converter}
+\label{sec:requirements}
+
+The above considerations lead to some technical requirements in the
+construction of our converter. First and obviously we need to use well
+filtered air in the Ozone generator as not to introduce other trace
+gases which would disturb the measurement. The normal procedure
+consists of using an activated charcoal, a silica gel and a particle
+filter. However, one problem is that \ch{NO} is hardly soluble in
+water and thus passes all these filter barriers. After the Ozone
+generation it will react with it and lead to an additional \ch{NO2}
+signal, which cannot be neglected. To remove it, one can add
+another silica gel filter after the generator. \ch{NO2} is well
+adsorbed within, which should lead to the desired reduction of the
+error. However, Ozone is also adsorbed in Silica. Luckily, the
+adsorption capacity for Ozone is much worse than for Nitrogen
+Dioxide. So we would expect the filter to be quickly saturated by
+Ozone, so that it can pass, while still blocking \ch{NO2}. To make
+this work, we also have to add some extra pathlength after the
+generator to make sure that the oxidization takes place before the gas
+passes the Silica gel filter.
+
+The next restriction is that we need a nigh \SI{100}{\%} conversion of
+\ch{NO} to \ch{NO2}. This leads to three considerations. Firstly, we
+need enough time for the mixing of the ozone with the sample air to
+take place. Secondly, we need enough time for the actual reaction to
+take place. Thirdly, we need the time to be short enough, such that we
+do not loose to much \ch{NO2} to further oxidation.
+
+Concering our first consideration, we have to look at
+Section~\ref{sec:fluid} to estimate the mixing time. As we work with
+laminar flows in the reaction path (c.\,f.\ Sec.~\ref{sec:cylinder}),
+the mixing will be dominated by diffusion. Thus we use the mean
+squared displacement to estimate the time the Ozone takes to cross the
+tube diameter. In our case we use tubes with $d =
+\SI{4}{\milli\meter}$ and the diffusion constant for Ozone in air was
+taken to be $D = \SI{0.137}{\square\centi\meter\per\second}$ (at $T =
+\SI{298}{\kelvin}$ and $p = \SI{1}{\text{bar}}$
+c.\,f.~\cite{diff-ozone}). With these values we get
+\begin{align*}
+  t_{\text{mix}} = \frac{d^2}{6\cdot D} = \SI{0.195}{\second}
+\end{align*}
+
+Turning towards considerations two and three, we need to gauge the
+reaction times. For this we have to set a desired conversion
+ratio. For our estimates work with a ratio of \SI{99}{\%}. 
+Since the Ozone generator will supply an
+overabundance of \ch{O3}, we can use the linear ordinary
+differential equation approximation introduced in
+Section~\ref{sec:rate}. Thus the conversion ratio is
+given by
+\begin{align*}
+  \exp(-kc(\ch{O3})\cdot t),
+\end{align*}
+where $t$ is the reaction time. $1$ stands for no
+conversion at all (i.\,e.\ no decrease in the educt concentration) and
+$0$ stands for complete conversion. For \SI{99}{\%} we need
+\begin{align}
+  kc(\ch{O3}) \cdot t_{\text{react}} \gtrsim 4.6. \label{eq:react-bound}
+\end{align}
+As a lower bound for the Ozone concentration we use
+\begin{align*}
+  c(\ch{O3}) = \SI{2}{ppm} = \SI{4.996e13}{\per\cubic\centi\meter} 
+\end{align*}
+and using $k = \SI{1.8e-14}{\hertz\per\cubic\centi\meter}$, we yield
+the following natural time scale
+\begin{align*}
+  \tau^{-1} & = k c(\ch{O3}) = \SI{0.90}{\hertz}.
+\end{align*}
+
+Together with Equation~\eqref{eq:react-bound} this leads to
+
+\begin{align*}
+  t_{\text{react}} \gtrsim \SI{5.1}{\second}.
+\end{align*}
+
+Using $t_{\text{react}}$ to compute the conversion ratio of
+$\ch{NO2}$ to $\ch{NO3}$, we get \SI{0.9}{\%}. So with this reaction
+time we should expect about a \SI{2}{\%} error in the retrieved
+\ch{NO} concentration. Hopefully, the results will be better than
+that, as some of the produced \ch{NO3} will (as described in
+Section~\ref{sec:o-no}) quickly degrade to \ch{NO2} and the Ozone
+concentration is likely to be underestimated.
+
+As a last step we want to translate the needed mixing and reaction
+time
+\begin{align*}
+  t = t_{\text{mix}} + t_{\text{react}} = \SI{5.3}{\second}
+\end{align*}
+to be converted to its associated pathlength. Using the applied flow
+of $\Phi = \SI{2}{\liter\per\minute}$, we can compute the average
+speed of the gas to be
+\begin{align*}
+  \bar v = \frac{\Phi}{\pi r^2} = \SI{2.7}{\meter\per\second}. 
+\end{align*}
+As was described in Section~\ref{sec:cylinder} this corresponds to a
+maximal speed in the center of the tube of
+
+\begin{align*}
+  v_0 = 2\cdot \bar v = \SI{5.4}{\meter\per\second}.
+\end{align*}
+
+Using these two speeds we get
+
+\begin{align*}
+  \bar l & = \SI{14.31}{\meter} \quad \text{and}\\
+  l_0 & = \SI{28.62}{\meter}
+\end{align*}
+as our pathlengths.
+
+For the experiment we oriented at $\bar l$, as the maximum speed is
+only relevant for a rather small cross section of the
+cylinder. Most experiments were performed at $l = \SI{10}{\meter}$
+accepting a slightly worse \ch{NO} conversion ratio at the upside of a
+smaller loss to \ch{NO3}. As all these estimates were intended as a
+worst case, we expect even a \SI{10}{\meter} reaction path to be
+sufficient for acceptable results.
+
 \subsection{The physics behind CE-DOAS}
 \label{sec:ce-doas-physics}
 
@@ -573,8 +610,6 @@ which contains all the necessary information.
 
 \subsubsection{The DOAS method}
 \label{sec:doas}
-
-\todo{write something about units?}
 
 Differential Optical Absorption Spectroscopy uses the Lambert-Beer Law
 to compute the concentrations of trace gases in the air. There are a
@@ -727,7 +762,8 @@ following
 \end{enumerate}
 
 In the following we will always refer to the number of the above
-mentioned assumptions, when used.
+mentioned assumptions, when used. The approximations carried out below
+are described in~\cite{platt2009} and~\cite{fiedel2003}.
 
 The information of our trace gas concentration should in this setup
 still be obained by comparing $I$ and $I_0$. We still expect an
@@ -830,7 +866,7 @@ it very easy for us to fit the concentrations.
 In addition this equation also allows us to determine the pathlength
 $L_0$. Using Helium as sample air we have a rather large difference
 and well known $\delta$, which we can then use to fit
-$L_0$.\todo{Platt 2009 und Fiedler 2003 aufnehmen}
+$L_0$.
 
 In the actual evaluation we then take, as in the DOAS evaluation, the fit function
 

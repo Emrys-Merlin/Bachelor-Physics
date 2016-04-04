@@ -280,8 +280,55 @@ although the error should still be in the promille area.
 \subsection{Basics of fluid dynamics}
 \label{sec:fluid}
 
+One important aspect of this work consists in the understanding of the
+different gas flows in the instrument. We need an estimate for the
+mixing time of Ozone with the sample air and then we need to know how
+long our mixing and reaction pathlength needs to be in order to
+achieve a full conversion. These questions can all be answered using a
+few basic principles from fluid dynamics. First we will have a look at
+laminar flows in cylindric vessels (in our case tubes) to get a
+connection between the flow and the maximum speed in the tube. Next we
+have a look at diffusion of gases. As we only hav laminar flows,
+diffusion is the only way mixing can take place, so we need an
+estimate of the time this mixing takes. Lastly we will discuss
+adsorption of some trace gases at teflon, silica gel and activated
+carbon to better our understanding of the filtering effects in the
+instrument. 
+
 \subsubsection{Laminar flows in cylinders}
 \label{sec:cylinder}
+
+We are interested in what regime the gas transport in the tube
+remains. Especially after the ozone enriched air is added to the
+sample air, we would benefit from ab turbulent flow in the system as
+it would acertain a faster mixing of the gases. To see whether we have
+a laminar or a turbulent flow, we use the phenomenological \emph{Reynold's
+number}
+
+\begin{align*}
+  \operatorname{Re} = \frac{\rho \cdot d \cdot \bar v}{\eta},
+\end{align*}
+
+where $\rho$ denotes the density of our gas, $d$ is a characteristc
+length of the system, in our case the tube diameter, $\bar v$ is the
+average velocity of the gas and $\eta$ its viscosity. As a rule of
+thumb the flow in a cylinder will be laminar, if the Renold's number
+is smaller than the critical Reynold's number
+$\operatorname{Re}_{\text{c}} = 2300$ and the flow will be turbulent
+if the number is higher than $4000$ (c.\,f.~\cite{gerthsen}). In our
+system we have $d = \SI{4}{\milli\meter}$, $\rho \approx
+\SI{1.2}{\kilo\gram\per\cubic\meter}$ and $\eta \approx
+\SI{17.1}{\micro\pascal\second}$. Further more we work with a flow of
+$\Phi = \SI{2}{\liter\per\minute}$, with the above diameter this
+leads to an average velocity of $\bar v =
+\SI{2.7}{\meter\per\second}$. Using this data we compute the Reynold's
+number to be
+
+\begin{align*}
+  \operatorname{Re} \approx 760 < 2300.
+\end{align*}
+
+Thus we see that we work solely in the laminar setting. 
 
 \subsubsection{Diffusion}
 \label{sec:diffusion}

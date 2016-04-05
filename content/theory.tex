@@ -1,5 +1,6 @@
 \section{Theoretical background}
 \label{sec:theory}
+\todo{add theory intro}
 
 \subsection{Ozone chemistry and \ch{NO} to \ch{NO2} conversion}
 \label{sec:chemistry}
@@ -23,15 +24,15 @@ During our conversion we will have many chemical reactions of the form
 
 Some of them will have positive, wanted effects, others describe side
 effects and we want to suppress them as much as possible. However we
-have only two parameters we can vary. The first is the Ozone
+have only two parameters we can adjust. The first is the Ozone
 concentration, which we can vary slighty and very roughly and the
-other one is the reaction pathlength and by that the reaction
-time. Thus our best chance to select certain reactions is to set ther
-reaction time to a value that corresponds to the different reaction
-speeds of the equations, making sure that wanted reactions have enough
-time to happen while simultaneously having the time too short for
-unwanted reactions. Of cours this is only possible, if the wanted
-reactions run faster than the unwanted ones. 
+other one is the reaction pathlength and.  Thus our best chance to
+select certain reactions is to set ther reaction time to a value that
+corresponds to the different reaction speeds of the equations, making
+sure that wanted reactions have enough time to happen while
+simultaneously suppressing unwanted reactions. Of
+course this is only possible, if the wanted reactions run faster than
+the unwanted ones.
 
 With this motivation in mind, we need a measure for the reaction
 speed. Thinking of speed in this setting means to think of change of
@@ -43,8 +44,8 @@ different species are related by:
   -\dot c(A) = - \dot c(B) = \dot c(C) = \dot c(D).
 \end{align*}
 
-Lastly we want to get a connection of these derivatives to the educt
-concentration. The probability for a reaction to take place should be
+Next we need a relation between these derivatives and the educt
+concentrations. The probability for a reaction to take place should be
 proportional both to $c(A)$ and $c(B)$ as the two particles need to
 `meet'. Thus we expect
 \begin{align}
@@ -54,8 +55,8 @@ proportional both to $c(A)$ and $c(B)$ as the two particles need to
 where the proportionality constant $k$ ist called \emph{rate
   coefficient}. It is often given in units of
 \si{\hertz\per\cubic\centi\meter}. This $k$ is our desired reaction
-speed measure, as it describes concentration independently the
-reaction time. 
+speed measure, as it describes the
+reaction time concentration independently.
 
 In our case the Ozone concentration will often far exceed the
 concentration of the other trace gases. This allows us to think of its
@@ -63,14 +64,14 @@ concentration as approximately constant. If we set $c(B)$ constant in
 Equation~\eqref{eq:rate}, then we get a well known ordinary first
 order differential equation with solution
 \begin{align*}
-  c(A,t) = c(A,0)\exp(kc(B)\cdot t).
+  c(A,t) = c(A,0)\exp(-kc(B)\cdot t).
 \end{align*}
 
 In this limiting case we see that the decay time is given by $\tau =
-(kc(B))^{-1}$, such that the connection of $k$ to the reaction speed
-becomes obvious.
+(kc(B))^{-1}$, making the connection of $k$ to the reaction speed
+obvious.
 
-\subsubsection{Ozone Generation}
+\subsubsection{Ozone generation}
 \label{sec:theory-ozone}
 
 In this section we will discuss the generation of Ozone (\ch{O3}) out of ambient
@@ -78,15 +79,16 @@ air. The main idea comes from the observation that stratospheric
 \ch{O3} protects us from ultraviolet (UV) light. Thus Ozone needs to
 have absorption bands there. Furthermore normally the Ozone layer is
 not depleted, but regenerates itself, so there needs to be a reaction
-cycle building Ozone out of ordinary Oxigen molecules (\ch{O2}).
+cycle building Ozone out of ordinary Oxygen molecules (\ch{O2}).
 
-The following equations describe the processes using UV photons to
-generate and destroy Ozone. The cycle is ofthen referred to as
-\emph{Chapman-Cycle} due to its first investigator
-(c.\,f.~\cite{chapman} and~\cite{roedel}). In
-some of the reactions an additional molecule is necessary to assure
-momentum conservation. This inert reaction participant is always
-denoted \ch{M}.
+The following equations describe the Ozone-Oxygen cycle in the
+atmosphere.  The cycle is often referred to as \emph{Chapman-Cycle}
+due to its first investigator (c.\,f.~\cite{chapman}
+and~\cite{roedel}). We will see that we can use these atmospheric
+reactions to generate Ozone in the laboratory. In some of the
+reactions an additional molecule is necessary to assure momentum
+conservation. This inert reaction participant is always denoted
+\ch{M}.
 
 The first part of the cycle contains the reactions, that generate
 \ch{O3} out of \ch{O2}
@@ -112,7 +114,7 @@ then be reexcited:
   \ch{O(^1 D) + M & -> O(^3 P) + M}.\nonumber
 \end{align}
 
-After this reaction there are two possible parts. Firt the $\ch{O}(^3
+After this reaction there are two possible reaction paths. First the $\ch{O}(^3
 P)$ can reenter into Equation~\eqref{eq:ozone}, such that there is no
 net change in Ozone or it could react to form \ch{O2} by the
 following mechanisms
@@ -121,57 +123,73 @@ following mechanisms
   \ch{2 O(^3 P) + M & -> O2 + M} \quad \text{and}\\
   \ch{O(^3 P) + O3 & -> 2 O2},
 \end{align*}
+leading to a net loss of Ozone. 
 
-leading to a net loss of Ozone. Introducing a UV light source with
-wavelength less than \SI{242}{\nano\meter} will start the above
-cycle. Since it contains sources and sinks for Ozone, we will reach an
-equilibrium state with a limiting Ozone concentration. This
-concentration will depend on multiple factors, which influence the
-reaction speeds. First and foremost the intensity of the light source
-at different wavelength segments determines if more Ozone is generated
-than destroyed or not. An in depth analysis of this reaction system
-has been carried out by~\cite{bsc} and lead to an estimated Ozone
-production of $c(\ch{O3}) = \SI{300}{ppm}$. Since the exact Ozone
-concentration is not of critical interest, we will leave it at that
-and determine the generator output experimentally. The result of this
-procedure can be found in Section~\ref{sec:ozone}. 
+Introducing a UV light source with
+an intensity peak at $\lambda = \SI{184.9}{\nano\meter}$
+will start the above cycle. In our case we use a Mercury lamp, which
+also has a peak at $\lambda = \SI{254}{\nano\meter}$. So the
+Chapman-Cycle will enter an equilibrium state with a constant Ozone
+Oxygen ratio. The value of this ratio depends on the
+intensity ratio at the two wavelengths mentioned above. Since the
+main energy output of the lamp is at \SI{254}{\nano\meter}, the ratio
+will be small. However, there is around \SI{20}{\%} Oxygen in ambient
+air, sucht that in absolute terms we will still produce an Ozone
+surplus. The expected Ozone value can be computed exactly and has been
+done so in~\cite{bsc}. Using this specific lamp leads to a value of
+$c(\ch{O3}) = \SI{300}{ppm}$. Of course this value will vary for
+different currents, but since we are not intersted in the exact value,
+only in the order of magnitude, this estimation will suffice for our
+purpose. The experimentally verified output of our generator can be
+found in Section~\ref{sec:ozone}.
 
 \subsubsection{Ozone triggerd Nitrogenoxide reactions}
 \label{sec:o-no}
 
 In this section we will have a look at all reactions concerning
-chemicals consisting of Nitrogen and Oxygen. Our aim is to convert
-100\% of the Nitrogenmonoxide (\ch{NO}) to Nitrogendioxide
-(\ch{NO2}). However introducing Ozone to the sample air can trigger
-other reactions. If these lead to a net change of \ch{NO2} we have
-additional effects to correct, if we want to determine the \ch{NO}
-concentration. All reactions are given with their corresponding rate
-coefficient $k$ which were taken from~\cite{bsc}. In
-Section~\ref{sec:requirements} we will discuss the implications of the
-reactions here on the setup of our converter.
+chemicals consisting of Nitrogen and Oxygen. Our aim is to achieve a
+complete conversion of the Nitrogen Monoxide (\ch{NO}) to Nitrogen
+Dioxide (\ch{NO2}). However, introducing Ozone to the sample air
+triggers further reactions. If these lead to a net change of \ch{NO2}
+we have additional effects to correct. All reactions are given with
+their corresponding rate coefficient $k$ which were taken
+from~\cite{bsc}. In Section~\ref{sec:requirements} we will discuss the
+implications of the reactions here on the setup of our converter.
 
-The reaction we are mainly interested in and we want to be dominant is
-the following
+Our desired reaction is the following
 
-\begin{align*}
-  \ch{NO + O3 & ->[$k=\SI{1.8e-14}{\hertz\per\cubic\centi\meter}$] NO2 + O2}.
-\end{align*}
+\begin{align}
+  \ch{NO + O3 & ->[$k=\SI{1.8e-14}{\hertz\per\cubic\centi\meter}$] NO2
+                + O2}. \label{eq:no}
+\end{align}
 
 If this were the only reaction, we would have a one to one conversion
-from \ch{NO} to \ch{NO2}. We would only have to make certain that
-there is enough Ozone. However this is not the only reaction taking
-place. Nitrogendioxide itself can be oxidized by Ozone to generate
-Nitrogentrioxide (\ch{NO3}):
+from \ch{NO} to \ch{NO2}. With enough Ozone our problem would be
+solved. However, this is not the only reaction taking
+place. Nitrogen Dioxide itself can be oxidized by Ozone to generate
+Nitrogen Trioxide (\ch{NO3}):
 
-\begin{align*}
-  \ch{NO2 + O3 ->[$k=\SI{3.5e-17}{\hertz\per\cubic\centi\meter}$] NO3 + O2}.
-\end{align*}
+\begin{align}
+  \ch{NO2 + O3 ->[$k=\SI{3.5e-17}{\hertz\per\cubic\centi\meter}$] NO3
+  + O2}. \label{eq:no2}
+\end{align}
 
 Luckily, we see that the rate coefficients of the two reactions are
-very different and the first ony is approximately three orders of
-magnitude faster than the second one. Furthermore \ch{NO3} is again
-not detectible by our measurement instrument. Also \ch{NO3} can react
-again with \ch{NO2} to generate laughing gas
+very different and the first one is approximately three orders of
+magnitude larger than the second one. Additionally there is a very
+fast reaction of \ch{NO3} with \ch{NO}
+
+\begin{align}
+  \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz\per\cubic\centi\meter}$] 2 NO2},\label{eq:back}
+\end{align}
+
+such that small Nitrogen Trioxide concentrations should decay
+quickly. If we assume no \ch{NO3} in our sample air (which is sensible
+for day time measurements) Equation~\eqref{eq:back} should guarantee
+that the oxidation of \ch{NO2} should be compensated. 
+
+Sadly, this is not the only reaction using \ch{NO3}. Some can react
+with \ch{NO2} to generate laughing gas
 
 \begin{align}
   \ch{NO2 + NO3 + M
@@ -180,22 +198,11 @@ again with \ch{NO2} to generate laughing gas
 \end{align}
 
 As we can see the equilibrium of Equation~\eqref{eq:laughing} lies on the
-side of the educts, so the effect should not be too large, if the
-\ch{NO3} concentration can be kept low. In addition there is another
-very fast reaction using \ch{NO3}
-
-\begin{align}
-  \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz\per\cubic\centi\meter}$] 2 NO2}.\label{eq:back}
-\end{align}
-
-Thus, if we keep the Nitrogentrioxide concentration low to begin with,
-the above reaction implies that basically all of it should react with
-\ch{NO} to form \ch{NO2}. Since \ch{NO3} is quickly destroyed by
-photolysis, we can assume our measurement air to be \ch{NO3} free (at
-least during day time measurements). Thus the molecules come either
-from oxidizes \ch{NO2} or from twice oxidized \ch{NO}. In both cases
-Equation~\eqref{eq:back} makes sure that our measurement is not distorted.
-
+side of the educts, so the effect should not be too large. Especially
+if the \ch{NO3} concentrations are small. Still in the further
+analysis we will try to allow enough time for Reaction~\eqref{eq:no}
+to take place, while being too fast for Reaction~\eqref{eq:no2}. Such
+that we can simply ignore the reaction paths for \ch{NO3}.
 
 \subsection{Basics of fluid dynamics}
 \label{sec:fluid}

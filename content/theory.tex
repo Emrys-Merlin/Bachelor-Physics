@@ -553,8 +553,8 @@ necessary to understand the Cavity Enhance Diffirential Absorption
 Spectroscopy (CE-DOAS). First, we will investigate the Lambert-Beer
 Law. This leads directly to the so called \emph{Longpath}-DOAS
 instrument. As the name already indicates, those need a long
-lightpath, since normally the absorption crosssections are very
-small. Thus lastly we introduce the \emph{cavity enhancement} to
+lightpath, since normally the absorption cross sections are very
+small. Hence lastly we introduce the \emph{cavity enhancement} to
 overcome this restriction.
 
 The presentation follows mostly~\cite{fp58} with a few inspirations
@@ -563,7 +563,7 @@ taken from~\cite{bsc} and~\cite{platt}.
 \subsubsection{The Lambert-Beer Law}
 \label{sec:lambert-beer}
 
-The \emph{Labert-Beer Law} ist the underlying principle behind the
+The \emph{Lambert-Beer Law} ist the underlying principle behind the
 main measurement method used in this work. It concerns itself with the
 evolution of the light intensity $I_0$ which propagates a certain
 distance $L$ through air. It assumes an exponential decay over $L$, so
@@ -576,7 +576,7 @@ we can write
 
 where $\epsilon$ is called \emph{absorption coefficient}. This
 coefficient contains all the influences of the matter on the
-absorption and can thus be split to account for the different
+absorption behaviour and can thus be split to account for the different
 absorption and scattering mechanisms:
 
 \begin{align*}
@@ -595,11 +595,11 @@ proportional to the concentration of the gases, so we write
 
 where $i$ sums over all the trace gases present in the penetrated
 air, $\bar c_i$ is the associated average concentration and $\sigma_i$
-is calld \emph{absorption crosssection}. For the above formula to be
+is calld \emph{absorption cross section}. For the above formula to be
 useful to determine the concentration of our trace gases, we need to
 have a very homogenous air sample, so that we can assume that the
 concentration within it is constant. As we will see this assumption is
-sensible vor CE-DOAS, if one works with Longpath-DOAS measurements one
+sensible for CE-DOAS, if one works with Longpath-DOAS measurements one
 has to work with other parameters, e.\,g.\ the collon density.
 
 Equations~\eqref{eq:lb-easy} and~\eqref{eq:lb-abs} now contain the central idea for our
@@ -626,20 +626,19 @@ few more technicalities we need to respect. First of all, we must have
 a look at the absorption crosssections of different trace gases. If we
 want to be able to discern different gases and even compute their
 concentration, we need the crosssections to be sufficiently
-different.
+separating.
 
-As can be seen in Figure\todo{include picture of crosssection}  the
-crosssections can be separated into two parts: 
+As can be seen in Figure\todo{include picture of cross section}  the
+cross sections can be separated into two parts: 
 
 \begin{align*}
   \sigma = \sigma^b + \sigma'.
 \end{align*}
-
 One ($\sigma^b$) only weakly
-wavelength dependent and similar for all gases and a narrowband
+wavelength dependent and a narrowband
 structure ($\sigma'$) on top which differs strongly for different species. This
 narrowband structure is what will allow us to discern the gases. It is
-called the \emph{differential band}. Hence the name of the
+called the \emph{differential band}. Hence the name of the measurement
 method. Putting what we used so far into the Lambert-Beer equation we
 yield
 
@@ -650,37 +649,36 @@ yield
                 & = I'_0(\lambda) \exp \left( \sum_{i=1}^n L \cdot
                   \sigma'_j(\lambda) \cdot c_j \right),
 \end{align*}
-
 where we collected all the broadband structure within $I'_0$. This
-makes sense, as our $I_0$ spectrum will never be free of the Rayleigh
+makes sense, as our $I_0$ spectrum often will not be free of the Rayleigh
 and Mie scattering processes and thus are already taken into
-account. Furthermore can residual broadband structure be handled in
+account. Furthermore residual broadband structure can be handled in
 the fitting process by adding a polynomial function. Thus we fit
 
 \begin{align}
   f(\lambda) = - \sum_{i=1}^n c_i \cdot L \cdot \sigma'_i(\lambda) +
   \sum_k a_k \lambda^k \label{eq:doas-fit}
 \end{align}
-
 to the Optical Density, where the concentrations $c_i$ and the polynomial
-coefficients $a_k$ are to be determined. 
+coefficients $a_k$ are to be determined. The degree of the polynomial
+is generally fixed to \num{4}.
 
-One other technical aspect we have to keep in mind, is how to get the
-absorption crosssections. They have been determined by various
-methods. Some have been computed theoretically other have been
+One other technical aspect is how to adapt the literature
+absorption cross sections to our spectrometer resolution. Some have
+been computed theoretically others have been 
 measured with a very high resolution. So we are given the
-crosssections, however, we need to adapt them to the spectrometer used
+cross sections, however, we need to adapt them to the spectrometer used
 in our measurement instrument, since it has a far lower
 resolution. The effect of this lower resolution is that narrow
-emission lines are smeared out. This smearing out is called
+emission lines get smeared out. This smearing out is called
 \emph{instrument function}. To determine it, we can measure the
-spectrum of an \ch{Hg}-lamp and use one of the
+spectrum of a Mercury lamp and use one of the
 (normally very narrow) emission lines as a convolution kernel. The
 narrow line is broadened and we can assume that all other used
 measurements are broadened by the same amount. So if we convolute our
-crosssections with this measured \ch{Hg}-line, we will compensate for
+crosssections with this \ch{Hg} line, we will compensate for
 the lower resolution. This step has to be done before the actual fit
-and in Equation~\eqref{eq:doas-fit} the convoluted crosssections have
+and in Equation~\eqref{eq:doas-fit} the convoluted cross sections have
 to be used.
 
 This plain DOAS method is used as measurement method on
@@ -690,14 +688,14 @@ Section~\ref{sec:ozone-setup}.
 \label{sec:ce-doas}
 
 Since the absorption coefficents $\epsilon$ are so small, we need a
-very long pathlength $L$ to see a signal in the DOAS method. One
-possibility is to really use a very long geometrical pathlength using
+very long pathlength $L$ to see a signal using the DOAS method. One
+possibility is to really use a very long geometrical pathlength with
 mirrors and telescopes. With this we are able to obtain pathlengths
 between \num{1} and \SI{10}{\kilo\meter}~\cite{platt}. These so called
 \emph{Longpath-DOAS} instruments have advantages, but also a few
 disadvantages one of them clearly being that we need a lot of space
 and in the process we average the concentration of our trace gases
-over a large area.
+over a large column.
 
 An alternative approach is to increase the lightpath by the use of
 optical instruments, i.\,e.\ mirrors. Using two highly reflective
@@ -705,16 +703,13 @@ mirrors we can obtain very large optical pathlengths, while still
 having a managable geometrical pathlength. The price we pay by taking
 this approach lies in the fact that now our pathlength becomes
 wavelength dependent as this is true for the reflectivity of all
-highly reflecting mirrors. 
+highly reflective mirrors. 
 
 In this paragraph we will generalize the DOAS approach keeping in mind
 that our pathlength is not constant anymore. On the way we try to
 separate two effects on the pathlength. First the shortening due to
 the absorption by the trace gases and secondly the influence by the
 reflectivity.
-
-The CE-DOAS method was used for the measurements in
-Sections~\ref{sec:silica} to~\ref{sec:vehicle}. 
 
 The geometrical setup is the following:\todo{setup}
 
@@ -764,8 +759,7 @@ following
   comparativly weak and our geometrical pathlength is in the order of
   magnitude of \SI{1}{\meter}.
 \item We assume  $(R - 1) + \epsilon d \ll 1$, too. This is only a
-  slightly stronger condition then the above mentioned two, but
-  necessary. 
+  slightly stronger condition then the above mentioned two.
 \item We assume to be allowed to neglect higher order monomials of the
   form $(R-1)^i(\epsilon d)^j$  with $i+j \geq 2$, $i,j \in \N_0$.
 \end{enumerate}
@@ -774,9 +768,9 @@ In the following we will always refer to the number of the above
 mentioned assumptions, when used. The approximations carried out below
 are described in~\cite{platt2009} and~\cite{fiedler2003}.
 
-The information of our trace gas concentration should in this setup
-still be obained by comparing $I$ and $I_0$. We still expect an
-exponential factor between the two so we introduce the \emph{Cavity
+In this setup the information of our trace gas concentration should
+still be obainable by comparing $I$ and $I_0$. We still expect an
+exponential relation between the two so we introduce the \emph{Cavity
   Enhanced Optical Density} $D_{\text{CE}}$ by
 
 \begin{align}
@@ -800,11 +794,11 @@ we will take a closer look at $D_{\text{CE}}$.
                            (RT_g)^2}{1 - (RT_{g,0})^2}\right)\label{eq:d_ce},
 \end{align}
 
-where the wavelenght dependencies were dropped after the first
+where the wavelength dependencies were dropped after the first
 equation to preserve clarity. 
 
 To evaluate this expression further we
-first have a look at the separate expression $(RT)^2$:
+first have a look at the expression $(RT)^2$:
 
 \begin{align}
   [RT]^2 & = [R \exp(-\epsilon d)]^2 \nonumber\\
@@ -834,17 +828,16 @@ This last equation can be reformulated to
   \delta(\lambda)\label{eq:i-1}, 
 \end{align}
 
-where all the trace gas information is bundled in $\delta(\lambda)$
-and the other right hand side parts are trace gas independent.
+where all the trace gas information is bundled in $\delta(\lambda)$.
 
-In a next step we want anlogously $D_{\text{CE}}$ to be given by a
+In a next step we want $D_{\text{CE}}$ to be given by a
 pathlength multiplied by $\delta$. Thus we define
 
 \begin{align}
   L_{\text{eff}}(\lambda) \coloneqq \frac{D_{\text{CE}}(\lambda)}{\delta(\lambda)}.
 \end{align}
 
-In this equation we can enter Equation~\ref{eq:i-1} solved for
+In this equation we can substitute Equation~\ref{eq:i-1} solved for
 $\delta$ and get
 
 \begin{align}
@@ -853,7 +846,7 @@ $\delta$ and get
 \end{align}
 
 We see that with this definition of $L_0$ it is completely independent
-of any trace gas influence and hence all the trace gas dependence is
+of any trace gas influences and hence all the trace gas dependence is
 restricted to the first term. Furthermore we see that $L_0$ directly
 depends on the mirror reflectivity. All in all $L_0$ depends only on
 the geometry of our setup (if we assume $\epsilon_0$ to be fixed) and
@@ -885,8 +878,11 @@ In the actual evaluation we then take, as in the DOAS evaluation, the fit functi
 \end{align*}
 
 where the parameters $c_j$ and $a_i$ are fitted to
-$D_{\text{eff}}$. This is done using the leas square methods. The
-polynomial is again added to compensate for broadband structure.
+$D_{\text{eff}}$. This is done using the least square methods. The
+polynomial is again added to compensate for residual broadband structure.
+
+The CE-DOAS method was used for the measurements in
+Sections~\ref{sec:silica} to~\ref{sec:vehicle}. 
 
 %%% Local Variables: 
 %%% mode: latex

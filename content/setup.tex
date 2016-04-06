@@ -93,17 +93,17 @@ a resolution of \SI{0.021}{\nano\meter}.
 \end{figure}
 
 After the above setup was tested the converter was added to an
-existing CE-DOAS instrument (EnviMeS SN:2014002)\todo{technical data
-  of envimes}. The instrument was already supplied with an \ch{O3}
-generator, but lacked a Silica gel filter, which was added. The inside
-of the instrument can be seen in Figure~\ref{fig:envimes}. Since it
-is optimized for space, it is difficult, if not impossible, to extract
-the setup from this view. Therefore Figure~\ref{fig:envimes-schematic}
-contains a slightly simplified schematic view of the instrument. The
-zero air input\todo{write zero air somewhere in theory} is used to
-generate the Ozone, since it is already filtered. After the Mercury lamp
-there is a \SI{1}{\meter} reaction path before the silica filter
-follows. After that we have an Ozone bypass valve, which is operated
+existing CE-DOAS instrument (EnviMeS SN:2014002).  The instrument was
+already supplied with an \ch{O3} generator, but lacked a Silica gel
+filter, which was added. The inside of the instrument can be seen in
+Figure~\ref{fig:envimes}. Since it is optimized for space, it is
+difficult, if not impossible, to extract the setup from this
+view. Therefore Figure~\ref{fig:envimes-schematic} contains a slightly
+simplified schematic view of the instrument. The zero air
+input\todo{write zero air somewhere in theory} is used to generate the
+Ozone, since it is already filtered. After the Mercury lamp there is a
+\SI{1}{\meter} reaction path before the silica filter follows. After
+that we have an Ozone bypass valve, which is operated
 electromechanically and allows us to switch between an Ozone free and
 an Ozone enriched air flow in the cavity. The sample air (with or
 without Ozone) passes a \SI{10}{\meter} reaction path. In later
@@ -120,12 +120,20 @@ determine the Ozone production rate this flow is varied. When actual
 performed the flow is fixed to \SI{0.03}{\liter\per\minute}.
 
 The ligth source of the instrument is a LED with maximum intensity at
-$\lambda = \SI{444}{\nano\meter}$. The effective pathlength $L_0$ of the
-cavity has a maximum at this wavelength of \SI{1.3}{\kilo\meter}. A
-plot of the pathlength can be found in Figure~\todo{add pathlength
-  plot}. The spectrograph as \num{2048} channesl and is calibrated to
-a wavelength region of \num{395} to \SI{490}{\nano\meter}. This leads
-to a resolution of \SI{0.046}{\nano\meter}.
+$\lambda = \SI{444}{\nano\meter}$. The effective pathlength $L_0$ of
+the cavity has a maximum at this wavelength of
+\SI{1.3}{\kilo\meter}. A plot of the pathlength can be found in
+Figure~\ref{fig:pathlength}. The spectrograph as \num{2048} channesl
+and is calibrated to a wavelength region of \num{395} to
+\SI{490}{\nano\meter}. This leads to a resolution of
+\SI{0.046}{\nano\meter}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{L0.png}
+  \caption{Effective pathlength of the used EnviMeS CE-DOSA system.}
+  \label{fig:pathlength}
+\end{figure}
 
 %%% Local Variables:
 %%% mode: latex

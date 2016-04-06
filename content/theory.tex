@@ -215,7 +215,7 @@ achieve a full conversion. These questions can all be answered using a
 few basic principles from fluid dynamics. First we will have a look at
 laminar flows in cylindric vessels (in our case tubes) to get a
 connection between the flow and the maximum speed in the tube. Next we
-have a look at diffusion of gases. As we only hav laminar flows,
+have a look at diffusion of gases. As we only have laminar flows,
 diffusion is the only way mixing can take place, so we need an
 estimate of the time this mixing takes. Lastly we will discuss
 adsorption of some trace gases at teflon, silica gel and activated
@@ -226,9 +226,9 @@ instrument.
 \label{sec:cylinder}
 
 We are interested in what regime the gas transport in the tube
-remains. Especially after the ozone enriched air is added to the
+settles. Especially after the Ozone enriched air is added to the
 sample air, we would benefit from ab turbulent flow in the system as
-it would acertain a faster mixing of the gases. To see whether we have
+it would ensure a faster mixing of the gases. To see whether we have
 a laminar or a turbulent flow, we use the phenomenological \emph{Reynold's
 number}
 
@@ -239,15 +239,15 @@ number}
 where $\rho$ denotes the density of our gas, $d$ is a characteristc
 length of the system, in our case the tube diameter, $\bar v$ is the
 average velocity of the gas and $\eta$ its viscosity. As a rule of
-thumb the flow in a cylinder will be laminar, if the Renold's number
+thumb the flow in a cylinder will be laminar, if the Reynold's number
 is smaller than the critical Reynold's number
-$\operatorname{Re}_{\text{c}} = 2300$ and the flow will be turbulent
-if the number is higher than $3000$ (c.\,f.~\cite{maschbau}). In our
-system we have $d = \SI{4}{\milli\meter}$, $\rho \approx
+$\operatorname{Re}_{\text{c}} = 2300$ and it will be turbulent if the
+number is higher than $3000$ (c.\,f.~\cite{maschbau}). In our system
+we have $d = \SI{4}{\milli\meter}$, $\rho \approx
 \SI{1.2}{\kilo\gram\per\cubic\meter}$ and $\eta \approx
-\SI{17.1}{\micro\pascal\second}$. Furthermore we work with a flow of
-$\Phi = \SI{2}{\liter\per\minute}$. With the above diameter this
-leads to an average velocity of $\bar v =
+\SI{17.1}{\micro\pascal\second}$(c.\,f.~\cite{maschbau}). Furthermore
+we work with a flow of $\Phi = \SI{2}{\liter\per\minute}$. With the
+above diameter this leads to an average velocity of $\bar v =
 \SI{2.7}{\meter\per\second}$. Using this data we compute the Reynold's
 number to be
 
@@ -266,20 +266,21 @@ Denote by $r_0$ the inner radius of our tube and by $l$ its length. We
 assume that we are in the equilibrium state, such that all forces need
 to add to zero. We look at a cylinder with radius $0 \leq r \leq
 r_0$. To have a nonzero flow, we need a pressure difference at the two
-ends of the tube dentode $\Delta p$. The force exerted on the cylinder
+ends of the tube denoted $\Delta p$. The force exerted on the cylinder
 by the pressure is given by
 \begin{align*}
   F_b = - \pi r^2 \Delta p,
 \end{align*}
 
 where the minus sign is introduced because the force points in the
-opposite direction of the pressurre gradient. On the boundary of our
-cylinder we have friction. The force exerted by 
-it is proportional to the area of friction, i.\,e.\ the cylinder
-barrel and to difference in velocity between the fluid within the
-cylinder and without, since we have to look at an infinitesimal anulus
-around the boundary, we get a proportionality to the velocity gradient
-$\frac{\d[v]}{\d[r]}$. Thus the force of friction takes the form
+opposite direction of the pressure gradient. At the boundary of our
+cylinder we have to consider friction between the adjoining layers of
+fluid. The force exerted by it is proportional to the area of
+friction, i.\,e.\ the cylinder barrel and to the difference in velocity
+between the fluid within the cylinder and without, since we have to
+look at an infinitesimal anulus around the boundary, we get a
+proportionality to the velocity gradient $\frac{\d[v]}{\d[r]}$. Thus
+the force of friction takes the form
 
 \begin{align*}
   F_f = \eta \cdot 2\pi r \cdot l \cdot \frac{\d[v]}{\d[r]}.
@@ -287,14 +288,14 @@ $\frac{\d[v]}{\d[r]}$. Thus the force of friction takes the form
 
 We are at an equilibrium state, thus we need $F_b = F_f$ for all
 possible $r$ to hold. This leads us to the following differential
-equatio for the velocity
+equation for the velocity
 
 \begin{align*}
-  \frac{\d[v]}{\d[r]} = - \frac{\Delta p}{2l\eta} r
+  \frac{\d[v]}{\d[r]} = - \frac{\Delta p}{2l\eta} \cdot r
 \end{align*}
  
-whic can be directly integrated. Using the boundary condition $v(r_0)
-= 0$, i.\,e.\ the fluid sticks at the wall of the tube, we yield
+which can be directly integrated. Using the boundary condition $v(r_0)
+= 0$, i.\,e.\ the fluid sticks to the wall of the tube, we yield
 
 \begin{align}
   v(r) = v_0 \left ( 1 - \left( \frac{r}{r_0} \right)^2 \right) \quad
@@ -308,7 +309,7 @@ This can be further integrated to yield the flow $\Phi$ of the system
   r_0^4}{8\eta l} \cdot \Delta p.
 \end{align*}
 
-This is the standard form of the Hagen-Poiseulle law. One remarkabel
+This is the standard form of the Hagen-Poiseulle law. One remarkable
 obersvation is that there is a power four law between the radius of
 the tube and the flow. More interesting for us is the relation between
 the average velocity $\bar v$ and the maximum velocity $v_0$ at the
@@ -327,7 +328,7 @@ the dwell time of our gases.
 
 As was shown in the previous section, the gas flows laminarly through
 our instrument. Thus the only mechanism by which gas mixing can occur
-is \emph{diffusion}. Therefore we we want an estimate for the time it
+is \emph{diffusion}. Therefore we want an estimate for the time it
 takes for diffusion to take place. This exposition drew inspiration
 from~\cite{fluid}.
 
@@ -365,7 +366,7 @@ n](k,t) = -ik_j \hat n(k,t)$, we can transform the equation to
   \partial_t \hat n(k,t) =  - Dk^2 \hat n(k,t)
 \end{align*}
 
-an linar first order ordinary differential equation, with the well
+a linar first order ordinary differential equation, with the well
 known solution
 
 \begin{align}
@@ -373,14 +374,14 @@ known solution
 \end{align}
 
 To determine $c(k)$, we need to introduce an initial value. We again
-work with an idealistic model. We will later on be interested in the
-diffusion of one molecule. Therefore we work with the initial
-condition
+work with an idealistic, simplified model. We will later on be
+interested in the diffusion of one molecule. Therefore we work with
+the initial condition
 \begin{align*}
   n(x,0) = n_0 \delta(x),
 \end{align*}
 i.\,e.\ all the species (or for $n_0 = 1$: the particle) is localized
-at one point for $t = 0$. We can fourietransform this initial
+at one point for $t = 0$. We can fouriertransform this initial
 condition, too, and yield
 
 \begin{align*}
@@ -392,24 +393,24 @@ Plugging this into Equation~\eqref{eq:sol-ft}, we get
   \hat n(k,t) = n_0 \exp(-Dt \cdot k^2).
 \end{align*}
 This is a Gaußian function with regard to the variable $k$. If we want
-the solution in terms of $x$ we need the inverse Fourier transform of
-$\hat n$. However, we know that the Gauß function is an Eigenfunction
-of the Fouriertransform (and its invers). Additionally the total
-concentration needs to be the same for all times $t$. Thus we yield
+the solution of the diffusion equation in terms of $x$ we need to
+compute the inverse Fourier transform of $\hat n$. However, we know
+that the Gauß function is an Eigenfunction of the Fouriertransform
+(and its invers). Additionally the total concentration needs to be the
+same for all times $t$. Thus we yield
 
 \begin{align*}
   n(x,t) = \frac{n_0}{(2\pi \cdot 2Dt)^{3/2}} \cdot \exp \left(
   -\frac{1}{2} \cdot \frac{x^2}{2Dt} \right).
 \end{align*}
-We have found the solution to Fick's second law. This allows us to
-describe the statistic behaviour of a particle undergoing
-diffusion. Setting $n_0 = 1$, we arrive at the probability
-distribution for the particle, which is just a Gaußian distribution
-with a timedependent variance. We see that the expectation value of
-the position $\langle x \rangle$ is always 0. However the standard
-deviation $\sigma = \sqrt{2Dt}$
-grows larger over time, such that vor the \emph{mean squared
-  displacement}, we yield the following relation
+This is the desired solution. This allows us to describe the statistic
+behaviour of a particle undergoing diffusion. Setting $n_0 = 1$, we
+arrive at the probability distribution for the particle, which is just
+a Gaußian distribution with a timedependent variance. We see that the
+expectation value of the position $\langle x \rangle$ is always
+0. However the standard deviation $\sigma = \sqrt{2Dt}$ grows larger
+over time, such that for the \emph{mean squared displacement}, we
+yield the following relation
 
 \begin{align}
   \langle x^2 \rangle = \sum_{j=1}^3 \langle

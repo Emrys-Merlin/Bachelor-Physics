@@ -189,7 +189,7 @@ for day time measurements) Equation~\eqref{eq:back} should guarantee
 that the oxidation of \ch{NO2} should be compensated. 
 
 Sadly, this is not the only reaction using \ch{NO3}. Some can react
-with \ch{NO2} to generate laughing gas
+with \ch{NO2} to generate the solid \ch{N2O5}
 
 \begin{align}
   \ch{NO2 + NO3 + M
@@ -435,19 +435,19 @@ construction of our converter. First and obviously we need to use well
 filtered air in the Ozone generator as not to introduce other trace
 gases which would disturb the measurement. The normal procedure
 consists of using an activated charcoal, a silica gel and a particle
-filter. However, one problem is that \ch{NO} is hardly soluble in
-water and thus passes all these filter barriers. After the Ozone
-generation it will react with it and lead to an additional \ch{NO2}
-signal, which cannot be neglected. To remove it, one can add
-another silica gel filter after the generator. \ch{NO2} is well
-adsorbed within, which should lead to the desired reduction of the
-error. However, Ozone is also adsorbed in Silica. Luckily, the
-adsorption capacity for Ozone is much worse than for Nitrogen
-Dioxide. So we would expect the filter to be quickly saturated by
-Ozone, so that it can pass, while still blocking \ch{NO2}. To make
-this work, we also have to add some extra pathlength after the
-generator to make sure that the oxidization takes place before the gas
-passes the Silica gel filter.
+filter. However, some Nitrogen derivates\todo{which ones? What reactions?} pass all these
+filters. Normally this is of no concern, as they have a zero
+absorption cross section in our wavelength range. In the case of our
+Ozone generator the molecules will react and form additional \ch{NO2},
+which will distort our measured signals. Thus we need to introduce
+another filter after the Ozone generator, which should be transparent
+for Ozone, but impervious to \ch{NO2}. Luckily a Silica gel filter
+suffices these constraints. At first it filters Ozone as well as
+\ch{NO2}, but the saturation level for Ozone is far lower for Ozone,
+such that it will pass unhindered, while the Nitrogen Dioxide is kept
+back. For the filtering to be effective, we also need to introduce a
+reaction path between the Ozone generation chamber and the Silica gel
+filter for the conversion to \ch{NO2} to be completed.
 
 The next restriction is that we need a nigh \SI{100}{\%} conversion of
 \ch{NO} to \ch{NO2}. This leads to three considerations. Firstly, we
@@ -472,7 +472,7 @@ c.\,f.~\cite{diff-ozone}). With these values we get
 
 Turning towards considerations two and three, we need to gauge the
 reaction times. For this we have to set a desired conversion
-ratio. For our estimates work with a ratio of \SI{99}{\%}. 
+ratio. For our estimates we work with a ratio of \SI{99}{\%}. 
 Since the Ozone generator will supply an
 overabundance of \ch{O3}, we can use the linear ordinary
 differential equation approximation introduced in
@@ -516,14 +516,14 @@ time
 \begin{align*}
   t = t_{\text{mix}} + t_{\text{react}} = \SI{5.3}{\second}
 \end{align*}
-to be converted to its associated pathlength. Using the applied flow
+to its associated pathlength. Using the applied flow
 of $\Phi = \SI{2}{\liter\per\minute}$, we can compute the average
 speed of the gas to be
 \begin{align*}
   \bar v = \frac{\Phi}{\pi r^2} = \SI{2.7}{\meter\per\second}. 
 \end{align*}
 As was described in Section~\ref{sec:cylinder} this corresponds to a
-maximal speed in the center of the tube of
+maximum speed at the center of the tube of
 
 \begin{align*}
   v_0 = 2\cdot \bar v = \SI{5.4}{\meter\per\second}.
@@ -539,11 +539,11 @@ as our pathlengths.
 
 For the experiment we oriented at $\bar l$, as the maximum speed is
 only relevant for a rather small cross section of the
-cylinder. Most experiments were performed at $l = \SI{10}{\meter}$
-accepting a slightly worse \ch{NO} conversion ratio at the upside of a
-smaller loss to \ch{NO3}. As all these estimates were intended as a
-worst case, we expect even a \SI{10}{\meter} reaction path to be
-sufficient for acceptable results.
+cylinder. Most experiments were performed at $l = \SI{10}{\meter}$,
+such that part of the conversion reaction was taking place inside the
+cavity. The idea behind this is to have the conversion peak close to
+the center of the cavity as this should lead to the best conversion
+ratio averaged over all the cavity.
 
 \subsection{The physics behind CE-DOAS}
 \label{sec:ce-doas-physics}

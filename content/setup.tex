@@ -8,29 +8,29 @@ As a proof of concept we built the Ozone generator on a wooden board
 as can be seen in Figure~\ref{fig:setup}. As described in
 Section~\ref{sec:requirements}, the lab air was first filtered and
 then sent through an alluminium coated tube containting a Pen-Ray
-Hg-Lamp (Model 11SC-1). It has a lighted length of
+Mercury lamp (Model 11SC-1). It has a lighted length of
 \SI{53.8}{\milli\meter} and primary energy at
 \SI{254}{\nano\meter}. The primary energy setting is not perfect for
-our purposes as it is directly at the Ozone dissociation wavelength,
-where as the lamp has almost no energy output at the Oxygen
+our purpose as it is directly at the Ozone dissociation wavelength,
+whereas the lamp has almost no energy output at the Oxygen
 dissociation wavelength. However, since the Oxygen concentration in
-ambient air is so high, we would still expect enough Ozone to be
+ambient air is so high, we still expect enough Ozone to be
 produced. 
 To make sure the superfluous \ch{NO} is completely converted to
 \ch{NO2}, we introduce a \SI{3}{\meter} teflon tube. Afterwards the
-Ozone enriched air passed another Silica gel filter and is expected to
+Ozone enriched air passes another Silica gel filter and is expected to
 then be \ch{NO_x} free.
 
 To be able to measure the Ozone production after the last filter a
-cuvette was added, which could be entered in the light path of a
-longpath DOAS instrument (cf.\ Fig.~\ref{fig:cuvette}). The length of
+cuvette is added, which can be entered in the light path of a
+Longpath-DOAS instrument (cf.\ Fig.~\ref{fig:cuvette}). The length of
 the lightpath through the cuvette is \SI{10}{\centi\meter}. 
 
 The Pen-Ray power source could switch the current between
 \SI{10}{\milli\ampere} and \SI{17}{\milli\ampere}.  Furthermore the
-Flow $\Phi_{\ch{O 3}}$ could be set via the flowmeter between \num{0}
-and \SI{0.3}{\liter\per\minute}. The lowest stable flow higher than
-\SI{0}{\liter\per\minute} was \SI{0.03}{\liter\per\minute}.
+flow $\Phi_{\ch{O 3}}$ can be set via the flowmeter between \num{0}
+and \SI{0.3}{\liter\per\minute}. The lowest stable positive flow is
+\SI{0.03}{\liter\per\minute}. 
 
 \begin{figure}[htbp]
   \centering
@@ -54,16 +54,20 @@ and \SI{0.3}{\liter\per\minute}. The lowest stable flow higher than
   \label{fig:setup}
 \end{figure}
 
-The cuvette was entered into the ligthpath of a longpath DOAS
+The cuvette is entered into the ligthpath of a longpath DOAS
 instrument (attached to an Amundsen telescope located at the height
-laboratory at the IUP building). Since we expected rather high Ozone
+laboratory at the IUP building). Since we expect rather high Ozone
 concentrations, we forgo the advantage of a cavity enhanced
-pathlength. The upside of this setup was that the instrument contained
-a UV led emitting around a wavelength of $\lambda =
+pathlength. The upside of this setup is that the instrument contains
+a UV led emitting at a wavelength of $\lambda =
 \SI{290}{\nano\meter}$. As mentioned in
 Section~\ref{sec:theory-ozone}, Ozone has a strong absorption cross
 section in this region, which allows us to determine the concentration
-very precisely.\todo{ask Denis how to denote instrument}
+very precisely. 
+
+The used spectrograph has 2048 channesl and is calibrated to a
+wavelength region of \num{268} to \SI{312}{\nano\meter}. This leads to
+a resolution of \SI{0.021}{\nano\meter}.
 
 \subsection{Inclusion into a CE-DOAS instrument}
 \label{sec:inclusion}
@@ -93,27 +97,35 @@ existing CE-DOAS instrument (EnviMeS SN:2014002)\todo{technical data
   of envimes}. The instrument was already supplied with an \ch{O3}
 generator, but lacked a Silica gel filter, which was added. The inside
 of the instrument can be seen in Figure~\ref{fig:envimes}. Since it
-was optimized for space, it is difficult, if not impossible, to extract
+is optimized for space, it is difficult, if not impossible, to extract
 the setup from this view. Therefore Figure~\ref{fig:envimes-schematic}
 contains a slightly simplified schematic view of the instrument. The
-Zero Air input\todo{write zero air somewhere in theory} is used to
-generate the Ozone, since it is already filtered. After the Hg-lamp
+zero air input\todo{write zero air somewhere in theory} is used to
+generate the Ozone, since it is already filtered. After the Mercury lamp
 there is a \SI{1}{\meter} reaction path before the silica filter
-follows. After that we have a Ozone bypass valve, which is operated
+follows. After that we have an Ozone bypass valve, which is operated
 electromechanically and allows us to switch between an Ozone free and
 an Ozone enriched air flow in the cavity. The sample air (with or
 without Ozone) passes a \SI{10}{\meter} reaction path. In later
-experiments the length of the reaction path was varied to measure the
+experiments the length of the reaction path is varied to measure the
 influence on the \ch{NO} conversion (c.\,f.\
 Sec.~\ref{sec:requirements} for the theory and Sec.~\ref{sec:no} for
-measurements). The current for the Pen-Ray lamp was fixed. The total
-flow $\Phi$ could be adapted, but was always set to
-\SI{2}{\liter\per\minute}. The Ozone flow could be adapted (as in
+measurements). The current for the Pen-Ray lamp is fixed. The total
+flow $\Phi$ can be adapted, but was always set to
+\SI{2}{\liter\per\minute}. The Ozone flow can be adapted (as in
 Sec.~\ref{sec:ozone-setup}) from 0 to \SI{0.3}{\liter\per\minute}. The
-lowest stable positive flow was \SI{0.03}{\liter\per\minute}. To
-determine the Ozone production rate this flow was varied. When actual
-\ch{NO} or \ch{NO_x}\todo{define NOx somewhere} measurements were
-performed the flow was fixed to \SI{0.03}{\liter\per\minute}.
+lowest stable positive flow is \SI{0.03}{\liter\per\minute}. To
+determine the Ozone production rate this flow is varied. When actual
+\ch{NO} or \ch{NO_x}\todo{define NOx somewhere} measurements are
+performed the flow is fixed to \SI{0.03}{\liter\per\minute}.
+
+The ligth source of the instrument is a LED with maximum intensity at
+$\lambda = \SI{444}{\nano\meter}$. The effective pathlength $L_0$ of the
+cavity has a maximum at this wavelength of \SI{1.3}{\kilo\meter}. A
+plot of the pathlength can be found in Figure~\todo{add pathlength
+  plot}. The spectrograph as \num{2048} channesl and is calibrated to
+a wavelength region of \num{395} to \SI{490}{\nano\meter}. This leads
+to a resolution of \SI{0.046}{\nano\meter}.
 
 %%% Local Variables:
 %%% mode: latex

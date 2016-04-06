@@ -26,7 +26,7 @@ Some of them will have positive, wanted effects, others describe side
 effects and we want to suppress them as much as possible. However we
 have only two parameters we can adjust. The first is the Ozone
 concentration, which we can vary slighty and very roughly and the
-other one is the reaction pathlength and.  Thus our best chance to
+other one is the reaction pathlength and. Thus our best chance to
 select certain reactions is to set ther reaction time to a value that
 corresponds to the different reaction speeds of the equations, making
 sure that wanted reactions have enough time to happen while
@@ -623,9 +623,9 @@ which contains all the necessary information.
 Differential Optical Absorption Spectroscopy uses the Lambert-Beer Law
 to compute the concentrations of trace gases in the air. There are a
 few more technicalities we need to respect. First of all, we must have
-a look at the absorption crosssections of different trace gases. If we
+a look at the absorption cross sections of different trace gases. If we
 want to be able to discern different gases and even compute their
-concentration, we need the crosssections to be sufficiently
+concentration, we need the cross sections to be sufficiently
 separating.
 
 \begin{figure}[htbp]
@@ -688,7 +688,7 @@ spectrum of a Mercury lamp and use one of the
 (normally very narrow) emission lines as a convolution kernel. The
 narrow line is broadened and we can assume that all other used
 measurements are broadened by the same amount. So if we convolute our
-crosssections with this \ch{Hg} line, we will compensate for
+cross sections with this \ch{Hg} line, we will compensate for
 the lower resolution. This step has to be done before the actual fit
 and in Equation~\eqref{eq:doas-fit} the convoluted cross sections have
 to be used.
@@ -752,7 +752,7 @@ where for the last equation we need $R_1R_2T_g^2 < 1$ to hold, which
 is clearly true since all entering variables lie between 0 and 1.
 
 With this formula we are able to compute the sample air intensity $I$
-as well as the zero air (i.\,e.\ the trace gas free) intensity $I_0$
+as well as the \emph{zero air} (i.\,e.\ the trace gas free) intensity $I_0$
 depending on the different reflectivities and transmittances. To do
 this we will use a few approximations, which are listed in the
 following

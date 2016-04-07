@@ -21,7 +21,7 @@ This section lays the chemical groundwork for the construction of our
 coefficient to get a measure for the speed of a reaction. Afterwards
 we will have a look at possible ways to generate Ozone out of ambient
 air and then describe Ozone induced reactions concerning
-Nitrogenoxides. This section is mainly inspired by and taken
+Nitrogen Oxides. This section is mainly inspired by and taken
 from~\cite{bsc}.
 
 \subsubsection{The rate coefficient}
@@ -154,7 +154,7 @@ only in the order of magnitude, this estimation will suffice for our
 purpose. The experimentally verified output of our generator can be
 found in Section~\ref{sec:ozone}.
 
-\subsubsection{Ozone triggerd Nitrogenoxide reactions}
+\subsubsection{Ozone triggerd Nitrogen Oxide reactions}
 \label{sec:o-no}
 
 In this section we will have a look at all reactions concerning
@@ -214,6 +214,35 @@ if the \ch{NO3} concentrations are small. Still in the further
 analysis we will try to allow enough time for Reaction~\eqref{eq:no}
 to take place, while being too fast for Reaction~\eqref{eq:no2}. Such
 that we can simply ignore the reaction paths for \ch{NO3}.
+There is yet another reaction cycle going on in the Ozone
+generator. This one is concerned with Nitrous Oxide (\ch{N2O}) also
+known as laughing gas. It has a strong absorption corss section in the
+range of \num{185} to \SI{230}{\nano\meter}, which triggers the
+following dissociation reaction
+\begin{align}
+  \ch{N2O + h}\nu \ch{-> N2 + O(^1 D)}.\label{eq:n2o-good}
+\end{align}
+This reaction in itself is not very interesting for us, as neither
+Nitrogen nor Oxygen interfere with our measurements. However there are
+other reaction pathways by which \ch{N2O} can degrade and these need
+the excited $\ch{O(^1D)}$ atom, which can come either from
+Equation~\eqref{eq:ozone} or~\eqref{eq:n2o-good}. In this case the two
+other possible reactions are
+\begin{align}
+  \ch{N2O + O(^1 D) & -> 2 NO} \quad \text{and}\label{eq:n2o-bad}\\
+  \ch{N2O + O(^1 D) & -> N2 + O2}, \nonumber
+\end{align}
+where the first path is slightly favored (c.\,f.~\cite{n2o}). All in
+all most of the laughing gas should degrade over the photolysis in
+Reaction~\eqref{eq:n2o-good}, however, since the Ozone generator
+produces quite a high amount of excited Oxygen atoms, we cannot ignore
+the other pathways with Reaction~\eqref{eq:n2o-bad} being especially
+worrisome for us, as additional Nitrogen Monoxide will lead to
+additional Nitrogen Dioxide, which will in turn distorte our
+measurement results. As will be seen in Section~\ref{sec:adsorption},
+this problem cannot be solved by filtering \ch{N2O} as it passes most
+filter barriers, so we will have to rid ourselves of the reaction
+products after the transition took place.
 
 \subsection{Basics of fluid dynamics}
 \label{sec:fluid}

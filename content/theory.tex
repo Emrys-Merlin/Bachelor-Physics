@@ -467,28 +467,50 @@ chemical reactions to take place.
 \label{sec:adsorption}
 
 Adsorption plays an important role in the setup of our
-instrument. First and foremost it is important in the different
-filtering stages we use. We have particle filters, activated carbon
-and silica gel, which are employed to filter the air entering our
-Ozone generator. These filters rid ourselves of most disruptive
-influences. They extract particulate matter, water, Nitrogen Dioxide,
-Nitrogen Monoxide and (up to a point) Ozone. 
+instrument. We have to free the zero air of all trace gases, we want
+to measure. Experience shows that a filter chain of activated carbon,
+Silica gel and a particle filter is sufficient for the process. One
+would assume that this air stream is also sufficiently pure to be used
+in the Ozone generator. Sadly, this is not true as was for example
+noted in~\cite{bsc}. 
 
-Unfortunately some Nitrogen Oxides pass all these filter
-barriers\todo{which ones?}. These will enter our Ozone generator and
-afterwards they will react with \ch{O3} and lead to \ch{NO2} in our
-otherwise \ch{NO2} free air stream. This is a problem, as any \ch{NO2}
-added to the sample air stream will distort our measurement results.
+After the air passed the generator there is a \ch{NO2} signal in the
+range of \num{1} to \SI{10}{ppb}, which is well detectable with our
+instrument. The caus was found to be laughing gas, which is a normally
+inert gas and badly soluble in water. Therefore it passes all our
+filters in high enough concentration such that
+Reaction~\eqref{eq:n2o-bad} has to betaken into account, this \ch{NO}
+then leads to the perceived \ch{NO2} signal. 
 
-Most interestingly for us is the fact mentioned
-in~\cite{ozone-silica}, which mentions that Silica can be used as an
-Ozone storage device, however with a limited ability to store
-it. Quite oppositely Silica can store about {\nfrac{} 1/3} of its
-weight in water \todo{cite?} and extends this capacity to molecules
-which are easily solible, like \ch{NO2}. Hence we can utilize a Silica
-filter to clean our generator air of \ch{NO2}. At first the filter
-will be impenetrable for Ozone, too, but after the saturation level is
-reached, most of it should pass. 
+As we are unable to filter the laughing gas in front of the generator,
+we turn towards the possibilty of filtering the Nitrogen Dioxide after
+filter. This poses the difficulty of filtering it without filtering
+the Ozone, too. In~\cite{ozone-silica} it is mentioned that Silica gel
+can be used as an Ozone storage device with a limited
+capacity. Furthermore, we know that Silica is a very good \ch{NO2}
+filter due to its good solubility in water. Hence the idea to use the
+Silica gel. At first it will be impassable by the Ozone as well as by
+the Nitrogen Dioxidy, but as soon as the Ozone saturation level is
+reached, it will pass, while the \ch{NO2} is still kept back. The
+experimental viability of this idea was tested in
+Sections~\ref{sec:ozone} and~\ref{sec:silica}.
+
+Another effect we have to consider is the adsorption of our gases at
+the teflon walls of the tube. Hopefully, this effect will not be too
+large. The influence on our sample air is a systematic uncertainty in
+any case and has to be considered for any CE-DOAS measurement, so the
+only question remaining is, whether the adsorption has an impact on
+the Ozone flow. As we work with rather large concentrations in the
+order of magnitude of \si{ppm}, we suspect this not to be the case
+after an equilibrium has been reached. The \ch{NO} concentration is
+normally in the order of magnitude of a few \SI{10}{ppb} perhaps a few
+\SI{100}{ppb} if we consider exhaust gas measurements. So for all
+reasonable adsorption capacities there is still enough Ozone left for
+the full conversion. The only interesting instance is during a switch
+where we turn the Ozone off to only measure \ch{NO2}. Here the
+evaporation of Ozone could lead to longer purge times and hence to a
+worse time resolution. The behaviour of our system after such switches
+has been researched in Section~\ref{sec:switch}.
 
 \subsection{Technical requirements for the converter}
 \label{sec:requirements}
@@ -498,19 +520,12 @@ construction of our converter. First and obviously we need to use well
 filtered air in the Ozone generator as not to introduce other trace
 gases which would disturb the measurement. The normal procedure
 consists of using an activated charcoal, a silica gel and a particle
-filter. However, some Nitrogen derivates\todo{which ones? What reactions?} pass all these
-filters. Normally this is of no concern, as they have a zero
-absorption cross section in our wavelength range. In the case of our
-Ozone generator the molecules will react and form additional \ch{NO2},
-which will distort our measured signals. Thus we need to introduce
-another filter after the Ozone generator, which should be transparent
-for Ozone, but impervious to \ch{NO2}. Luckily a Silica gel filter
-suffices these constraints. At first it filters Ozone as well as
-\ch{NO2}, but the saturation level for Ozone is far lower for Ozone,
-such that it will pass unhindered, while the Nitrogen Dioxide is kept
-back. For the filtering to be effective, we also need to introduce a
-reaction path between the Ozone generation chamber and the Silica gel
-filter for the conversion to \ch{NO2} to be completed.
+filter. To compensate for the laughing gas mentioned in
+Section~\ref{sec:adsorption}, we also have to introduce a Silica gel
+filter after the Ozone generator. For the filtering to be effective,
+we also need to introduce a reaction path between the Ozone generation
+chamber and the Silica gel filter for the conversion from \ch{N2O} to
+\ch{NO2} to be completed.
 
 The next restriction is that we need a nigh \SI{100}{\%} conversion of
 \ch{NO} to \ch{NO2}. This leads to three considerations. Firstly, we

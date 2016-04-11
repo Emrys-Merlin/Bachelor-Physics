@@ -29,17 +29,7 @@ set to \SI{10}{\milli\ampere}.
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      xlabel={Time [\si{\hour}]},
-      ylabel={c(\ch{O3}) [ppb]},
-      no markers,
-      xmin=0,
-      xmax=2,
-      ]
-      \addplot table [col sep=comma] {images/Anschaltkurve2.csv};
-    \end{axis}
-  \end{tikzpicture}
+j  \input{images/startup}
   \caption{Evolution of Ozone after a long full stop of the
     generator.}
   \label{fig:long-stop}
@@ -48,7 +38,7 @@ set to \SI{10}{\milli\ampere}.
 Next we were interested in the short term startup behaviour of the
 system. We stopped the generator after it had reached a stable level
 and restarted it after a fixed time period. The result can be found in
-Figure~\ref{fig:multiple-stop}. Since the time resolution of the DOAS
+Figure~\ref{fig:multiple-stop} Left. Since the time resolution of the DOAS
 instrument is rather coarse the only safe statement is, that even
 after a \SI{4}{\hour} stop the concentration climbed back up to around
 \SI{200}{ppb} after \SI{5}{\minute}. So it stands to reason, that if
@@ -63,45 +53,14 @@ experiments were conducted in November and December.
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      xlabel={Time [\si{\minute}]},
-      ylabel={c(\ch{O3}) [ppb]},
-      legend entries={\nfrac 1/2\si{\hour}, \SI{1}{\hour}, \SI{2}{\hour},
-        \SI{4}{\hour}},
-      no markers,
-      legend pos=south east,
-      xmin=0,
-      xmax=10,
-      ]
-      \addplot table [col sep=comma] {images/Multiple-stop.csv};
-      \addplot table [col sep=comma,y=1h] {images/Multiple-stop.csv};
-      \addplot table [col sep=comma,y=2h] {images/Multiple-stop.csv};
-      \addplot table [col sep=comma,y=4h] {images/Multiple-stop.csv};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Evolution of the Ozone concentration after a full stop of the
-    generator.}
-  \label{fig:multiple-stop}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      xlabel={Time [\si{\minute}]},
-      ylabel={c(\ch{O3}) [ppb]},
-      no markers,
-      xmin=0,
-      xmax=45,
-      ]
-      \addplot table [col sep=comma] {images/2015-12-02-current2.csv};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Ozone level dependence on current of Hg-lamp. The steep
+  \input{images/multi}
+  \hfill
+  \input{images/current}
+  \caption{Left: Evolution of the Ozone concentration after a full stop of the
+    generator. Right: Ozone level dependence on current of Hg-lamp. The steep
     flank occured after a change of the current from
     \SI{10}{\milli\ampere} to \SI{17}{\milli\ampere}.}
-  \label{fig:lamp}
+  \label{fig:multiple-stop}
 \end{figure}
 
 After having analyzed the startup procedure, we wanted to at least get
@@ -113,7 +72,7 @@ know how a change in power would transform the power distribution on
 the different Mercury lines. We recorded a timeseries while switching
 between the two possible currents, \SI{10}{\milli\ampere} and
 \SI{17}{\milli\ampere}, and yielded 
-Figure~\ref{fig:lamp}. From this we see that we still work in a regime
+Figure~\ref{fig:multiple-stop} Right. From this we see that we still work in a regime
 where higher power leads to more Ozone. This is interesting to know,
 however, since \SI{200}{ppb} is already more than enough Ozone for our
 purposes, in the practical application we just used the current

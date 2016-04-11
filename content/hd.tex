@@ -12,10 +12,11 @@
   \input{images/hd_comparison}
   \caption{Comparison of the used CE-DOAS systems. No Ozone was
     entered into either air stream. No systematic effects
-    determinable.}
+    determinable. The difference is
+    \SI[separate-uncertainty=true]{-0.37 \pm 0.02}{ppb}.}
   \label{fig:hd-comparison}
 \end{figure}
-
+\todo{systematic error of comparison?}
 \begin{figure}[htbp]
   \centering
   \input{images/umba_ts}
@@ -24,6 +25,26 @@
     measurement station in Heidelberg.}
   \label{fig:umba}
 \end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \sisetup{
+    table-format=2.1
+  }
+  \begin{tabular}{c S S}
+    \toprule
+    {Compound} & \multicolumn{2}{c}{Concentration in \si{ppb}}\\
+    & {Station} & {DOAS}\\
+    \midrule
+    \ch{NO} & 7.4 & 6.5\\
+    \ch{NO2} & 19.2 & 21.9\\
+    \ch{NOx} & 26.6 & 28.4\\ 
+    \bottomrule
+  \end{tabular}
+  \caption{Comparison between air quality measurement station and
+    improved CE-DOAS instrument.}
+  \label{tab:umba}
+\end{table}
 
 %%% Local Variables:
 %%% mode: latex

@@ -1,45 +1,96 @@
-\subsection{Comparison to chemiluminescence measurement}
+\subsection{Comparison to chemiluminescence measurements}
 \label{sec:cld}
 
 After having assured the functionality of our converter in the lab
-setting, we wanted to use it in ambient air. There we had to struggle
-with additional challenges. First and foremost the concept our setup
-allows us only to measure \ch{NO2} or \ch{NO_x} directly, but not
-\ch{NO}. Only in our very special \ch{NO2} free setting, could we
-determine the Nitrogen Monoxide concentration directly. In this more
-general setting we chose the strategy of measuring \ch{NO2} and
-\ch{NO_x} alternatingly, i.\,e.\ we measured a \ch{NO2} spectrum, then
-added Ozone to the sample air, waited for \SI{30}{\second} to make
-sure the cavity was purged, took a \ch{NO_x} spectrum, switched of the
-Ozone stream and purged again for \SI{30}{\second}. In the evaluation
-step we then interpolated the \ch{NO2} concentrations and subtract
-them from the \ch{NO_x} concentration. 
-
-This procedure drastically reduces the time resolution and leads to
-ohter complications. Depending on the location the \ch{NO_x}
-concentration and composition can fluctuate strongly during
-\SI{30}{\second}. This contests the validity of our algorithm and
-indeed repeatedly lead to `negative' \ch{NO} concentrations. One
-loophole is to increase the averaging time further and only compare
-\SI{30}{\minute} averages of \ch{NO_x} and \ch{NO2}. Depending on the
-circumstances this can be acceptable for stationary measurements, however
-
+environment, we wanted to use it with ambient air. We wanted to try
+out the alternating measurement procedure described in the previous
+section and compare our results to another Nitrogen Monoxide
+measurement instrument, a chemiluminescence monitor.\todo{find out
+  stuff about monitor.} This allowed us to use ambient air as our
+\ch{NO} source while simultaneously being able to check our results
+with a well established measurement method. 
 
 \subsubsection{Setup}
 \label{sec:cld-setup}
 
+The cavity and the chemiluminescence monitor were both setup at the
+height laboratory at the Institute for Environmental Physics. We used
+a tripod on the roof together with two teflon tubes to make sure to
+sample at the same spot with both instruments.
+
+We set up the cavity as described in Section~\ref{sec:inclusion}. For
+each spectrum we sampled 3000 spectra at an exposure time of
+\SI{10}{\milli\second}. Furthermore we used a purge time of
+\SI{30}{\second} after Ozone switches. This time might have been taken
+too short, as Section~\ref{sec:switch} indicates, as some residual
+Ozone might have rested in the sample line.
+
+To account for slight differences in the path length and flows in the
+two instruments, we decided to comput \SI{30}{\minute} averages for
+the comparison. The measurements depicted below were taken during the
+day of January 22 and January 25, 2016. In between, there was a
+malfunction of the chemiluminescence monitor, such that we do not have
+any values from that period.
+
 \subsubsection{Results}
 \label{sec:cld-results}
 
+The time series of the two measurements can be found in
+Figure~\ref{fig:corr-ts}. As can be seen, the qualitative form of the
+DOAS results is in good accordance with the chemiluminescence results.
+However, there seems to be an offset and the DOAS concentration is
+systematically lower than the chemiluminescence concentration. This
+relation is also plainly visible in the correlation plot in
+Figure~\ref{fig:cld-corr}. The measurements are very well correlated
+and can be easily fitted by a linear regression, but it has an offset
+and a slope differing from unity:
+
+\begin{align*}
+  y = \SI{1.38}{{ppb}\tothe{-1}} \cdot x + 3.8.
+\end{align*}
+
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.7\textwidth]{20160122_25_fixI0_corr.png}
+  \input{images/correlation_ts01}
+  \hfill
+  \input{images/correlation_ts02}
+  \caption{Time series of the \ch{NO} concentration during the two
+    measurements on January 22 and January 25. Green depicts the
+    chemiluminescence measurement, violet the DOAS measurement.}
+  \label{fig:corr-ts}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
   \input{images/20160122_25_fixI0_corr}
   \caption{Correlation plot between our DOAS instrument and a
     chemiluminescence monitor (CLD). Each data point depicts a
     \SI{30}{\minute} average.}
   \label{fig:cld-corr}
 \end{figure}
+\todo{remove fit formula}
+
+There are two avenues we took in an attempt to understand these
+findings. Both of them follow arguments already layed out in
+Section~\ref{sec:switch}. The first consists in the observation, that
+we used the \ch{NO} calibration gas container to calibrate the
+chemiluminescence display (cld). If some of the \ch{NO} had been converted
+to \ch{NO2}, we would have an error in the chemiluminescence
+calibration, which would lead to lower cld results. Using the above
+mentioned results, we can compute that we have about \SI{420}{ppb}
+\ch{NO2} in the container, if all of it stemmed from \ch{NO} this
+would introduce an error of about \SI{5}{\percent} (the calibration
+concentration given was $c = \SI{8.177}{ppm}$). This is not enough to
+explain the descripancy. Together with the fact that we cannot
+explain, how the transition from \ch{NO} to \ch{NO2} could occur, we
+discard this approach.
+
+The second avenue we took, was to look at the purge
+time. Section~\ref{sec:switch} suggests that \SI{30}{\second} purge
+time is not enough when the Ozone switch is turned off, as we observed
+a tail in the falling flank with a natural timescale of about
+\SI{146}{\second}. We were not aware of this tail when we performed
+the measurements, so we tried to remedy its effects afterwards.
 
 
 %%% Local Variables:

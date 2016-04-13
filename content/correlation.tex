@@ -49,26 +49,6 @@ and a slope differing from unity:
   y = \SI{1.38}{{ppb}\tothe{-1}} \cdot x + 3.8.
 \end{align*}
 
-\begin{figure}[htbp]
-  \centering
-  \input{images/correlation_ts01}
-  \hfill
-  \input{images/correlation_ts02}
-  \caption{Time series of the \ch{NO} concentration during the two
-    measurements on January 22 and January 25. Green depicts the
-    chemiluminescence measurement, violet the DOAS measurement.}
-  \label{fig:corr-ts}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \input{images/20160122_25_fixI0_corr}
-  \caption{Correlation plot between our DOAS instrument and a
-    chemiluminescence monitor (CLD). Each data point depicts a
-    \SI{30}{\minute} average.}
-  \label{fig:cld-corr}
-\end{figure}
-
 There were two avenues we took in an attempt to understand these
 findings. Both of them follow arguments already layed out in
 Section~\ref{sec:switch}. The first consists in the observation, that
@@ -84,13 +64,64 @@ explain the descripancy. Together with the fact that we cannot
 explain, how the transition from \ch{NO} to \ch{NO2} could occur, we
 discard this approach.
 
-The second avenue we took, was to look at the purge
-time. Section~\ref{sec:switch} suggests that \SI{30}{\second} purge
-time is not enough when the Ozone switch is turned off, as we observed
-a tail in the falling flank with a natural timescale of about
-\SI{146}{\second}. We were not aware of this tail when we performed
-the measurements, so we tried to remedy its effects afterwards. 
+\begin{figure}[htbp]
+  \centering
+  \input{images/correlation_ts01}
+  \hfill
+  \input{images/correlation_ts02}
+  \caption{Time series of the \ch{NO} concentration during the two
+    measurements on January 22 and January 25. Green depicts the
+    chemiluminescence measurement, violet the DOAS measurement.}
+  \label{fig:corr-ts}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \input{images/Correlation_corrected}
+  \caption{Correlation plot between the DOAS instrument and a
+    chemiluminescence monitor (CLD). Each data point depicts a
+    \SI{30}{\minute} average.}
+  \label{fig:cld-corr}
+\end{figure}
 
+The second avenue we took, was to look at the purge time.
+Section~\ref{sec:switch} suggests that \SI{30}{\second} purge time is
+not enough after the Ozone switch was turned off. Thus we can expect
+the measured \ch{NO2} intensities to be too large. One observation
+pointing towards the influence of this effect ist, that we measures
+negative \ch{NO} concentrations (to a minimum of \SI{-1.54}{ppb}) with
+this method, which is of course absurd. In the previous section we
+suggest, that hopefully the surplus \ch{NO2} signal does not depend
+too strongly on the \ch{NO} concentration. If this assumption is
+correct, we expect to be able to mitigate the effects by lowering the
+\ch{NO2} signal by \SI{1.55}{ppb}, which corresponds surprisingly well
+to the negative offset of our data. This \emph{tail corrected} data
+set was then again correlated with the chemiluminescence data. The
+result can also be found in Figure~\ref{fig:cld-corr}. The linear
+regression follows the formula
+\begin{align*}
+  y = \SI{1.38}{ppb\tothe{-1}} \cdot x + 1.67.
+\end{align*}
+So we see that this tail correction has only an effect on the
+intercept of our regression. This is expected as the constant lowering
+of the \ch{NO2} signal increases the computed \ch{NO} signal by the
+same amount and thus all data points are only shifted to the
+right. Hence the slope of the regression is still off. Clearly the
+aprroaches utilized here were too simplistic to account for all
+effects. Further investigations are necessary to understand the
+corrections necessary, possibly the offset might be computed by
+analizing surrounding \ch{NO_x} values. This varying \ch{NO2}
+correction could also influence the slope of the
+regression. Additionally the chemiluminescence monitor has the
+disadvantage that it does not write raw measurement data and rejects
+data if it suspects the values to be negative (which can easily happen due
+to a shift of the calibration). In this case the monitor only returns
+the constant value zero, which has then to be taken care of. 
+
+All in all it seems that there a few more stumbling blocks ahead
+before this alternating measurement procedure is ready for productive
+use. The behaviour of our converter after an Ozone switch have to be
+characterized thoroughly to explain and cope with all the observed
+effects.
 
 %%% Local Variables:
 %%% mode: latex

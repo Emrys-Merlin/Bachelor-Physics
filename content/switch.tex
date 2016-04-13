@@ -118,20 +118,6 @@ measured tail was too short for it to be determined correctly.
     reaction to form the long tail.}
   \label{tab:switch-coeff}
 \end{table}
-\begin{figure}[htbp]
-  \centering
-  \input{images/20160223_15_equil_fixI0_ts}
-  \caption{Timeseries of the measured \ch{NO2} concentration while
-    switching the Ozone stream on and off.}
-  \label{fig:switch}
-\end{figure}
-\begin{figure}[htbp]
-  \centering
-  \input{images/20160223_equil_fixI0_fall_fit}
-  \caption{The behaviour of the falling flanks depending on the
-    reaction pathlength}
-  \label{fig:switch-pl}
-\end{figure}
 In any case the fit proves that we work with two time scales. First a
 rather fast decay, which is well described by the time necessary for
 the gas to purge the system. And second a time scale in on the order
@@ -173,6 +159,50 @@ impossible to use one cavity to determine \ch{NO_x} and \ch{NO2}
 alternatingly, as the purge time would have to be in the order of
 magnitude of multiple minutes. This is inacceptable for volatile
 environments as for example urban areas.
+
+\begin{figure}[htbp]
+  \centering
+  \input{images/20160223_15_equil_fixI0_ts}
+  \caption{Timeseries of the measured \ch{NO2} concentration while
+    switching the Ozone stream on and off.}
+  \label{fig:switch}
+\end{figure}
+Lastly, we turn towards possibilities to account for the effects of
+the long tail, if the purge time was chosen too short. In these
+laboratory conditions, we know that we had a constant supply of
+\ch{NO}, such that the behaviour of the falling flank is solely
+determined by the changing Ozone concentration. If we look at a
+special, but in this work often used case, we are interested in the
+setting where we have \SI{30}{\second} purge time and afterwards
+\SI{30}{\second} of measurement (300 spectra à
+\SI{10}{\milli\second}). Then we can compute the average additional
+\ch{NO2} signal coming from the slow tail
+
+\begin{align*}
+  \bar c_s = \frac{c_s}{\Delta t} \int_{t_0}^{t_1}
+  \exp\left(\frac{t}{\tau_s}\right)\d[t] \approx \SI{1.55}{ppb},
+\end{align*}
+with $t_1 = \SI{30}{\second}$, $t_2 = \SI{60}{\second}$, $\Delta t =
+t_2 - t_1$ and specialising to the case of pathlength $l =
+\SI{10}{\meter}$. We propose that this value is mostly independent of
+the precise \ch{NO} concentration present in the system, as long as it
+is larger than $c_{\text{crit}} \approx \SI{1.7}{ppb}$. Then we expect
+the bottle neckt of the Reaction~\eqref{eq:no} to be the diminishing
+\ch{O3} concentration, which we assume to be well described by the
+above decay plots. If these assumptions are correct and we are in a
+region with nonvanishing \ch{NO} concentration, then we should be able
+to mitigate the effects of the tail, by subtracting the above computed
+average slow tail concentration $\bar c_s$ from the measured \ch{NO2}
+concentrations. The results of this procedure can be seen in the next
+section.
+\begin{figure}[htbp]
+  \centering
+  \input{images/20160223_equil_fixI0_fall_fit}
+  \caption{The behaviour of the falling flanks depending on the
+    reaction pathlength}
+  \label{fig:switch-pl}
+\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex

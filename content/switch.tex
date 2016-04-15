@@ -187,10 +187,10 @@ and afterwards \SI{30}{\second} of measurement (300 spectra à
 \SI{10}{\milli\second}). With this we can compute the average additional
 \ch{NO2} signal coming from the slow tail at constant \ch{NO} flow
 
-\begin{align*}
+\begin{align}
   \bar c_s = \frac{c_s}{\Delta t} \int_{t_0}^{t_1}
-  \exp\left(\frac{t}{\tau_s}\right)\d[t] \approx \SI{1.55}{ppb},
-\end{align*}
+  \exp\left(\frac{t}{\tau_s}\right)\d[t] \approx \SI{1.55}{ppb},\label{eq:offset}
+\end{align}
 with $t_1 = \SI{30}{\second}$, $t_2 = \SI{60}{\second}$, $\Delta t =
 t_2 - t_1$ and specialising to the case of pathlength $l =
 \SI{10}{\meter}$. We propose that this value is mostly independent of

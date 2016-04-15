@@ -26,20 +26,23 @@ resolution of \SI{1}{\second}. As \ch{NO2}
 cavity we used the AQM$_{\text{Tec}}$ Compact Cavity, which is the
 standard cavity at the Institute for Environmental Physics for
 measurements in urban areas and especially vehicle measurements. This
-cavity operated at a \SI{2}{\second} timely resolution. The
-measurement took place on Friday, February 05, 2016 in Heidelberg
+cavity operated at a \SI{2}{\second} timely resolution and had the
+further advantage of possessing a \ch{CO2} sensor. This allowed us to
+compute ratios between Nitrogen (Di-)Oxide and Carbon Dioxide, which
+is a good measure for the emission per (gazoline) consumption. 
+
+The measurement took place on Friday, February 05, 2016 in Heidelberg
 between 11:00 and 16:30. From 12:15 to 13:45, we operated both
 cavities in \ch{NO2} mode to test for systematic deviations. From
 15:00 to 16:15, we positioned our measurement car next to the
 Heidelberg air quality measurement station to be able to compare our
 \ch{NO} and \ch{NO2} values to the ones of the station as a measure of
-reliability. In between we followed various vehicles throughout
+reliability. In between we followed 30 vehicles throughout
 Heidelberg between {\nfrac{} 1/2}~\si{\minute} and \SI{10}{\minute}
 and tried to stay within their exhaust plume. Since the two cavities's
 clocks could not be fully synchronized, the timeseries had to be
 matched in the evaluation step. This was done manually using succinct
 peaks in the plots.
-\todo{write something about \ch{CO2}}
 
 \begin{figure}[htbp]
   \centering
@@ -61,14 +64,20 @@ concentrations than the \ch{NO2} cavity with a mean difference of
 $\Delta = \SI{0.43\pm0.01}{ppb}$. Absolutely speaking this is not a
 large difference, but the question remains why it shows up at all. The
 most probable explanation is that the used zero air spectrum of the
-\ch{NO_x} cavity was not completely trace gas free. On reason that
+\ch{NO_x} cavity was not completely trace gas free. One reason that
 points towards this direction is, that in the \ch{NO_x} measurement
 mode, we have a constant flow through the zero air input, as this is
-the input for the Ozone generator. Thus the zero air filters are much
+the input for the Ozone generator, too. Thus the zero air filters are much
 more strained than they would be in a cavity without \ch{NO_x}
 mode. Additionally the cavity had been thoroughly tested for multiple
 weeks, such that a saturation or starting effects of a saturation of
-the Silica gel or the activated carbon seem plausible. 
+the Silica gel or the activated carbon seems plausible. For the
+comparison to the air quality measurement station, we should keep this
+effect in mind as deviation is large enough to be of interest. During
+the vehicle measurements this deviation can well be neglected as the
+measured concentrations lay in the region of several hundered ppb (see
+below). Additionally the value would be neglectable with regard to all
+other uncertainties affecting the concentrations.
 
 \begin{figure}[htbp]
   \centering

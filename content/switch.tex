@@ -1,23 +1,23 @@
-\subsection{Tuning behaviour after Ozone switches}
+\subsection{Tuning behaviour after ozone switches}
 \label{sec:switch}
-
+s
 This measurement was a preliminary measurement to perform the
-transition from our pure Nitrogen Monoxide and synthetic air mixture
+transition from our pure nitrogen monoxide and synthetic air mixture
 to unfiltered ambient air. The new challenge consists in the obvious
-fact, that ambient air is not \ch{NO2} free. Thus if we add Ozone to
+fact, that ambient air is not \ch{NO2} free. Thus if we add ozone to
 our sample air stream, we measure \ch{NO_x\, =\ NO + NO2}. In some
 cases, e.\,g.\ during live vehicle measurements this is exactly what
 we want (c.\,f.~Sec.~\ref{sec:vehicle}), however, in other cases we
-would like to obtain the Nitrogen Monoxide and the Nitrogen Dioxide
+would like to obtain the nitrogen monoxide and the nitrogen dioxide
 concentrations separately. This can only be achieved indirectly. If we
 have a single cavity, we can choose to measure \ch{NO2} and \ch{NO_x}
-alternatingly by switching the Ozone stream off and on, we will denote
-this as \emph{alternating measurement mode}. Doing that the technical
-question arises how long we have to wait after triggering an Ozone
+alternatingly by switching the ozone stream off and on, we will denote
+this as \emph{alternating measurement mode}. In this case, the technical
+question arises how long we have to wait after triggering an ozone
 switch, before the equilibrium is reached and we can take our next
 measurement.
 
-As Section~\ref{sec:requirements} indicates, for a pathlength of
+As Section~\ref{sec:requirements} indicates, for a tube length of
 \SI{15}{\meter} we need about \SI{5.3}{\second} for the gas to be
 completely exchanged. Taking the cavity volume itself into account a
 \SI{30}{\second} purge time should well suffice for the exchange. As
@@ -35,12 +35,12 @@ page~\pageref{fig:no-setup}). We fixed the flow of the \ch{NO}
 calibration gas to $\Phi_{\ch{NO}} = \SI{0.01}{\liter\per\minute}$ and
 kept all other flows as before. We set the cavity measurement script
 to record 60 spectra sampled over 1000 scans each with an exposure
-time of \SI{10}{\milli\second} then switch the Ozone stream on, record
-60 spectra with the same characteristcs, switch the Ozone stream off
+time of \SI{10}{\milli\second} then switch the ozone stream on, record
+60 spectra with the same characteristcs, switch the ozone stream off
 and repeat. With this setup we got a time resolution of
 \SI{10}{\second}. In hindsight the sample size could have been
 smaller to improve the time resolution. We performed the measurement
-for both \SI{5}{\meter} and \SI{15}{\meter} reaction pathlength, due
+for both \SI{5}{\meter} and \SI{15}{\meter} reaction tube length, due
 to time constraints the measurement for \SI{10}{\meter} was shortened
 to only collect 30 spectra. Thus we are missing some of the decay tail
 in this case.
@@ -49,16 +49,16 @@ in this case.
 \label{sec:switch-results}
 
 Figure~\ref{fig:switch} contains the time series of the measured
-\ch{NO2} concentration for a reaction pathlength of $l =
-\SI{15}{\meter}$. The time series for the other two pathlengths were
+\ch{NO2} concentration for a reaction tube length of $l =
+\SI{15}{\meter}$. The time series for the other two tube lengths were
 similar in shape and are therefore omitted here. The flanks correspond
-to the switch in the Ozone flow. There are severeal interesting
+to the switch in the ozone flow. There are severeal interesting
 observations concerning this plot. First of all the increasing flanks
 are very steep, which in this setting means, that the transition took
 less than \SI{10}{\second}. The decreasing flanks take longer and
 interestingly they do not reach \SI{0}{ppb}. This positive offset
 could also be observed directly after the start of the measurement
-(before any Ozone had been added to the 
+(before any ozone had been added to the 
 sample air stream). The concentration rose to a level of
 \SI{1.61(2)}{ppb}. One explanation for this is, that the calibration gas is
 not \ch{NO2} free. This would raise the question why we did not
@@ -78,14 +78,14 @@ result in the previous chapter.
 Accepting for the moment that we have a background \ch{NO2} signal, we
 turn towards the question, why the decreasing flanks have the slowly
 falling tail. In Figure~\ref{fig:switch-pl}, there are falling flanks for
-different pathlenghts and we see that they all appear to have a
+different tube lenghts and we see that they all appear to have a
 similar shape. They all seem to tend to the same equilibrium and the
-decay time seems to grow with the pathlength. We suspect the reason
-for this long tail to be a technical one. Between the Ozone valve and
-the t-piece, connecting th Ozone stream to the sample air stream,
+decay time seems to grow with the tube length. We suspect the reason
+for this long tail to be a technical one. Between the ozone valve and
+the T-piece, connecting th ozone stream to the sample air stream,
 there is a \SI{14}{\centi\meter} tube filled with around
-\SI{200}{ppm} Ozone. If this diffused into the sample line, this would
-lead to further \ch{NO} conversion, although the Ozone stream had 
+\SI{200}{ppm} ozone. If this diffused into the sample line, this would
+lead to further \ch{NO} conversion, although the ozone stream had 
 already been switched off. To investigate this hypothesis, we tried to fit
 the decay using the following fit formula
 \begin{align}
@@ -96,7 +96,7 @@ i.\,e.\ we suspect two overlaying decay processes. A fast one with a
 decay time $\tau_f$ of less than $\SI{10}{\second}$ and a slower one
 explaining the tail. Fitting this function we yielded the values
 summarized in Table~\ref{tab:switch-coeff}. For the \SI{10}{\meter}
-pathlength fit the offset concentration had to be fixed to
+tube length fit the offset concentration had to be fixed to
 \SI{1.5}{ppb}, as the measured tail was too short for it to be
 determined correctly.
 
@@ -117,12 +117,12 @@ determined correctly.
     \bottomrule
   \end{tabular}
   \caption{Fit coefficients for the decay function
-    (Eq.~\eqref{eq:switch-fit}) after an Ozone switch off. For the
+    (Eq.~\eqref{eq:switch-fit}) after an ozone switch off. For the
     pathlength of $l= \SI{10}{\meter}$ the offset concentration was
     fixed to \SI{1.5}{ppb}. This was necessary as, due to the
     shortness of the measurement time, the tail was not long enough
     for the fit to determine the offset correctly. The last column
-    contains the (partial) Volume of the Ozone participating in the
+    contains the (partial) Volume of the ozone participating in the
     reaction to form the long tail.}
   \label{tab:switch-coeff}
 \end{table}
@@ -130,17 +130,16 @@ In any case the fits underline that we work with two time
 scales. First a rather fast one, which is well described by the time
 necessary for the gas to purge the system. And a second time scale in
 the order of \SIrange{2.5}{3}{\minute}. To test our dead volume
-hypothesis we want to use the fits to determine the amount of Ozone
+hypothesis we want to use the fits to determine the amount of ozone
 necessary to explain the tail. We assume that the measured \ch{NO2}
 signal above the offset, comes directly from the conversion of \ch{NO}
-to \ch{NO2}. Looking at Reaction~\eqref{eq:no} on
-page~\pageref{eq:no}, we see that this relation leads to a one to one
-correspondence between the \ch{NO2} signal\footnote{always above the
-offset} and the amount of Ozone enetering the sample air stream. To
-determine the absolute amount, we integrate the slow falling part of
-the fit function and use the constant flow of $\Phi =
-\SI{2}{\liter\per\minute}$ to convert the result to the (partial)
-volume of Ozone, i.\,e.
+to \ch{NO2}. Looking at Reaction~\eqref{eq:no}, we see that this
+relation leads to a one to one correspondence between the \ch{NO2}
+signal\footnote{always above the offset} and the amount of ozone
+enetering the sample air stream. To determine the absolute amount, we
+integrate the slow falling part of the fit function and use the
+constant flow of $\Phi = \SI{2}{\liter\per\minute}$ to convert the
+result to the (partial) volume of ozone, i.\,e.
 \begin{align*}
   V_{\ch{O3}} \coloneqq  c_s \cdot \tau_s \cdot \Phi.
 \end{align*}
@@ -148,14 +147,14 @@ The result of this computation can be found in
 Table~\ref{tab:switch-coeff}, too. We first notice the clear
 pathlength dependence. This is already an indicator against our
 hypothesis, as our dead volume is constant. Nevertheless, computing
-the Ozone volume in the tube we get
+the ozone volume in the tube we get
 \begin{align*}
-  V_{\text{tube}} \approx \SI{3.52e-4}{\milli\liter(Ozone)}.
+  V_{\text{tube}} \approx \SI{3.52e-4}{\milli\liter(ozone)}.
 \end{align*}
 This is even more evidence that the dead volume cannot be the sole
-explanation. The total Ozone volume is about two orders of magnitude
+explanation. The total ozone volume is about two orders of magnitude
 too large. Even if we take into account that not the whole tube volume
-contributes to the reaction (as the Ozone enters the sample air stream
+contributes to the reaction (as the ozone enters the sample air stream
 via diffusion), we still have to explain the pathlength
 dependence. Especially as it seems that the relation is highly linear,
 one might suspect the reason to lie in the adsorption capacity of the
@@ -172,30 +171,30 @@ for example urban areas.
   \centering
   \input{images/20160223_15_equil_fixI0_ts}
   \caption{Timeseries of the measured \ch{NO2} concentration while
-    switching the Ozone stream on and off.}
+    switching the ozone stream on and off.}
   \label{fig:switch}
 \end{figure}
 If we want to persist on the alternating mode anyway and work with
-shorter purge time, we would like to compensate
-for the long tail. under the in thes experiment used laboratory
-conditions, we know that we had
-a constant supply of \ch{NO}, such that the behaviour of the falling
-flank is solely determined by the changing Ozone concentration.
-Assuming that the deca always follows Ecuation~\eqref{eq:switch-fit}
-with the doefficients given in Table~\ref{tab:switch-coeff}, we can
-compute the average additional \ch{NO2} signal due to the flank by
+shorter purge time, we would like to compensate for the long tail. For
+the laboratory conditions, used in this experiment, we know that we
+had a constant supply of \ch{NO}, such that the behaviour of the
+falling flank is solely determined by the changing ozone
+concentration. Assuming that the deca always follows
+Equation~\eqref{eq:switch-fit} with the coefficients given in
+Table~\ref{tab:switch-coeff}, we can compute the average additional
+\ch{NO2} signal due to the flank by
 
 \begin{align}
   \bar c_s = \frac{c_s}{\Delta t} \int_{t_0}^{t_1}
-  \exp\left(\frac{t}{\tau_s}\right)\d[t] \approx \SI{1.55(8)}{ppb},\label{eq:offset}
+  \exp\left(-\frac{t}{\tau_s}\right)\d[t] \approx \SI{1.55(8)}{ppb},\label{eq:offset}
 \end{align}
 with $t_0 = \SI{30}{\second}$, $t_1 = \SI{60}{\second}$, $\Delta t =
 t_1 - t_0$, where we already specialised to the later used setup of $l
 = \SI{10}{\meter}$. We propose now to correct the measured \ch{NO2}
-values by this offset. For this procedure to work, we would need th
-edecay form to be mainly \ch{NO} independent. This assumption might be
+values by this offset. For this procedure to work, we would need the
+decay form to be mainly \ch{NO} independent. This assumption might be
 true, as the bottle neck in Reaction~\eqref{eq:no} should be the
-vanishing Ozone. However, to be sure, we would suggest to perform
+vanishing ozone. However, to be sure, we would suggest to perform
 further decay experiments at multiple \ch{NO} levels. This would lead
 to the further advantage, that possible existing \ch{NO} dependencies
 could possibly be extrapolated. This then could lead to a \ch{NO_x}

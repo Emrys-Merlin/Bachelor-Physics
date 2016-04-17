@@ -2,49 +2,48 @@
 \label{sec:setup}
 
 Since the general measurement instrument setup was comparable for most
-of our measurements, we decided to collect this setup herefor
+of our measurements, we decided to collect this setup here for
 conciseness. The first experiments used a Longpath-DOAS instrument, as
-it allowed for a precise Ozone measurement. Afterwards we transferred
+it allowed for a precise ozone measurement. Afterwards we transferred
 to a CE-DOAS instrument, because of its better localisation and
-Nitrogen Oxides detection capabilities.
+nitrogen oxides detection capabilities.
 
 \subsection{Ozone generator setup}
 \label{sec:ozone-setup}
 
-As a proof of concept we built the Ozone generator on a wooden board
+As a proof of concept we built the ozone generator on a wooden board
 as can be seen in Figure~\ref{fig:setup}. As described in
-Section~\ref{sec:requirements}, the lab air was first filtered and
-then sent through an alluminium coated tube containing a Pen-Ray
-Mercury lamp (Model 11SC-1). It has a lighted length of
-\SI{53.8}{\milli\meter} and primary energy at
-\SI{254}{\nano\meter}. This energy setting is not perfect for
-our purpose as it is directly at the Ozone dissociation wavelength,
-whereas the lamp has almost no energy output at the Oxygen
-dissociation wavelength. However, since the Oxygen concentration in
-ambient air is so high, we still expect enough Ozone to be
-produced. 
-To make sure the \ch{N2O} is completely converted to
-\ch{NO2}, we introduce a \SI{3}{\meter} teflon tube. Afterwards the
-Ozone enriched air passes another Silica gel filter and is then
-expected to be \ch{NO_x} free.
+Section~\ref{sec:requirements}, the lab air is first filtered and then
+sent through an alluminium coated tube containing a Pen-Ray mercury
+lamp (Model 11SC-1). It has a lighted length of
+\SI{53.8}{\milli\meter} and primary emission band at
+\SI{254}{\nano\meter}. The mercury lamp's spectrum is not perfect for
+our purpose as its strongest emission is in the ozone dissociation
+wavelength range, whereas the lamp has almost no energy output below
+the Oxygen dissociation limit (c.\,f.~\cite{lamp}). However, since the
+Oxygen concentration in ambient air is so high, we still expect enough
+ozone to be produced. In order to make sure that the \ch{N2O} is completely
+converted to \ch{NO2}, we introduce a \SI{3}{\meter} teflon
+tube. Afterwards the ozone enriched air passes another Silica gel
+filter and is then expected to be \ch{NO_x} free.
 
-To be able to measure the Ozone production after the last filter a
-cuvette was added, which coul be entered in the light path of a
+In order to be able to measure the ozone production after the last filter a
+cuvette is added, which can be entered in the light path of a
 Longpath-DOAS instrument (cf.\ Fig.~\ref{fig:cuvette}). The length of
 the lightpath through the cuvette is \SI{8.7}{\centi\meter}. 
 
-The Pen-Ray power source could switch the current between
+The Pen-Ray power source can switch the current between
 \SI{10}{\milli\ampere} and \SI{17}{\milli\ampere}. If not otherwisely
 stated the measurements were performed at \SI{10}{\milli\ampere}.
-Furthermore the flow $\Phi_{\ch{O 3}}$ coul be set via the flowmeter
+Furthermore the flow $\Phi_{\ch{O 3}}$ can be set via the flowmeter
 between \num{0} and \SI{0.3}{\liter\per\minute}. The lowest stable
-positive flow was \SI{0.03}{\liter\per\minute}.
+positive flow is \SI{0.03}{\liter\per\minute}.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{images/cuvette.jpg}
   \caption{Cuvette together with styrofoam mount on an optical
-    rack. The outermost riders are the mounts for the optical
+    rail. The outermost riders are the mounts for the optical
     fibers. The riders within consist of two collimators.}
   \label{fig:cuvette}
 \end{figure}
@@ -58,20 +57,20 @@ positive flow was \SI{0.03}{\liter\per\minute}.
   \phantom{h}\\
   \vspace{2cm}
   \includegraphics[width=0.9\linewidth]{setup.jpg}
-  \caption{Ozone generator setup. Schematic and picture.}
+  \caption{ozone generator setup. Schematic and picture.}
   \label{fig:setup}
 \end{figure}
 
 The cuvette was entered into the ligthpath of a Longpath-DOAS
-instrument (attached to an Amundsen telescope located at the height
-laboratory at the IUP building). Since we expected rather high Ozone
+instrument (attached to an Amundsen telescope located at the rooftop
+laboratory at the IUP building). Since we expected rather high ozone
 concentrations, we forewent the advantage of a cavity enhanced
 pathlength. The upside of this setup was that the instrument contains
-a UV led emitting at a wavelength of $\lambda \approx
-\SI{290}{\nano\meter}$. As mentioned in
-Section~\ref{sec:theory-ozone}, Ozone has a strong absorption cross
+a UV led\todo{check light source} emitting at a wavelength of
+$\lambda \approx \SI{290}{\nano\meter}$. As mentioned in
+Section~\ref{sec:theory-ozone}, ozone has a strong absorption cross
 section in this region, which allowed us to determine the
-concentration very precisely.  The used spectrograph has 2048 channesl
+concentration very precisely. The used spectrograph has 2048 channesl
 and is calibrated to a wavelength region of \num{268} to
 \SI{312}{\nano\meter}.
 
@@ -80,13 +79,9 @@ and is calibrated to a wavelength region of \num{268} to
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{images/envimes_up.jpg}
+  \includegraphics[width=0.8\textwidth]{images/InstrumentEdited_small.jpg}
   \caption{EnviMeS CE-DOAS instrument with \ch{NO} to \ch{NO2}
-    converter. On the upper left part the Pen-Ray lamp with
-    powersupply can be seen. Below the powersupply partly covered by
-    styrofoam is the additional Silica gel filter. In the lower half
-    one can see the cavity with spectrometer and \SI{10}{\meter}
-    reaction path rolled up.}
+    converter}
   \label{fig:envimes}
 \end{figure}
 
@@ -99,47 +94,43 @@ and is calibrated to a wavelength region of \num{268} to
 \end{figure}
 
 After the above setup was tested the converter was added to an
-existing CE-DOAS instrument (EnviMeS SN:2014002).  The instrument was
-already supplied with an \ch{O3} generator, but lacked a Silica gel
-filter, which was added. The inside of the instrument can be seen in
-Figure~\ref{fig:envimes}. Since it is optimized for space, it is
-difficult, if not impossible, to extract the setup from this
-view. Therefore Figure~\ref{fig:envimes-schematic} contains a slightly
-simplified schematic view of the instrument. The zero air input was
-used to generate the Ozone, since it had already installed all the
-necessary filters. After the Mercury lamp there was a \SI{1}{\meter}
-reaction path before the silica filter followed. After that we had an
-Ozone bypass valve, which was operated electromechanically and allowed
-us to switch between an Ozone free and an Ozone enriched air flow in
-the cavity. The sample air (with or without Ozone) passed a
-\SI{10}{\meter} reaction path. In later experiments the length of the
-reaction path was varied to measure the influence on the \ch{NO}
-conversion (c.\,f.\ Sec.~\ref{sec:requirements} for the theory and
-Sec.~\ref{sec:no} for measurements). The current for the Pen-Ray lamp
-was fixed. The total flow $\Phi$ could be adapted, but was always set to
-\SI{2}{\liter\per\minute}. The Ozone flow could be adapted (as in
-Sec.~\ref{sec:ozone-setup}) from 0 to \SI{0.3}{\liter\per\minute}. The
-lowest stable positive flow was \SI{0.03}{\liter\per\minute}. To
-determine the Ozone production rate this flow was varied. When actual
-\ch{NO} or \ch{NO_x} measurements were performed the flow was fixed to
-\SI{0.03}{\liter\per\minute}.
+existing CE-DOAS instrument. The instrument was already supplied with
+an \ch{O3} generator, but lacked a Silica gel filter, which was
+added. The instrument can be seen in
+Figure~\ref{fig:envimes}. Figure~\ref{fig:envimes-schematic} contains
+a slightly simplified schematic view of the instrument. Zero air is
+used to generate the ozone, since it is already sufficientyl trace gas
+free (except for \ch{N2O}). After the mercury lamp there is a
+\SI{1}{\meter} reaction path before the silica filter follows. After
+that we have an ozone bypass valve, which is operated
+electromechanically and allows us to switch between an ozone free and
+an ozone enriched air flow in the cavity. The sample air (with or
+without ozone) passes a \SI{10}{\meter} reaction path. In later
+experiments the length of the reaction path was varied to measure the
+influence on the \ch{NO} conversion (c.\,f.\
+Sec.~\ref{sec:requirements} for the theory and Sec.~\ref{sec:no} for
+measurements). The total flow $\Phi$ can be adapted, but was always
+set to \SI{2}{\liter\per\minute}. The ozone flow can be adapted (as
+in Sec.~\ref{sec:ozone-setup}) from 0 to
+\SI{0.3}{\liter\per\minute}. The lowest stable positive flow is
+\SI{0.03}{\liter\per\minute}. To determine the ozone production rate
+this flow was varied. When actual \ch{NO} or \ch{NO_x} measurements
+were performed the flow was fixed to \SI{0.03}{\liter\per\minute}.
 
-The light source of the instrument was a led with maximum intensity at
-$\lambda \approx \SI{444}{\nano\meter}$. The effective pathlength $L_0$ of
-the cavity had a maximum at this wavelength of
+The light source of the instrument is a led with maximum intensity at
+$\lambda \approx \SI{444}{\nano\meter}$. The effective pathlength
+$L_0$ of the cavity had a maximum at this wavelength of
 \SI{1.3}{\kilo\meter}. A plot of the pathlength can be found in
-Figure~\ref{fig:pathlength}. The spectrograph had \num{2048} channesl
-and was calibrated to a wavelength region of \num{395} to
+Figure~\ref{fig:pathlength}. The spectrograph has \num{2048} channels
+and is calibrated to a wavelength region of \num{395} to
 \SI{490}{\nano\meter}.
 
 \begin{figure}[htbp]
   \centering
-  %\includegraphics[width=0.7\textwidth]{L0.png}
   \input{images/L0}
   \caption{Effective pathlength of the used EnviMeS CE-DOAS system.}
   \label{fig:pathlength}
 \end{figure}
-
 
 %%% Local Variables:
 %%% mode: latex

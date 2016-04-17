@@ -1,28 +1,29 @@
 \subsection{Pure \ch{NO} measurements with synthetic air}
 \label{sec:no}
 
-After confirming that our generator produced a clean Ozone stream, we
+After confirming that our generator produced a clean ozone stream, we
 turned towards the question whether it is possible to actually measure
-\ch{NO} or not. Furthermore we wanted to reach an experimental
-estimate for the necessary reaction pathlength as computed in
+\ch{NO} or not. Furthermore we wanted to get an estimate for the
+necessary reaction pathlength as computed in
 Section~\ref{sec:requirements}.
 
 \subsubsection{Setup}
 \label{sec:no-setup}
 
-To be able to measure the Nitrogen Monoxide concentration directly
-without additional corrections and computations, we had to make sure
-that the used sample air was Nitrogen Dioxide free. This lead us to
-the setup depicted in Figure~\ref{fig:no-setup}. We used synthetic air
-and \ch{NO} calibration gas with a known \ch{NO} concentration ($c =
-\SI{8.177}{ppm}$) together with a mass flow controller to generate
-precisely controlled sample air. To minimize the influence on the
-pressure inside the cavity, we decided to overflow the air input
+In order to be able to measure the nitrogen monoxide concentration
+directly without additional corrections and computations, we had to
+make sure that the used sample air was nitrogen dioxide free. This
+lead us to the setup depicted in Figure~\ref{fig:no-setup}. We used
+synthetic air and \ch{NO} calibration gas with a known \ch{NO}
+concentration ($c = \SI{8.177}{ppm}$) together with a mass flow
+controller to generate synthetic sample air with a precisely known
+\ch{NO} concentration. In order to minimize the influence on the
+pressure inside the cavity, we decided to overflow the air inlet
 instead of bypassing the cavity pump as is done during a Helium
 calibration. Thus we set the synthetic air flow to $\Phi_{\text{air}}$
 to \SI{3}{\liter\per\minute}. The cavity itself was in the standard
 setup described in Section~\ref{sec:inclusion}, except for the
-reaction pathlength which was varied between \SI{5}{\meter},
+reaction tube length which was varied between \SI{5}{\meter},
 \SI{10}{\meter} and \SI{15}{\meter}. For each of these lengths we
 varied the \ch{NO} calibration gas flow between \num{0} and
 \SI{0.03}{\liter\per\minute}. As zero air we used ambient lab air
@@ -49,23 +50,22 @@ following formula
 
 Figure~\ref{fig:ts} shows the time series of the \ch{NO} and \ch{O3}
 concentration. Each of the three clusters corresponds from left to
-right to the reaction path length of \num{5}, \num{10} and
-\SI{15}{\meter}. Turning first towards the Ozone concentration on the
-right hand side, we see that its concentration is constant within its
-error margins. These, however, are large. This is to be expected, as
-the absorption cross section of \ch{O3} in the visual spectrum is weak
-compared to the cross section of \ch{NO2} and has almost no
-differential structure. Nevertheless, the Ozone level seems
-acceptably stable, which indicates that not too many Ozone destroying
-reactions take place, even in the presence of high \ch{NO}
-concentrations. This is again what we expected in this very pure
-sample air which should only allow for the oxidation of
-\ch{NO}. Lastly the shape of the Ozone time series does not seem to
-depend on the reaction pathlength.
+right to the reaction tube length of \SI{5}{\meter}, \SI{10}{\meter}
+and \SI{15}{\meter}. Turning first towards the ozone concentration on
+the right hand side, we see that its concentration is constant within
+its error margins. These, however, are large. This is to be expected,
+as the absorption cross section of \ch{O3} in the visual spectrum is
+weak compared to the cross section of \ch{NO2} and has almost no
+differential structure. Nevertheless, the ozone level seems acceptably
+stable, which indicates that not too many ozone destroying reactions
+take place, even in the presence of high \ch{NO} concentrations. This
+is again what we expected in this very pure sample air which should
+only allow for the oxidation of \ch{NO}. Lastly the shape of the ozone
+time series does not seem to depend on the reaction pathlength.
 
 Looking at the \ch{NO} time series on the right hand side of
 Figure~\ref{fig:ts} we see that the overall shape of the three
-measurements are similar. For the reaction pathlength of $l=
+measurements are similar. For the reaction tube length of $l=
 \SI{5}{\meter}$ we see slight deviations. The rising flanks take
 longer to reach a stable plateau than during the other two
 measurements. Furthermore the first three plateaus are not visible,
@@ -77,15 +77,15 @@ reaction dynamic equilibrium would set for a lower, but
 \emph{constant} \ch{NO2} concentration. Interstingly on the falling
 flanks the equilibria are reached instantaneously (the small drop at
 \SI{50}{ppb} being a human error). One possible explanation might lie
-in the adsorption behaviour of teflon. For example if the Ozone were
+in the adsorption behaviour of teflon. For example if the ozone were
 to be adsorbed to the tube walls, this could lead to an effective
-increase in Ozone concentration, accelerating the reaction and thus
+increase in ozone concentration, accelerating the reaction and thus
 compensating the too short pathlength. If, additionally, the
 adsorption time scale were in the order of magnitude of our dwell time
 per set flow, this could explain why we have slowly increasing flanks,
 while the falling flanks stabilize quickly. In the first case the
-adsorbed Ozone would have to build up, because of the increased
-concentration, in the second case there would already be enough Ozone
+adsorbed ozone would have to build up, because of the increased
+concentration, in the second case there would already be enough ozone
 adsorbed. The testing of this idea was sadly outside the scope of this
 thesis, such that for the following measurements we could only accept
 this oddity and decided to work with longer pathlengths (i.\,e.~$l =
@@ -126,7 +126,7 @@ equilibrium had not been reached and we averaged too early.
 \begin{figure}[htbp]
   \centering
   \input{images/20160222_NO_fixI0}
-  \caption{Correlation plot of the computed and the measured \ch{pNO}
+  \caption{Correlation plot of the computed and the measured \ch{NO}
     concentration.}
   \label{fig:no-calib}
 \end{figure}
@@ -142,6 +142,7 @@ regression formula yields
 \begin{align*}
   y = \num{0.994 \pm 0.002}  \cdot x -\num{0.002 \pm 0.058}.
 \end{align*}
+\todo{chi$^2$ or something}
 
 Thus we see that the deviation between the measured and computed
 concentration lies in the per mill regime. We see that under these

@@ -1,4 +1,83 @@
 \section{Introduction}
 \label{sec:intro}
 
-Nothing to see yet.
+This Bachelor Thesis stands in a row of theses all concerned with the
+improvement of nitrogen oxide detection capabilities of CE-DOAS
+instruments. Nitrogen oxides (\ch{NO_x}) play an important role in the
+atmospherical chemistry in urban areas (c.\,f.~\cite{roedel}) and are
+a major air pollutant in German
+cities(c.\,f.~\cite{no2schadstoff,who}). Together with other
+volatile organic compounds, they can build up Ozone, leading to
+higher health risks. Additionally, it is slightly toxic in its own
+right.
+
+In inhabitated areas, most nitrogen oxide is anthropogenic, as it is
+easily generated during combustion processes, e.\,g.\ in car
+engines. Strict regulation and monitoring by government agencies is
+necessary to protect the air quality. However, the recent VW affair
+shows that there is still lack of adequate monitoring
+instruments. There is a need for mobile and reasonably priced measurement
+units, which can be used to determine the \ch{NO_x} emissions under
+live conditions; in the streets, during regular traffic.
+
+A first succesful step towards such an instrument, is the compact
+CE-DOAS instrument developed at the Institute of Environmental Physics
+at Heidelberg University. With a led in the blue light spectrum, it
+can determine nitrogen dioxide (\ch{NO2}) concentrations with a very
+high accuracy, while being portable and easily installable in vehicles
+for in vivo measurements. However, there is still room for
+improvement. Nitrogen monoxide (\ch{NO}) is also a central component
+in the atmospheric \ch{NO_x} equilibrium, but it can only be detected
+in the ultraviolet wavelength range. This is a dilemma as UV leds are
+still expensive and highly reflective mirrors in that range are even
+more so, making such an upgrade unattractive. Luckily, there is a
+workaround for this problem. There is a promising conversion from
+\ch{NO} to \ch{NO2}, which would allow us to measure the concentration
+indirectly. The details of this converter construction is the topic of
+this thesis.
+
+Zimmermann~\cite{zimmermann}, Gerick~\cite{gerick} and
+Jegminat~\cite{bsc} have already established, that ambient air
+together with a mercury lamp can be used to generate ozone, which in
+turn triggers our desired conversion. However, there are still a few
+stumbling blocks left. The ozone generatore produces \ch{NO2}, too,
+which disturbs the measured \ch{NO_x} signals. Jegminat found that
+this additional signal is due to laughing gas (\ch{N2O}), which is
+very hard to filter. Therefore, this work explores the possibilities
+of filtering the \ch{NO2} behind the generator, while avoiding the
+removal of the necessary ozone. We use silica gel
+as~\cite{ozone-silica} inidicates, that it will quickly be saturated
+by ozone, while still being able to adsorb nitrogen dioxide.  We
+confirm this hypothesis and determin the filtering efffects. After
+having assured a clean ozone air stream we work with synthetic sample
+air allowing for precisely controlled \ch{NO} concentrations and
+determine the accuracy of our conversion in this pure \ch{NO}
+setting. Afterwards we characterize the alternating measurement mode,
+which switches between \ch{NO2} and \ch{NO}+\ch{NO2} measurements. We
+are interested in necessary purge times in between measurements to
+ensure that stable equilibria are reached. As it turns out ozone
+adsorption at the teflon tubes might be a major caveat, when it comes
+to quickly draining the system of it. If we stay at one measurement
+mode (i.\,e. \ch{NO2} or \ch{NO_x}), no additional adsorption effect
+seem to occur. Next, we conduct measurements using ambient air and
+compare our results to well established a \ch{NO} measurement method,
+a chemiluminescence monitor. Lastly, we turn our attention towards the
+above mentioned possible application and perform vehicle measurements
+within Heidelberg. We install our updated cavity together with a
+second (pure \ch{NO2}) cavity in a car and measure the plume of ca.~30
+vehicles. Additionally, we measure next to the Heidelberg air quality
+measurement station, which allows us to compare our results to
+official data.
+
+In the following we will first discuss the necessary physical and
+chemical background of our converter and the DOAS system
+(Sec.~\ref{sec:theory}). This already shows some of the necessary
+constraints for our setup, which we will then describe in detail in
+Section~\ref{sec:setup}. Lastly, we describe all preformed experiments
+in Section~\ref{sec:measurements} together with their results and their
+interpretation.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Bachelor"
+%%% End:

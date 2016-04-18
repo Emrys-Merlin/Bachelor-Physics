@@ -1,6 +1,86 @@
 \section{Conclusion}
 \label{sec:conclusion}
-\todo{write a conclusion}
+
+This Bachelor Thesis was dedicated to further improve a \ch{NO} to
+\ch{NO2} converter by testing filtering capabilities of silica gel
+behind the ozone generator. This was a complete success. The
+additional \ch{NO2} signal at the generator output could be removed
+completely, while still achieving over \SI{200}{ppm} Ozone
+output. Additionally the startup time seems handable and lies in the
+region of \SI{5}{\minute} after the start of the mercury lamp and the
+pump of the ozone system. 
+
+Next, I could show that in a synthetic setting without \ch{NO2} and
+precisely controlled \ch{NO} the measurement deviation from the
+computed \ch{NO} concentrations lies in the per mill region. Hence,
+there is also a very high correlation between the measured and the
+computed data. For measurements in ambient air it was necessary to
+research the behaviour of our system after turning the converter on
+and off alternatingly. During this investigation, I found a major
+stumbling block. After turning off the ozone generator, there is still
+residual ozone in the measurement system on a natural time scale of
+\SI{2}{\minute} to \SI{2.5}{\minute}. This leads to an overestimation
+of the determined \ch{NO2} values and thus complications in the
+correct determination of the \ch{NO} values. The difficulty became
+even more prominent during parallel measurements with a
+chemiluminescence monitor, which showed that this alternating
+measurement mode should not be used before the decay behaviour of the
+ozone concentration is understood and can be compensated. In order to
+do this, I think it is necessary to research the adsorption behaviour
+of ozone at teflon walls. The residual ozone concentration seemed to
+indicate a proportionality to the reaction tube length, which points
+towards this explanation. If adsorption really is the reason, this
+would have a deep impact on the design constraints of the
+converter. So far a standard \SI{4}{\milli\meter} diameter teflon tube
+was used as reaction path, which allowed for the necessary mixing of
+the gases and which could easily be adapted to the necessary length of
+\SI{10}{\meter}. In order to diminish the adsorption effects, we would
+have to shorten the reaction path, while still keeping the dwell time
+constant. This could be achieved by using a reaction tube with a
+larger diameter, as this would reduce the surface area. However, the
+question would have to be addressed of how to guarantee the mixing of
+the ozone with the sample air. Since the used pumps only allow for
+laminar flows in our system, it might be that the diameter becomes too
+large for an adequate mixing by diffusion. A remedy could be the
+introduction of one or multiple jets behind the ozone injection. This
+would allow for turbulences and improved mixing, without unnessecarily
+increasing the teflon surface. I think the adsorption reasearch and
+possible alternative designs of the reaction path are the natural next
+step in the development of the converter.
+
+However, the adsorption effects have only to be taken into account, if
+one wants to switch between \ch{NO_x} and \ch{NO2} measurements. If
+one of the modes is fixed, there are no discernible adsorption
+effects. As during vehicle measurements the actually important
+quantity is the \ch{NO_x} concentration, the converter in the current
+form is already ready for operation. Furthermore, comparing the cavity
+data to the official data of the Heidelberg air quality measurement
+station showed that using two cavities in parallel avoids the
+difficulties introduced by the alternating measurement mode. The
+vehicle results proved the necessity for a true \ch{NO_x} measurement
+instrument, as the average emission of \ch{NO_x} lay a factor 10
+higher than the emission of \ch{NO2}, but also here a few more
+measurements should be performed. The peak \ch{NO_x} values during our
+campaign lay in the region of \SI{4000}{ppb}, this is also the region
+of the concentration of the injected ozone. Thus additional
+measurements should be performed to determine the \ch{NO} to \ch{NO2}
+conversion ratio for these high concentrations. The effect of an
+increased ozone flow should be studied to see if it is a viable
+solution for higher concentrations or if further oxidation processes
+thwart the benefits.
+
+All in all, the conducted experiments show that indirect \ch{NO}
+measurements are possible using this setup. For moderate
+concentrations reliable \ch{NO_x} values can be expected and with
+slight adaptions even high ranging \ch{NO_x} values should be
+determinable with a good accuracy. Thus in the near future the
+converter should be ready for \ch{NO_x} vehicle measurements. There is
+still some work to do when it comes to measuring \ch{NO2} and
+\ch{NO_x} alternatingly. In this case further studies towards
+adsorption effects are necessary and the design of the converter,
+especially the reaction volume, has to be reevaluated and
+adapted. Still, this work succeeded in taking a next step a robust
+implementation of this promising measurement technique.
 
 %%% Local Variables:
 %%% mode: latex

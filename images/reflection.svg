@@ -457,14 +457,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="350.78861"
+     inkscape:cx="388.92187"
      inkscape:cy="862.30901"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4772"
      showgrid="false"
-     inkscape:window-width="1918"
-     inkscape:window-height="1059"
-     inkscape:window-x="0"
+     inkscape:window-width="1278"
+     inkscape:window-height="1003"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      showborder="true" />
@@ -476,7 +476,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -637,7 +637,7 @@
          sodipodi:role="line"
          id="tspan4629"
          x="-737.14282"
-         y="-1861.9235"></tspan><tspan
+         y="-1861.9235" /><tspan
          sodipodi:role="line"
          x="-737.14282"
          y="-1811.9235"
@@ -798,7 +798,7 @@
          id="text4736"
          y="1419.7908"
          x="-1275.4286"
-         style="font-style:normal;font-weight:normal;font-size:312.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffd666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:312.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#cfa536;fill-opacity:0.75686276;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
          xml:space="preserve"><tspan
            y="1419.7908"
            x="-1275.4286"
@@ -809,7 +809,7 @@
          id="text4740"
          y="1458.0765"
          x="-1114.2856"
-         style="font-style:normal;font-weight:normal;font-size:187.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffd666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:187.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#c79715;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
          xml:space="preserve"><tspan
            y="1458.0765"
            x="-1114.2856"
@@ -820,7 +820,7 @@
          id="text4744"
          y="1406.6479"
          x="-952.28571"
-         style="font-style:normal;font-weight:normal;font-size:312.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffd666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="font-style:normal;font-weight:normal;font-size:312.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#c79715;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
          xml:space="preserve"><tspan
            y="1406.6479"
            x="-952.28571"

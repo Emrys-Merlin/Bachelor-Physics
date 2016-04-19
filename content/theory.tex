@@ -46,9 +46,9 @@ possible, if the desired reactions run faster than the unwanted ones.
 
 With this motivation in mind, I would like to introduce a measure for
 the reaction speed. Thinking of speed in this setting means to think
-of change of compound concentration. In this section we will use $c$
+of change of compound concentration. In this section I will use $c$
 to denote concentrations in \si{\per\cubic\centi\meter}. Using the
-above mentioned prototypic equation, we can see that the change of
+above mentioned prototypic equation, one can see that the change of
 concentration, i.\,e. $\dot c$, of the different species are related
 by:
 \begin{align*}
@@ -60,7 +60,7 @@ only reaction concerned with the above mentioned species.
 Next I need a relation between these derivatives and the educt
 concentrations. The probability for a reaction to take place should be
 proportional both to $c(A)$ and $c(B)$ as the two molecules need to
-`meet'. Thus we expect
+`meet'. Thus it seems plausible to expect
 \begin{align}
   -\dot c(A) = - \dot c(B) = k \cdot c(A) \cdot c(B), \label{eq:rate}
 \end{align}
@@ -82,7 +82,7 @@ In this limiting case one sees that the reaction time is given by $\tau =
 (kc(B))^{-1}$, making the connection of $k$ to the reaction speed
 obvious.
 
-There is a second important reaction type, we will encounter:
+There is a second important reaction type for this work:
 \emph{photolysis} reactions. These take the form
 
 \begin{align}
@@ -155,15 +155,15 @@ leading to a net loss of ozone.
 
 Introducing a UV light source with an emission below
 $\lambda = \SI{240}{\nano\meter}$ will start the above cycle. In this
-case we use a mercury lamp, which also has a strong peak at
+case a mercury lamp is used, which also has a strong peak at
 $\lambda = \SI{254}{\nano\meter}$. So the Chapman-Cycle will enter an
 equilibrium state with a constant ozone oxygen ratio. The value of
 this ratio depends on the intensity ratio at the two wavelength ranges
 of the above mentioned photolysis reactions. Since the main energy
 output of the lamp is at \SI{254}{\nano\meter}, the ratio will be
 small. However, there is around \SI{20}{\%} oxygen in ambient air,
-such that in absolute terms we will still produce an ozone
-surplus. The expected ozone value can be computed exactly using the
+such that in absolute terms there will still be a surplus of ozone.
+The expected ozone value can be computed exactly using the
 photolysis coefficients of the reactions and this has been done
 in~\cite{bsc}. Using this specific lamp leads to a value of
 $c(\ch{O3}) = \SI{300}{ppm}$. Of course this value will vary for
@@ -211,7 +211,7 @@ Additionally there is a very fast reaction of \ch{NO3} with \ch{NO}
   \ch{NO + NO3 ->[$k=\SI{6.9e-2}{\hertz\cubic\centi\meter}$] 2 NO2},\label{eq:back}
 \end{align}
 such that small nitrogen trioxide concentrations should decay
-quickly. If we assume no \ch{NO3} in the sample air (which is sensible
+quickly. If one assumes no \ch{NO3} in the sample air (which is sensible
 for day time measurements) Equation~\eqref{eq:back} should guarantee
 that the oxidation of \ch{NO2} should be compensated. 
 
@@ -226,7 +226,7 @@ with \ch{NO2} to generate the solid \ch{N2O5}
 As the rate coefficients show, the equilibrium of
 Equation~\eqref{eq:laughing} lies on the side of the educts, such that
 the effect should not be too large. Especially if the \ch{NO3}
-concentrations are small. In tnhe further analysis we will assume that
+concentrations are small. In the further analysis it will be assumed that
 the reaction time is set in such a way that Equation~\eqref{eq:no}
 can proceed while Equation~\eqref{eq:no2} is still suppressed. This
 will make it possible to simply ignore the reaction paths for \ch{NO3}.
@@ -253,13 +253,13 @@ where the first path is slightly favored (c.\,f.~\cite{n2o}). All in
 all most of the laughing gas should degrade over the photolysis in
 Reaction~\eqref{eq:n2o-good}, as the lamp has lines in this range.
 However, since the ozone generator produces quite a high amount of
-excited oxygen atoms, we cannot ignore the other pathways with
-Reaction~\eqref{eq:n2o-bad} being especially worrisome. Additional
-nitrogen monoxide will lead to additional nitrogen dioxide, which will
-in turn distort the measurement results. As will be seen in
-Section~\ref{sec:adsorption}, this problem cannot be solved by
-filtering \ch{N2O} as it passes most filter barriers, so the reaction
-products have to be removed after the transition took place.
+excited oxygen atoms, the other pathways, with
+Reaction~\eqref{eq:n2o-bad} being especially worrisome, cannot be
+ignored. Additional nitrogen monoxide will lead to additional nitrogen
+dioxide, which will in turn distort the measurement results. As will
+be seen in Section~\ref{sec:adsorption}, this problem cannot be solved
+by filtering \ch{N2O} as it passes most filter barriers, so the
+reaction products have to be removed after the transition took place.
 
 \subsection{Basics of fluid dynamics}
 \label{sec:fluid}
@@ -286,8 +286,8 @@ I am interested in what regime the gas transport in the tube
 settles. Especially after the ozone enriched air is added to the
 sample air, it would be beneficial to have a turbulent flow in the
 system as it would ensure a faster mixing of the gases. To see whether
-one can expect a laminar or a turbulent flow, we use the
-phenomenological \emph{Reynold's number}
+one can expect a laminar or a turbulent flow, the phenomenological
+\emph{Reynold's number} is the standard method
 
 \begin{align*}
   \operatorname{Re} = \frac{\rho \cdot d \cdot \bar v}{\eta},
@@ -299,7 +299,7 @@ thumb the flow in a cylinder will be laminar, if the Reynold's number
 is smaller than the critical Reynold's number
 $\operatorname{Re}_{\text{c}} = 2300$ and it will be turbulent if the
 number is higher than $3000$ (c.\,f.~\cite{maschbau}). In this system
-we have $d = \SI{4}{\milli\meter}$,
+this means $d = \SI{4}{\milli\meter}$,
 $\rho \approx \SI{1.2}{\kilo\gram\cubic\meter}$ and
 $\eta \approx \SI{17.1}{\micro\pascal\second}$
 (c.\,f.~\cite{maschbau}). Furthermore, the cavity operates at a flow
@@ -319,24 +319,24 @@ take place. The law behind the laminar flow in a cylindric tube is
 called \emph{Hagen-Poiseulle} and I will follow the exposition used
 in~\cite{gerthsen} to derive it.
 
-Denote by $r_0$ the inner radius of the tube and by $l$ its length. We
-assume that we are in the equilibrium state, such that all forces need
-to add to zero. Consider a cylinder of radius $0 \leq r \leq
-r_0$. To have a nonzero flow, we need a pressure difference at the two
-ends of the tube denoted $\Delta p$. The force exerted on the cylinder
-by the pressure is given by
+Denote by $r_0$ the inner radius of the tube and by $l$ its
+length. Let furthermore the gas flow be in an equilibrium state, such
+that all forces need to add to zero. Consider a cylinder of radius
+$0 \leq r \leq r_0$. To have a nonzero flow, there needs to be a
+pressure difference at the two ends of the tube denoted $\Delta
+p$. The force exerted on the cylinder by the pressure is given by
 \begin{align*}
   F_b = - \pi r^2 \Delta p,
 \end{align*}
 where the minus sign is introduced because the force points in the
 opposite direction of the pressure gradient. At the boundary of the
-cylinder we have to consider friction between the adjoining layers of
-fluid. The force exerted by it is proportional to the area of
-friction, i.\,e.\ the cylinder barrel and to the difference in velocity
-between the fluid within the cylinder and without, since we have to
-look at an infinitesimal anulus around the boundary, we get a
-proportionality to the velocity gradient $\frac{\d[v]}{\d[r]}$. Thus
-the force of friction takes the form
+cylinder there is friction between the adjoining layers of fluid. The
+force exerted by it is proportional to the area of friction, i.\,e.\
+the cylinder barrel and to the difference in velocity between the
+fluid within the cylinder and without, since this means talking about
+the velocity difference on an infinitesimal anulus around the
+boundary, this leads to a proportionality to the velocity gradient
+$\frac{\d[v]}{\d[r]}$. Thus the force of friction takes the form
 
 \begin{align*}
   F_f = \eta \cdot 2\pi r \cdot l \cdot \frac{\d[v]}{\d[r]},
@@ -389,24 +389,24 @@ the evolution of its concentration $n$ (in \SI{1}{\per\cubic\meter}).
 Fick's first law states that the particle current density $j$ (in
 \SI{1}{\per\square\meter\second}) of the species is proprotional to
 the concentration gradient $\nabla n$ and that the species flows from
-higher to lower concentration. We yield
+higher to lower concentration. This leads to
 
 \begin{align*}
   j = - D \nabla n,
 \end{align*}
 where $D > 0$ (in \SI{1}{\square\meter\per\second}) is called the
 \emph{diffusion constant}. Assuming no sources and sinks and using the
-continuity equation for fluids, we arrive at Fick's second law
+continuity equation for fluids, one arrives at Fick's second law
 
 \begin{align*}
   \dot n = - \nabla j = \nabla (D \nabla n) = D \cdot \Delta n,
 \end{align*}
-where for the last equation an istotrope medium, i.\,e.\
+where for the last equation an isotrope medium, i.\,e.\
 $\nabla D = 0$, was assumed. This is a second order linear partial
 differential equation and for arbitrary boundary conditions it can
 become arbitrarily hard to solve. Since in this work's setup diffusion
-of species at small time scales is most interesting, we can assume the
-vessel inifinitely large. With this the equation becomes accessible
+of species at small time scales is of interest, the vessel can be
+assumed inifinitely large. With this the equation becomes accessible
 via Fourier analysis. Let
 
 \begin{align*}
@@ -457,12 +457,12 @@ to take the form
   -\frac{1}{2} \cdot \frac{x^2}{2Dt} \right).
 \end{align*}
 This makes it possible to describe the statistical behaviour of a particle
-undergoing diffusion. Setting $n_0 = 1$, we arrive at the probability
+undergoing diffusion. Setting $n_0 = 1$ leads to the probability
 distribution for the particle, which is just a Gaußian distribution
-with a timedependent variance. We see that the expectation value of
+with a timedependent variance. The expectation value of
 the position $\langle x \rangle$ is always 0. However the standard
 deviation $\sigma = \sqrt{2Dt}$ grows larger over time, such that for
-the \emph{mean squared displacement}, we yield the following relation
+the \emph{mean squared displacement}, one gets the following relation
 
 \begin{align}
   \langle x^2 \rangle = \sum_{j=1}^3 \langle
@@ -512,18 +512,18 @@ the teflon walls of the tube. Experience from previous setups shows
 that this effect is rather small. The influence on the sample air is a
 systematic uncertainty in any case and has to be considered for any
 CE-DOAS measurement, so the only question remaining is, whether the
-adsorption has an impact on the ozone flow. As we work with rather
-large concentrations in the order of magnitude of \si{ppm}, we suspect
-this not to be the case after an equilibrium has been reached. The
-\ch{NO} concentration is normally on the order of magnitude of a few
-\SI{10}{ppb} perhaps a few \SI{100}{ppb} if we consider downtown
-stationary measurements. So for all reasonable adsorption capacities
-there is always enough ozone left for the full conversion. The only
-interesting instance is during a switch where the ozone stream is
-turned off to only measure \ch{NO2}. Here the evaporation of ozone
-could lead to longer purge times and hence to a worse time
-resolution. The behaviour of the system after such switches has been
-researched in Section~\ref{sec:switch}.
+adsorption has an impact on the ozone flow. As in this setting there
+are rather large concentrations in the order of magnitude of \si{ppm},
+I suspect this not to be the case after an equilibrium has been
+reached. The \ch{NO} concentration is normally on the order of
+magnitude of a few \SI{10}{ppb} perhaps a few \SI{100}{ppb} if one
+consider downtown stationary measurements. So for all reasonable
+adsorption capacities there is always enough ozone left for the full
+conversion. The only interesting instance is during a switch where the
+ozone stream is turned off to only measure \ch{NO2}. Here the
+evaporation of ozone could lead to longer purge times and hence to a
+worse time resolution. The behaviour of the system after such switches
+has been researched in Section~\ref{sec:switch}.
 
 \subsection{Technical requirements for the converter}
 \label{sec:requirements}
@@ -552,7 +552,7 @@ estimate the mixing time. As there are mainly laminar flows in the
 reaction path (c.\,f.\ Sec.~\ref{sec:cylinder}), the mixing will be
 dominated by diffusion. Thus the mean squared displacement is used to
 estimate the time the ozone takes to cross the tube diameter. In this
-case we use tubes with $d = \SI{4}{\milli\meter}$ and the diffusion
+case tubes with $d = \SI{4}{\milli\meter}$ are used and the diffusion
 constant for ozone in air was taken to be
 $D = \SI{0.137}{\square\centi\meter\per\second}$ (at
 $T = \SI{298}{\kelvin}$ and $p = \SI{1}{\text{bar}}$
@@ -562,17 +562,18 @@ c.\,f.~\cite{diff-ozone}). This leads to
 \end{align*}
 
 Turning towards considerations two and three, the reaction time has to
-be adjusted. For this we have to set a desired conversion ratio. For
-these estimates we work with a ratio of \SI{99}{\%}. Since the ozone
-generator will supply an overabundance of \ch{O3}, the
-linear ordinary differential equation approximation introduced in
-Section~\ref{sec:rate} is applicable. Thus the conversion ratio is given by
+be adjusted. For this the desired conversion ratio was set to
+\SI{99}{\%}. Since the ozone generator will supply an overabundance of
+\ch{O3}, the linear ordinary differential equation approximation
+introduced in Section~\ref{sec:rate} is applicable. Thus the
+conversion ratio is given by
 \begin{align*}
   \exp(-kc(\ch{O3})\cdot t),
 \end{align*}
 where $t$ is the reaction time. $1$ stands for no
 conversion at all (i.\,e.\ no decrease in the educt concentration) and
-$0$ stands for complete conversion. For \SI{99}{\%} we need
+$0$ stands for complete conversion. In order to get \SI{99}{\%} for
+the exponent the following bound needs to hold
 \begin{align}
   kc(\ch{O3}) \cdot t_{\text{react}} \gtrsim 4.6. \label{eq:react-bound}
 \end{align}
@@ -638,12 +639,12 @@ to the best conversion ratio averaged over all the cavity.
 
 In the following sections I will discuss the physical concepts
 necessary to understand the \emph{Cavity Enhanced Diffirential
-Absorption Spectroscopy} (CE-DOAS). First, I will investigate the
+  Absorption Spectroscopy} (CE-DOAS). First, I will investigate the
 Lambert-Beer Law. This leads directly to the so called
 \emph{Longpath}-DOAS instrument. As the name already indicates, those
 need a long lightpath, since often the absorption cross sections of
-the investigated trace gases are very small. Hence lastly we introduce
-the \emph{cavity enhancement} to overcome this restriction.
+the investigated trace gases are very small. Hence lastly the
+\emph{cavity enhancement} is introduced to overcome this restriction.
 
 The presentation follows mostly~\cite{fp58} with a few inspirations
 taken from~\cite{bsc} and~\cite{platt}.
@@ -655,7 +656,7 @@ The \emph{Lambert-Beer Law} ist the underlying principle behind the
 main measurement method used in this work. It concerns itself with the
 evolution of the light intensity $I_0$ which propagates a certain
 distance $L$ through air (or other absorbing matter). It assumes an
-exponential decay over $L$, so we can write
+exponential decay over $L$, so one can write
 
 \begin{align}
   I(\lambda, L) = I_0(\lambda) \cdot \exp[-\epsilon(\lambda) \cdot
@@ -715,7 +716,7 @@ separating.
   \centering
   \input{images/NO2_conv}
   \caption{Absorption cross section of \ch{NO2} in the region around
-    \SI{440}{\nano\meter}. From top to bottom we have the complete
+    \SI{440}{\nano\meter}. From top to bottom there is the complete
     cross section $\sigma$, the broadband part $\sigma^b$ and the
     differential part $\sigma'$. The cross section is adapted to the
     resolution of the spectrograph used in the measurements
@@ -818,7 +819,7 @@ and absorption $A_i$. They are connected via
 \end{align*}
 
 Furthermore, there is the transmittance $T_g$ of the gas in the
-cavity. For this we get from the Lambert-Beer law
+cavity. For this the Lambert-Beer law gives
 
 \begin{align*}
   T_g = \exp(-\epsilon d),
@@ -846,8 +847,8 @@ following
   any fluctuations in the light source intensity coming from
   temperature instabilities or other optomechanic effects are
   neglected.
-\item We assume $R_1 \approx R_2 \eqqcolon R \approx 1$, meaning $(R -
-  1) \ll 1$. Since we use hihgly reflective mirrors this assumption
+\item I assume $R_1 \approx R_2 \eqqcolon R \approx 1$, meaning $(R -
+  1) \ll 1$. Since hihgly reflective mirrors are used this assumption
   seems reasonable.
 \item I assume $\epsilon \cdot d \ll 1$ for both sample and zero
   air. Furthermore I assume that $T_{g,0}/T_{g}$ is negligible. This
@@ -931,7 +932,7 @@ With this definition of $L_0$ it is completely independent of any
 trace gas influences and hence all the trace gas dependence is
 restricted to the first term. Furthermore, $L_0$ directly depends on
 the mirror reflectivity. All in all $L_0$ depends only on the geometry
-of the setup (if we assume $\epsilon_0$ to be fixed) and desired
+of the setup (if one assumes $\epsilon_0$ to be fixed) and desired
 separation of $L_{\text{eff}}$ is reached.
 
 Looking only at the definition of $L_0$ and comparing it to

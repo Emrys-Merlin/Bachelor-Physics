@@ -1,32 +1,32 @@
 \subsection{Pure \ch{NO} measurements with synthetic air}
 \label{sec:no}
 
-After confirming that our generator produced a clean ozone stream, we
+After confirming that the generator produced a clean ozone stream, I
 turned towards the question whether it is possible to actually measure
-\ch{NO} or not. Furthermore we wanted to get an estimate for the
-necessary reaction pathlength as computed in
+\ch{NO} or not. Furthermore I wanted to get an estimate for the
+necessary reaction tube length as computed in
 Section~\ref{sec:requirements}.
 
 \subsubsection{Setup}
 \label{sec:no-setup}
 
 In order to be able to measure the nitrogen monoxide concentration
-directly without additional corrections and computations, we had to
+directly without additional corrections and computations, I had to
 make sure that the used sample air was nitrogen dioxide free. This
-lead us to the setup depicted in Figure~\ref{fig:no-setup}. We used
+lead to the setup depicted in Figure~\ref{fig:no-setup}. I used
 synthetic air and \ch{NO} calibration gas with a known \ch{NO}
 concentration ($c = \SI{8.177}{ppm}$) together with a mass flow
 controller to generate synthetic sample air with a precisely known
 \ch{NO} concentration. In order to minimize the influence on the
-pressure inside the cavity, we decided to overflow the air inlet
+pressure inside the cavity, I decided to overflow the air inlet
 instead of bypassing the cavity pump as is done during a Helium
-calibration. Thus we set the synthetic air flow to $\Phi_{\text{air}}$
+calibration. Thus I set the synthetic air flow to $\Phi_{\text{air}}$
 to \SI{3}{\liter\per\minute}. The cavity itself was in the standard
 setup described in Section~\ref{sec:inclusion}, except for the
 reaction tube length which was varied between \SI{5}{\meter},
-\SI{10}{\meter} and \SI{15}{\meter}. For each of these lengths we
+\SI{10}{\meter} and \SI{15}{\meter}. For each of these lengths I
 varied the \ch{NO} calibration gas flow between \num{0} and
-\SI{0.03}{\liter\per\minute}. As zero air we used ambient lab air
+\SI{0.03}{\liter\per\minute}. As zero air I used ambient lab air
 together with a zero air cartridge.
 
 \begin{figure}[htbp]
@@ -37,8 +37,8 @@ together with a zero air cartridge.
 \end{figure}
 
 In order to be able to compare the measured \ch{NO} concentration to the
-actual concentration in the air stream, we had to convert the applied
-\ch{NO} flow to a concentration, too. We were able to do this using the
+actual concentration in the air stream, I had to convert the applied
+\ch{NO} flow to a concentration, too. I was able to do this using the
 following formula
 \begin{align}
   c_{\ch{NO}} = c \cdot \frac{\Phi_{\ch{NO}}}{\Phi_{\text{air}} +
@@ -52,26 +52,26 @@ Figure~\ref{fig:ts} shows the time series of the \ch{NO} and \ch{O3}
 concentration. Each of the three clusters corresponds from left to
 right to the reaction tube length of \SI{5}{\meter}, \SI{10}{\meter}
 and \SI{15}{\meter}. Turning first towards the ozone concentration on
-the right hand side, we see that its concentration is constant within
+the right hand side, one can see that its concentration is constant within
 its error margins. These, however, are large. This is to be expected,
 as the absorption cross section of \ch{O3} in the visual spectrum is
 weak compared to the cross section of \ch{NO2} and has almost no
 differential structure. Nevertheless, the ozone level seems acceptably
 stable, which indicates that not too many ozone destroying reactions
 take place, even in the presence of high \ch{NO} concentrations. This
-is again what we expected in this very pure sample air which should
+is again what I expected in this very pure sample air which should
 only allow for the oxidation of \ch{NO}. Lastly the shape of the ozone
-time series does not seem to depend on the reaction pathlength.
+time series does not seem to depend on the reaction tube length.
 
 Looking at the \ch{NO} time series on the right hand side of
-Figure~\ref{fig:ts} we see that the overall shape of the three
-measurements are similar. For the reaction tube length of $l=
-\SI{5}{\meter}$ we see slight deviations. The rising flanks take
+Figure~\ref{fig:ts} one may find that the overall shape of the three
+measurements are similar. For the reaction tube length of
+$l= \SI{5}{\meter}$ there are slight deviations. The rising flanks take
 longer to reach a stable plateau than during the other two
 measurements. Furthermore the first three plateaus are not visible,
 however, the reason for this lies in the fact that they were skipped
 during the measurement procedure. The behaviour of the rising flanks
-cannot simply be explained by a too short reaction path. If this were
+cannot simply be explained by a too short reaction tube. If this were
 the case, the depcited equilibria should all just lay lower, as the
 reaction dynamic equilibrium would set for a lower, but
 \emph{constant} \ch{NO2} concentration. Interstingly on the falling
@@ -80,40 +80,22 @@ flanks the equilibria are reached instantaneously (the small drop at
 in the adsorption behaviour of teflon. For example if the ozone were
 to be adsorbed to the tube walls, this could lead to an effective
 increase in ozone concentration, accelerating the reaction and thus
-compensating the too short pathlength. If, additionally, the
-adsorption time scale were in the order of magnitude of our dwell time
-per set flow, this could explain why we have slowly increasing flanks,
+compensating the too short tube length. If, additionally, the
+adsorption time scale were in the order of magnitude of the dwell time
+per set flow, this could explain why there are slowly increasing flanks,
 while the falling flanks stabilize quickly. In the first case the
 adsorbed ozone would have to build up, because of the increased
 concentration, in the second case there would already be enough ozone
 adsorbed. The testing of this idea was sadly outside the scope of this
-thesis, such that for the following measurements we could only accept
-this oddity and decided to work with longer pathlengths (i.\,e.~$l =
-\SI{10}{\meter}$) which seem to not express this behaviour.
+thesis, such that for the following measurements I could only accept
+this oddity and decided to work with longer tube lengths
+(i.\,e.~$l = \SI{10}{\meter}$) which seem to not express this
+behaviour.
 
-\begin{figure}[htbp]
-  \centering
-  \input{images/20160222_NO_fixI0_NO_ts}
-  \hfill
-  \input{images/20160222_NO_fixI0_O3_ts}
-  \caption{Timeseries of the \ch{NO} and \ch{O3} concentration. The
-    three clusters correspond to the three used reaction pathlengths
-    $l = 5, 10$ and \SI{15}{\meter}.}
-  \label{fig:ts}
-\end{figure}
-\begin{figure}[H]
-  \centering
-  \input{images/20160222_NO_fixI0_NO_length}
-  \caption{\ch{NO} concentration dependence on reaction path
-    length. The data points are colored depending on the applied
-    \ch{NO} flow. All data points were linearly interpolated. The
-    results can also be found in the plot.}
-  \label{fig:no-length}
-\end{figure}
 
-Comparing next the \ch{NO2} plateaus between multiple pathlengths, we
-see that the concentrations seem to coincide. Averaging them and
-plotting them over the pathlength we yield Figure~\ref{fig:no-length},
+Comparing next the \ch{NO2} plateaus between multiple tube lengths, one
+finds that the concentrations seem to coincide. Averaging them and
+plotting them over the tube length yields Figure~\ref{fig:no-length},
 which confirms this assertion. The data points at coresponding flows
 were linearly interpolated to make drifts more tangible. The fits are
 also plotted in the figure. The interpolation showed that the slope
@@ -121,7 +103,40 @@ was undiscernible from zero in each case. At the \SI{5}{\meter}
 setting one of the red and one of the violet data points seem to be
 off. These two data points correspond to the rising flanks discussed
 extensively above. It seems that at these two data points the
-equilibrium had not been reached and we averaged too early.
+equilibrium had not been reached and I averaged too early.
+
+Since Figure~\ref{fig:no-length} indicated that the measured
+concentrations are tube length independent (except for the two
+outliers), I can use all of them to research the correlation between
+the measured concentrations and the ones computed from the flow by
+Equation~\eqref{eq:c-flow}. The result can be seen in
+Figure~\ref{fig:no-calib} together with a linear regression. The
+regression formula yields
+
+\begin{align*}
+  y = \num{0.994 \pm 0.002}  \cdot x -\num{0.002 \pm 0.058}.
+\end{align*}
+Also I end up with a Pearson's r 0.994 which also indicates the high
+correlation between the measured and the computed data.
+\begin{figure}[htbp]
+  \centering
+  \input{images/20160222_NO_fixI0_NO_ts}
+  \hfill
+  \input{images/20160222_NO_fixI0_O3_ts}
+  \caption{Timeseries of the \ch{NO} and \ch{O3} concentration. The
+    three clusters correspond to the three used reaction tube lengths
+    $l = 5, 10$ and \SI{15}{\meter}.}
+  \label{fig:ts}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \input{images/20160222_NO_fixI0_NO_length}
+  \caption{\ch{NO} concentration dependence on reaction tube
+    length. The data points are colored depending on the applied
+    \ch{NO} flow. All data points were linearly interpolated. The
+    results can also be found in the plot.}
+  \label{fig:no-length}
+\end{figure}
 
 \begin{figure}[htbp]
   \centering
@@ -131,25 +146,11 @@ equilibrium had not been reached and we averaged too early.
   \label{fig:no-calib}
 \end{figure}
 
-Since Figure~\ref{fig:no-length} indicated that the measured
-concentrations aret pathlength independent (except for the two outliers),
-we can use all of them to research the correlation between our
-measured concentrations and the ones computed from the flow by
-Equation~\eqref{eq:c-flow}. The result can be seen in
-Figure~\ref{fig:no-calib} together with a linear regression. The
-regression formula yields
-
-\begin{align*}
-  y = \num{0.994 \pm 0.002}  \cdot x -\num{0.002 \pm 0.058}.
-\end{align*}
-Also we end up with a Pearson's r 0.994 which also indicates the high
-correlation between the measured and the computed data.
-
-Thus we see that the deviation between the measured and computed
-concentration lies in the per mill regime. We see that under these
-controlled conditions our converter works and does not introduce
+Thus the deviation between the measured and computed
+concentration lies in the per mill regime. Under these
+controlled conditions the converter works and does not introduce
 tangible systematic errors. Figure~\ref{fig:ts} implies that a
-\SI{10}{\meter} reaction path is sufficient and will therefore be used
+\SI{10}{\meter} reaction tube is sufficient and will therefore be used
 for the following experiments.
 
 %%% Local Variables:

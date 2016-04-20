@@ -53,15 +53,15 @@ Section~\ref{sec:switch}. The first consists in the observation, that
 the \ch{NO} calibration gas container was used to calibrate the
 chemiluminescence display. If some of the \ch{NO} had been converted
 to \ch{NO2}, there would be an error in the chemiluminescence
-calibration, which would lead an overestimation of the \ch{NO}
-concentration by the cld. Using the \ch{NO2}
-offset found in the previous section, one can compute that there is
-about \SI{420}{ppb} \ch{NO2} in the cylinder, if all of it stemmed
-from \ch{NO} this would introduce an error of about \SI{5}{\percent}
-(the calibration concentration given was $c = \SI{8.177}{ppm}$). This
-is not enough to explain the discrepancy. Together with the fact that
-I could not explain, how the transition from \ch{NO} to \ch{NO2} could
-occur, I discarded this approach.
+calibration, which would lead to an overestimation of the \ch{NO}
+concentration by the cld. Using the \ch{NO2} offset found in the
+previous section, one can compute that there is about \SI{420}{ppb}
+\ch{NO2} in the cylinder, if all of it stemmed from \ch{NO} this would
+introduce an error of about \SI{5}{\percent} (the calibration
+concentration given was $c = \SI{8.177}{ppm}$). This is not enough to
+explain the discrepancy. Together with the fact that I still cannot
+explain, how the transition from \ch{NO} to \ch{NO2} could occur, I
+discarded this approach.
 
 The second avenue I took, was to look at the purge time.
 Section~\ref{sec:switch} suggests that \SI{30}{\second} purge time is
@@ -70,7 +70,7 @@ expect the measured \ch{NO2} intensities to be overestimated. One
 observation pointing towards the influence of this effect ist, that I
 measured negative \ch{NO} concentrations (to a minimum of
 \SI{-1.54}{ppb}), which is of course absurd. In the previous section I
-suggest, that the surplus \ch{NO2} signal does not depend too strongly
+suggested, that the surplus \ch{NO2} signal does not depend too strongly
 on the \ch{NO} concentration. If this assumption is correct, one will
 expect to be able to mitigate the effects by lowering the \ch{NO2}
 signal by $\bar c_s = \SI{1.55}{ppb}$ (c.\,f.\
@@ -82,19 +82,19 @@ Figure~\ref{fig:cld-corr}. The linear regression follows the formula
 \begin{align*}
   y = \SI{1.38}{ppb\tothe{-1}} \cdot x + 1.67.
 \end{align*}
-So the tail correction has only an effect on the
-intercept of the regression. This is expected as the constant lowering
-of the \ch{NO2} signal increases the computed \ch{NO} signal by the
-same amount and thus all data points are shifted to the
-right. Hence the slope of the regression is still off. Clearly the
-aprroach utilized here was too simplistic to account for all
-effects. Further investigations are necessary to understand the
-corrections necessary. Possibly, the \ch{NO2} correction can be
-computed utilizing the previous \ch{NO_x} data point, thus indirectly
-taking \ch{NO} influences on the offset into account. This varying \ch{NO2}
-correction could then also influence the slope of the
-regression. In order to investigate this further I suggest to perform
-additional decay measurements as proposed in the previous section.
+So the tail correction has only an effect on the intercept of the
+regression. This is expected as the constant lowering of the \ch{NO2}
+signal increases the computed \ch{NO} signal by the same amount and
+thus all data points are shifted to the right. Hence the slope of the
+regression is still off. Clearly, the approach utilized here was too
+simplistic to account for all effects. Further investigations are
+necessary to understand the corrections necessary. Possibly, the
+\ch{NO2} correction can be computed utilizing the previous \ch{NO_x}
+data point, thus indirectly taking \ch{NO} influences on the offset
+into account. This varying \ch{NO2} correction could then also
+influence the slope of the regression. In order to investigate this
+further I suggest to perform additional decay measurements as proposed
+in the previous section.
 
 \begin{figure}[htbp]
   \centering

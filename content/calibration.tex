@@ -2,9 +2,10 @@
 \label{sec:no}
 
 After confirming that the generator produced a clean ozone stream, I
-turned towards the question whether it is possible to actually measure
-\ch{NO} or not. Furthermore, I wanted to confirm the necessary
-reaction tube length as computed in Section~\ref{sec:requirements}.
+turned towards the question, whether it is possible to actually
+measure \ch{NO} or not. Furthermore, I wanted to compare the
+experimentally necessary reaction tube length to the computed value in
+Section~\ref{sec:requirements}.
 
 \subsubsection{Setup}
 \label{sec:no-setup}
@@ -31,7 +32,7 @@ together with a zero air cartridge.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.6\textwidth]{no_setup.eps}
-  \caption{Setup of the calibration measurement}
+  \caption{Setup of the calibration measurement.}
   \label{fig:no-setup}
 \end{figure}
 
@@ -48,61 +49,63 @@ following formula
 \label{sec:no-results}
 
 Figure~\ref{fig:ts} shows the time series of the \ch{NO} and \ch{O3}
-concentration. Each of the three clusters corresponds from left to
-right to the reaction tube length of \SI{5}{\meter}, \SI{10}{\meter}
-and \SI{15}{\meter}. Turning first towards the ozone concentration on
-the right hand side, one can see that its concentration is constant within
-its error margins. These, however, are large. This is to be expected,
-as the absorption cross section of \ch{O3} in the visual spectrum is
-weak compared to the cross section of \ch{NO2} and has almost no
-differential structure. Nevertheless, the ozone level seems acceptably
-stable, which indicates that not too many ozone destroying reactions
-take place, even in the presence of high \ch{NO} concentrations. This
-is again what I expected in this very pure sample air which should
-only allow for the oxidation of \ch{NO}. Lastly, the shape of the ozone
-time series does not seem to depend on the reaction tube length.
+concentration. Each of the three clusters corresponds; from left to
+right, to the reaction tube length of \SI{5}{\meter}, \SI{10}{\meter}
+and \SI{15}{\meter}. Looking at the ozone concentration on the
+left-hand side, it can be seen that its concentration is constant
+within its error margins. These, however, are large. This is to be
+expected, as the absorption cross section of \ch{O3} in the visual
+spectrum is weak compared to the cross section of \ch{NO2} and has
+almost no differential structure. Nevertheless, the ozone level seems
+acceptably stable, which indicates that not too many ozone destroying
+reactions take place, even in the presence of high \ch{NO}
+concentrations. This is again what I expected in this very pure sample
+air, which should only allow for the oxidation of \ch{NO}. Lastly, the
+shape of the ozone time series does not seem to depend on the reaction
+tube length.
 
-Looking at the \ch{NO} time series on the right hand side of
-Figure~\ref{fig:ts} one sees that the overall shape of the three
-measurements are similar. For the reaction tube length of
-$l= \SI{5}{\meter}$ there are slight deviations. The rising flanks take
-longer to reach a stable plateau than during the other two
+Looking at the \ch{NO} time series on the right-hand side of
+Figure~\ref{fig:ts} the overall shape of the three measurements is
+seen to be similar. For the reaction tube length of
+$l= \SI{5}{\meter}$ there are slight deviations. The rising flanks
+take longer to reach a stable plateau than during the other two
 measurements. Furthermore, the first three plateaus are not visible,
 however, the reason for this lies in the fact that they were skipped
-during the measurement procedure. The behaviour of the rising flanks
+during the measurement procedure. The behavior of the rising flanks
 cannot simply be explained by a too short reaction tube. If this were
-the case, the depcited equilibria should all just lay lower, as the
+the case, the depicted equilibria should all just lay lower, as the
 reaction dynamic equilibrium would set for a lower, but
-\emph{constant} \ch{NO2} concentration. Interstingly on the falling
+\emph{constant} \ch{NO2} concentration. Interestingly on the falling
 flanks the equilibria are reached instantaneously (the small drop at
 \SI{50}{ppb} being a human error). One possible explanation might lie
-in the adsorption behaviour of teflon. For example, if the ozone were
+in the adsorption behavior of teflon. For example, if the ozone were
 to be adsorbed to the tube walls, this could lead to an effective
 increase in ozone concentration, accelerating the reaction and thus
 compensating the too short tube length. If, additionally, the
 adsorption time scale were in the order of magnitude of the dwell time
-per set flow, this could explain why there are slowly increasing flanks,
-while the falling flanks stabilize quickly. In the first case the
-adsorbed ozone would have to build up, because of the increased
+per set flow, this could explain why there are slowly increasing
+flanks, while the falling flanks stabilize quickly. In the first case
+the adsorbed ozone would have to build up because of the increased
 concentration, in the second case there would already be enough ozone
-adsorbed. The testing of this idea was sadly outside the scope of this
-thesis, such that for the following measurements I could only accept
+adsorbed. Testing this idea was sadly outside the scope of this thesis
+which means that for the following measurements I could only accept
 this oddity and decided to work with longer tube lengths
-(i.\,e.~$l = \SI{10}{\meter}$) which seem to not express this
-behaviour.
+(i.\,e.~$l = \SI{10}{\meter}$), which seem to not express this
+behavior.
 
 
-Comparing next the \ch{NO2} plateaus between multiple tube lengths, one
-finds that the concentrations seem to coincide. Averaging them and
-plotting them over the tube length yields Figure~\ref{fig:no-length},
-which confirms this assertion. The data points at coresponding flows
-were linearly interpolated to make drifts more tangible. The fits are
-also plotted in the figure. The interpolation showed that the slope
-was undiscernible from zero in each case. At the \SI{5}{\meter}
-setting one of the red and one of the violet data points seem to be
-off. These two data points correspond to the rising flanks discussed
-extensively above. It seems that at these two data points the
-equilibrium had not been reached and I averaged too early.
+Comparing next the \ch{NO2} plateaus between multiple tube lengths, it
+seems that the concentrations seem to coincide. Averaging them and
+plotting them against the tube length yields
+Figure~\ref{fig:no-length}, which confirms this assertion. The data
+points at corresponding flows were linearly interpolated to make
+drifts more tangible. The fits were also plotted in the figure. The
+interpolation showed that the slope was undiscernible from zero in
+each case. At the \SI{5}{\meter} setting one of the red and one of the
+violet data points seem to be off. These two data points correspond to
+the rising flanks discussed extensively above. It seems that at these
+two data points the equilibrium had not been reached and I averaged
+too early.
 
 Since Figure~\ref{fig:no-length} indicated that the measured
 concentrations are tube length independent (except for the two
@@ -122,7 +125,7 @@ correlation between the measured and the computed data.
   \input{images/20160222_NO_fixI0_NO_ts}
   \hfill
   \input{images/20160222_NO_fixI0_O3_ts}
-  \caption{Timeseries of the \ch{NO} and \ch{O3} concentration. The
+  \caption{Time series of the \ch{NO2} and \ch{O3} concentration. The
     three clusters correspond to the three used reaction tube lengths
     $l = 5, 10$ and \SI{15}{\meter}.}
   \label{fig:ts}

@@ -46,23 +46,22 @@ consumption of the vehicles.
 
 The measurements took place on Friday, February 05, 2016 in Heidelberg
 between 11:00 and 16:30. From 12:15 to 13:45, I operated both
-measurement cells
-in \ch{NO2} mode to test for systematic deviations. From 15:00 to
-16:00, the measurement vehicle was positioned next to the Heidelberg
-air quality measurement station to be able to compare the \ch{NO} and
-\ch{NO2} values to the ones of the station as a test of
-reliability. In between, 30 vehicles were observed throughout
-Heidelberg for {\nfrac{} 1/2}~\si{\minute} to \SI{10}{\minute} each.
-Since the two cavities' clocks could not be fully synchronized, the
-time series had to be matched in the evaluation process. This was done
-manually using succinct peaks in the plots.
+measurement cells in \ch{NO2} mode to test for systematic
+deviations. From 15:00 to 16:00, the measurement vehicle was
+positioned next to the Heidelberg air quality measurement station to
+be able to compare the \ch{NO} and \ch{NO2} values to the ones of the
+station as a test of reliability. In between, 30 vehicles were
+observed throughout Heidelberg for {\nfrac{} 1/2}~\si{\minute} to
+\SI{10}{\minute} each.  Since the two cavities' clocks could not be
+fully synchronized, the time series had to be matched in the
+evaluation process. This was done manually using succinct peaks in the
+plots.
 
 \begin{figure}[htbp]
   \centering
   \input{images/hd_comparison}
   \caption{Comparison of the two used ICAD systems. Both were
-    operated in pure \ch{NO2} measurement mode. The mean difference is
-    \SI{0.43 \pm 0.01}{ppb}.}
+    operated in pure \ch{NO2} measurement mode.}
   \label{fig:hd-comparison}
 \end{figure}
 \begin{figure}[htbp]
@@ -81,9 +80,8 @@ In Figure~\ref{fig:hd-comparison} one can see that the measured
 \ch{NO2} concentrations of the two cavities, which were then both
 operated in \ch{NO2} mode. There seems to be no qualitative difference
 between the two. However, the \ch{NO_x} cavity measured slightly lower
-concentrations than the \ch{NO2} cavity with a mean difference of
-$\Delta = \SI{0.43\pm0.01}{ppb}$. For a more precise analysis the
-correlation between the two time series was
+concentrations than the \ch{NO2} cavity. For a more precise analysis
+the correlation between the two time series was
 determined. Figure~\ref{fig:hd-corr} contains \SI{1}{\minute} averages
 together with a linear regression, which follows the formula
 \begin{align*}
@@ -92,14 +90,7 @@ together with a linear regression, which follows the formula
 Except for some data points on the left tail, the two time series seem
 to be well correlated. The slope of the regression coincides with
 unity within its uncertainty, but the intercept differs from
-zero. Within the uncertainties the intercept is in agreement with the
-above computed mean difference $\Delta$. However, the regression
-uncertainty is far larger than the uncertainty of $\Delta$. The reason
-for this lies in the fit routine and in the fact that due to the
-spread of the data points the exact intercept has a smaller influence
-on the fit quality compared to the slope.
-
-Regarding the consequences of this finding, this difference is not
+zero. Regarding the consequences of this finding, this offset is not
 large absolutely speaking, but the question remains why it exists at
 all. The most probable explanation is that the zero air spectrum used
 in the evaluation of the \ch{NO_x} cavity was not completely trace gas

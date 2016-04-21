@@ -50,7 +50,7 @@
   \makeatother%
   \begin{picture}(1,0.56250002)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{setup.pdf}}%
-    \put(0.72429101,0.00564448){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{carbon filter}}}%
+    \put(0.60386481,0.00564448){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{activated carbon filter}}}%
     \put(0.68467052,0.20710268){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{silica gel}}}%
     \put(0.83227363,0.28714496){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{pump}}}%
     \put(0.66255006,0.48383222){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{particle filter}}}%

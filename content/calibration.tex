@@ -92,7 +92,25 @@ which means that for the following measurements I could only accept
 this oddity and decided to work with longer tube lengths
 (i.\,e.~$l = \SI{10}{\meter}$), which seem to not express this
 behavior.
-
+\begin{figure}[htbp]
+  \centering
+  \input{images/20160222_NO_fixI0_NO_ts}
+  \hfill
+  \input{images/20160222_NO_fixI0_O3_ts}
+  \caption{Time series of the \ch{NO2} and \ch{O3} concentration. The
+    three clusters correspond to the three used reaction tube lengths
+    $l = 5, 10$ and \SI{15}{\meter}.}
+  \label{fig:ts}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \input{images/20160222_NO_fixI0_NO_length}
+  \caption{\ch{NO} concentration dependence on reaction tube
+    length. The data points are colored depending on the applied
+    \ch{NO} flow. All data points were linearly interpolated. The
+    results can also be found in the plot.}
+  \label{fig:no-length}
+\end{figure}
 
 Comparing next the \ch{NO2} plateaus between multiple tube lengths, it
 seems that the concentrations seem to coincide. Averaging them and
@@ -120,25 +138,6 @@ regression formula yields
 \end{align*}
 with a Pearson's r of 0.994. This further underlines the high
 correlation between the measured and the calculated data.
-\begin{figure}[htbp]
-  \centering
-  \input{images/20160222_NO_fixI0_NO_ts}
-  \hfill
-  \input{images/20160222_NO_fixI0_O3_ts}
-  \caption{Time series of the \ch{NO2} and \ch{O3} concentration. The
-    three clusters correspond to the three used reaction tube lengths
-    $l = 5, 10$ and \SI{15}{\meter}.}
-  \label{fig:ts}
-\end{figure}
-\begin{figure}[htbp]
-  \centering
-  \input{images/20160222_NO_fixI0_NO_length}
-  \caption{\ch{NO} concentration dependence on reaction tube
-    length. The data points are colored depending on the applied
-    \ch{NO} flow. All data points were linearly interpolated. The
-    results can also be found in the plot.}
-  \label{fig:no-length}
-\end{figure}
 
 \begin{figure}[htbp]
   \centering

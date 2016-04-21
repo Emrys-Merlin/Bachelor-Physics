@@ -1,4 +1,4 @@
-\documentclass[german,english,twoside,headsepline,titlepage=true,BCOR=10mm]{scrartcl}
+\documentclass[german,english,twoside,headsepline,titlepage=true,BCOR=10mm,final]{scrartcl}
 \input{header_std}
 \input{header_math}
 \input{header_artcl}
@@ -15,6 +15,9 @@
 \newfontfamily\nfrac[Fractions=On]{Linux Libertine O}
 
 \usepackage{ccicons}
+
+% needed as language in bibliography is mixed (and set to english)
+\hyphenation{Mess-in-stru-ments} 
 
 \addfontfeature{Fractions=On}
 

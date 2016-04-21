@@ -485,7 +485,7 @@ generator. Unfortunately, this is not true as was, for example, noted
 in~\cite{bsc}.
 
 After the air passes the generator there is a \ch{NO2} signal in the
-range of \num{1} to \SI{10}{ppb}, which is well detectable by CE-DOAS
+range of \num{1} to \SI{10}{ppb}, which is well detectable by ICAD
 instruments. The cause was found to be laughing gas, which is a
 normally inert and badly soluble gas. Therefore, it passes all used
 filters in high enough concentrations such that
@@ -626,9 +626,9 @@ For the experiment the used tube length was geared to $\bar l$, as the
 maximum velocity is only relevant for a rather small cross section of
 the cylinder. Most experiments were performed at
 $l = \SI{10}{\meter}$, such that part of the conversion reaction was
-taking place inside the cavity. The idea behind this is to have the
-conversion peak close to the center of the cavity as this should lead
-to the best conversion ratio averaged over all the cavity.
+taking place inside the measurement cell. The idea behind this is to have the
+conversion peak close to the center of the cell as this should lead
+to the best conversion ratio averaged over the whole cell volume.
 
 \subsection{The physics behind CE-DOAS}
 \label{sec:ce-doas-physics}
@@ -791,7 +791,7 @@ over a large column.
 An alternative approach is to increase the lightpath by the use of
 optical instruments, i.\,e.\ mirrors. Using two highly reflective
 mirrors very large optical pathlengths are obtainable, while still
-having a managable geometrical pathlength. The price to pay by
+having a manageable geometrical pathlength. The price to pay by
 taking this approach is that the light pathlength becomes
 wavelength dependent due to the nature of highly reflective mirrors.
 
@@ -806,7 +806,9 @@ The geometrical setup is the following:
 \begin{figure}[htbp]
   \centering
   \includegraphics[]{reflection.eps}
-  \caption{Geometrical setup of the cavity.}
+  \caption{Simplified geometrical setup of the cavity. The light beam
+    is only displaced for illustration, in reality the forward and
+    backward reflection are in the same plane.}
   \label{fig:cavity}
 \end{figure}
 There are two mirrors with reflectivity $R_i$, transmittance $T_i$
@@ -959,8 +961,18 @@ $D_{\text{eff}}$. This is done using the least square method. The
 polynomial is again added to compensate for residual broadband
 structure and its degree is fixed to \num{4}.
 
-The CE-DOAS method was used for the measurements in
-Sections~\ref{sec:silica} to~\ref{sec:vehicle}. 
+In the application an improved CE-DOAS will be used, the so called
+Iterative Cavity DOAS method (ICAD). It fits $D_{\text{CE}}$
+iteratively computing $L_{\text{eff}}$ starting from $L_0$. An
+schematic overview of the algorithm can befound in Figure~\ref{fig:icad}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{ICAD.png}
+  \caption{Schematic overview of the ICAD evaluation algorithm,
+    provided by~\cite{martin}.}
+  \label{fig:icad}
+\end{figure}
 
 %%% Local Variables: 
 %%% mode: latex

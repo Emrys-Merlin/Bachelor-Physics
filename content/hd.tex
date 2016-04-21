@@ -18,22 +18,35 @@ described in the previous two sections.
 \subsubsection{Setup}
 \label{sec:vehicle-setup}
 
-For the measurement a car was loaded with both cavities and the pickup
-tube was attached directly above the front license plate. The
-\ch{NO_x} cavity was set up according to Section~\ref{sec:inclusion}
-with an exposure time of \SI{10}{\milli\second} and 100 scans per
-spectrum leading to a time resolution of \SI{1}{\second}. As \ch{NO2}
-cavity I used the AQM$_{\text{Tec}}$ Compact Cavity, which is the
-standard cavity at the Institute for Environmental Physics for
-\ch{NO2} measurements in urban areas and especially vehicle
-measurements. This cavity operated at a \SI{2}{\second} time
-resolution and had the further advantage of possessing a \ch{CO2}
-sensor. This allowed the computation of the ratios between nitrogen
-(di-)oxide and carbon dioxide, which are a good measure for the
-emission per (gazoline) consumption of the vehicles.
+For the measurement a car was loaded with both ICAD instruments and
+the pickup tube was attached directly above the front license
+plate. The main ideas behind the setup can be found in
+Figure~\ref{fig:hd-principle}, where the institute's bus was equipped
+with an ICAD instrument. The \ch{NO_x} cell was set up according to
+Section~\ref{sec:inclusion} with an exposure time of
+\SI{10}{\milli\second} and 100 scans per spectrum leading to a time
+resolution of \SI{1}{\second}. As \ch{NO2} cell I used the
+AQM$_{\text{Tec}}$ Compact Cavity, which is the standard instrument at the
+Institute for Environmental Physics for \ch{NO2} measurements in urban
+areas and especially vehicle measurements. This cavity operated at a
+\SI{2}{\second} time resolution and had the further advantage of
+possessing a \ch{CO2} sensor. This allowed the computation of the
+ratios between nitrogen (di-)oxide and carbon dioxide, which are a
+good measure for the emission per (gazoline) consumption of the
+vehicles.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{vehicle_principle.jpg}
+  \caption{Principle setup behind the vehicle measurements. Instead of
+    the institute's bus a car was equipped with the ICAD
+    instruments. The picture was provided by~\cite{denis}.}
+  \label{fig:hd-principle}
+\end{figure}
 
 The measurements took place on Friday, February 05, 2016 in Heidelberg
-between 11:00 and 16:30. From 12:15 to 13:45, I operated both cavities
+between 11:00 and 16:30. From 12:15 to 13:45, I operated both
+measurement cells
 in \ch{NO2} mode to test for systematic deviations. From 15:00 to
 16:00, the measurement vehicle was positioned next to the Heidelberg
 air quality measurement station to be able to compare the \ch{NO} and
@@ -47,10 +60,18 @@ manually using succinct peaks in the plots.
 \begin{figure}[htbp]
   \centering
   \input{images/hd_comparison}
-  \caption{Comparison of the two used CE-DOAS systems. Both were
+  \caption{Comparison of the two used ICAD systems. Both were
     operated in pure \ch{NO2} measurement mode. The mean difference is
     \SI{0.43 \pm 0.01}{ppb}.}
   \label{fig:hd-comparison}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \input{images/vehicle_corr}
+  \caption{Correlation between the two used ICAD systems. Both were
+    operated in pur \ch{NO2} measurement mode. The data points depict
+    \SI{1}{\minute} averages.}
+  \label{fig:hd-corr}
 \end{figure}
 
 \subsubsection{Results}
@@ -61,10 +82,27 @@ In Figure~\ref{fig:hd-comparison} one can see that the measured
 operated in \ch{NO2} mode. There seems to be no qualitative difference
 between the two. However, the \ch{NO_x} cavity measured slightly lower
 concentrations than the \ch{NO2} cavity with a mean difference of
-$\Delta = \SI{0.43\pm0.01}{ppb}$. Absolutely speaking this is not a
-large difference, but the question remains why it exists at all. The
-most probable explanation is that the zero air spectrum used in the
-evaluation of the \ch{NO_x} cavity was not completely trace gas
+$\Delta = \SI{0.43\pm0.01}{ppb}$. For a more precise analysis the
+correlation between the two time series was
+determined. Figure~\ref{fig:hd-corr} contains \SI{1}{\minute} averages
+together with a linear regression, which follows the formula
+\begin{align*}
+  y = \num{0.99 \pm 0.01} \cdot x + \num{0.6 \pm 0.3}.
+\end{align*}
+Except for some data points on the left tail, the two time series seem
+to be well correlated. The slope of the regression coincides with
+unity within its uncertainty, but the intercept differs from
+zero. Within the uncertainties the intercept is in agreement with the
+above computed mean difference $\Delta$. However, the regression
+uncertainty is far larger than the uncertainty of $\Delta$. The reason
+for this lies in the fit routine and in the fact that due to the
+spread of the data points the exact intercept has a smaller influence
+on the fit quality compared to the slope.
+
+Regarding the consequences of this finding, this difference is not
+large absolutely speaking, but the question remains why it exists at
+all. The most probable explanation is that the zero air spectrum used
+in the evaluation of the \ch{NO_x} cavity was not completely trace gas
 free. One reason that points towards this direction is that in the
 \ch{NO_x} measurement mode there is a constant flow through the zero
 air input, as this is the input for the ozone generator, too. Thus the
@@ -106,7 +144,7 @@ In a next step I computed the average concentrations for all three
 time series and compared them to the station data taken
 from~\cite{umba}. The results can be found in Table~\ref{tab:umba}. It
 shows that there is a systematic deviation from the station, but the
-values lie in the same region. The standard CE-DOAS method has been
+values lie in the same region. The standard ICAD method has been
 thoroughly tested during the last decades and is known to produce
 solid results in good agreement with the measurement stations. Thus
 the deviation of the \ch{NO2} average points towards outer influences
@@ -142,7 +180,7 @@ comparison between the cavity and the station resilient.
   \end{tabular}
   \caption{Comparison of the \SI{1}{\hour} \ch{NO}, \ch{NO2} and
     \ch{NO_x} averages from 15:00 to 16:00 on February 05, 2016
-    between the air quality measurement station and the improved CE-DOAS
+    between the air quality measurement station and the improved ICAD
     instrument. The station data was taken from~\cite{umba}; no
     uncertainties were provided.}
   \label{tab:umba}

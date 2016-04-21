@@ -2,33 +2,44 @@
 \label{sec:setup}
 
 Since the general setup was comparable for most
-of the measurements, I decided to collect it here for
-conciseness. The first experiments used a Longpath-DOAS instrument, as
-it allowed for a precise ozone measurement. Afterwards, I transferred
-to a CE-DOAS instrument, because of its better localisation and
+of the measurements, it is described here for
+conciseness. The first experiments used a Shortpath-DOAS instrument, as
+it allowed for a precise ozone measurement at high
+concentrations. Afterwards, the setup was transferred
+to an ICAD instrument, because of its better localisation and
 nitrogen oxides detection capabilities.
 
 \subsection{Ozone generator setup}
 \label{sec:ozone-setup}
 
-As a proof of concept I built the ozone generator on a wooden board as
-can be seen in Figure~\ref{fig:setup}. As described in
-Section~\ref{sec:requirements}, the lab air is first filtered and then
-sent through an aluminium coated tube containing a Pen-Ray mercury
-lamp (Model 11SC-1). It has a lighted length of
-\SI{53.8}{\milli\meter} and primary emission band at
-\SI{254}{\nano\meter}. The mercury lamp's spectrum is not perfect for
-my purpose as its strongest emission is in the ozone dissociation
-wavelength range, whereas the lamp has almost no energy output below
-the oxygen dissociation limit (c.\,f.~\cite{lamp}). However, since the
-oxygen concentration in ambient air is so high, I still expect enough
-ozone to be produced. In order to make sure that the \ch{N2O} is
-completely converted to \ch{NO2}, there is a \SI{3}{\meter} teflon
-tube behind the lamp. Afterwards, the ozone enriched air passes another
-Silica gel filter and is then expected to be \ch{NO_x} free.
-
+As a proof of concept for this thesis the ozone generator was first
+set up on a wooden board as can be seen in Figure~\ref{fig:setup}. As
+described in Section~\ref{sec:requirements}, the lab air is first
+filtered and then sent through an aluminium coated tube containing a
+Pen-Ray mercury lamp (Model 11SC-1). It has a lighted length of
+\SI{53.8}{\milli\meter}, primary emission band at
+\SI{253.6}{\nano\meter} and additional some weaker emissions which can
+be seen in Figure~\ref{fig:hg}. The only other important one for the
+setup is the one at \SI{184.9}{\nano\meter}. The mercury lamp's
+spectrum is not perfect for my purpose as its strongest emission is in
+the ozone dissociation wavelength range, whereas the lamp has almost
+no energy output below the oxygen dissociation limit
+(c.\,f.~\cite{lamp}). However, since the oxygen concentration in
+ambient air is so high, it still produces enough ozone. In order to
+make sure that the simultaneously dissociated \ch{N2O} is completely
+converted to \ch{NO2}, there is a \SI{3}{\meter} teflon tube behind
+the lamp. Afterwards, the ozone enriched air passes another silica gel
+filter and is then tested to be \ch{NO_x} free.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[]{hg.jpg}
+  \caption{Spectrum of the Pen-Ray mercury lamp. Please note the
+    non-linear scale on the intensity axis. The plot was taken out
+    of~\cite{lamp}.}
+  \label{fig:hg}
+\end{figure}
 In order to be able to measure the ozone production a cuvette is
-added, which can be entered in the light path of a Longpath-DOAS
+added, which can be entered in the light path of a Shortpath-DOAS
 instrument (cf.\ Fig.~\ref{fig:cuvette}). The length of the lightpath
 through the cuvette is \SI{8.7}{\centi\meter}.
 
@@ -61,26 +72,27 @@ positive flow is \SI{0.03}{\liter\per\minute}.
   \label{fig:setup}
 \end{figure}
 
-The cuvette was entered into the ligthpath of a Longpath-DOAS
-instrument (attached to an Amundsen telescope located at the rooftop
-laboratory at the IUP building). Since I expected rather high ozone
-concentrations, I forewent the advantage of a cavity enhanced
-pathlength. The upside of this setup was that the instrument contains
-a laser driven light source which together with appropriate filters
-emits at a wavelength of $\lambda \approx \SI{290}{\nano\meter}$. As
-mentioned in Section~\ref{sec:theory-ozone}, ozone has a strong
-absorption cross section in this region, which made it possible to
-determine the concentration very precisely. The used spectrograph has
-2048 channels and is calibrated to a wavelength region of \num{268} to
+The cuvette was entered into the ligthpath of a Shortpath-DOAS
+instrument (it used the Amundsen LP-DOAS setup located at the rooftop
+laboratory at the IUP building). Due to the high \ch{O3}
+concentrations a single path measurement was sufficient at a UV
+wavelength range. A laser driven light source (ldls) together with
+appropriate filters emitred thus at the required wavelength of
+$\lambda \approx \SI{290}{\nano\meter}$. As mentioned in
+Section~\ref{sec:theory-ozone}, ozone has a strong absorption cross
+section in this region, which made it possible to determine the
+concentration very precisely. The used spectrograph (Acton 300i +
+Roper Scientific CCD Camera) has 2048 channels
+and is calibrated to a wavelength region of \num{268} to
 \SI{312}{\nano\meter}.
 
-\subsection{Inclusion into a CE-DOAS instrument}
+\subsection{Inclusion into a ICAD instrument}
 \label{sec:inclusion}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{images/InstrumentEdited_small.jpg}
-  \caption{EnviMeS CE-DOAS instrument with \ch{NO} to \ch{NO2}
+  \caption{ICAD instrument with \ch{NO} to \ch{NO2}
     converter.}
   \label{fig:envimes}
 \end{figure}
@@ -88,15 +100,13 @@ determine the concentration very precisely. The used spectrograph has
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{images/envimes_setup.eps}
-  \caption{Schematic of EnviMeS CE-DOAS instrument with \ch{NO} to
+  \caption{Schematic of the \ch{NO_x} ICAD instrument with \ch{NO} to
     \ch{NO2} converter.}
   \label{fig:envimes-schematic}
 \end{figure}
 
-After the above setup was tested, the converter was added to an
-existing CE-DOAS instrument. The instrument was already supplied with
-an \ch{O3} generator, but lacked a Silica gel filter, which was
-added. The instrument can be seen in
+After the above setup was tested, the converter plus the silica gel
+filter was added to an existing ICAD instrument. The instrument can be seen in
 Figure~\ref{fig:envimes}. Figure~\ref{fig:envimes-schematic} contains
 a slightly simplified schematic view of the interior. Zero air is used
 to generate the ozone, since it is already sufficientyl trace gas free
@@ -104,7 +114,7 @@ to generate the ozone, since it is already sufficientyl trace gas free
 \SI{1}{\meter} reaction tube before the silica filter
 follows. Following that there is an ozone bypass valve, which is
 operated electromechanically and allows for the switch between an
-ozone free and an ozone enriched air flow in the cavity. The sample
+ozone free and an ozone enriched air flow in the measurement cell. The sample
 air (with or without ozone) passes a \SI{10}{\meter} reaction path. In
 later experiments the length of the reaction path was varied to
 measure the influence on the \ch{NO} conversion (c.\,f.\
@@ -119,16 +129,16 @@ fixed to \SI{0.03}{\liter\per\minute}.
 
 The light source of the instrument is a led with maximum intensity at
 $\lambda \approx \SI{444}{\nano\meter}$. The effective pathlength
-$L_0$ of the cavity had a maximum at this wavelength of
+$L_0$ of the measurement cell had a maximum at this wavelength of
 \SI{1.3}{\kilo\meter}. A plot of the pathlength can be found in
-Figure~\ref{fig:pathlength}. The spectrograph has \num{2048} channels
-and is calibrated to a wavelength region of \num{395} to
-\SI{490}{\nano\meter}.
+Figure~\ref{fig:pathlength}. The spectrograph (Avantes AVA
+AvaBench-75-ULS2048L) has \num{2048} channels and is calibrated to a
+wavelength region of \num{395} to \SI{490}{\nano\meter}.
 
 \begin{figure}[htbp]
   \centering
   \input{images/L0}
-  \caption{Effective pathlength of the used EnviMeS CE-DOAS system.}
+  \caption{Effective pathlength of the used ICAD system.}
   \label{fig:pathlength}
 \end{figure}
 

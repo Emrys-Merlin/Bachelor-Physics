@@ -18,14 +18,15 @@ synthetic air and \ch{NO} calibration gas with a known \ch{NO}
 concentration ($c = \SI{8.177}{ppm}$) together with a mass flow
 controller to generate synthetic sample air with a precisely known
 \ch{NO} concentration. In order to minimize the influence on the
-pressure inside the measurement cell, I decided to overflow the air inlet
-instead of bypassing the cavity pump as is done during a helium
-calibration. Thus I set the synthetic air flow to $\Phi_{\text{air}}$
-to \SI{3}{\liter\per\minute}. The instrument itself was in the standard
-setup described in Section~\ref{sec:inclusion}, except for the
-reaction tube length which was varied between \SI{5}{\meter},
-\SI{10}{\meter} and \SI{15}{\meter}. For each of these lengths I
-varied the \ch{NO} calibration gas flow between \num{0} and
+pressure inside the measurement cell, I decided to overflow the air
+inlet instead of bypassing the cavity pump as is done during a helium
+calibration. Thus the synthetic air flow was set to
+$\Phi_{\text{air}}$ to \SI{3}{\liter\per\minute}. The instrument
+itself was in the standard setup described in
+Section~\ref{sec:inclusion}, except for the reaction tube length which
+was varied between \SI{5}{\meter}, \SI{10}{\meter} and
+\SI{15}{\meter}. For each of these lengths I varied the \ch{NO}
+calibration gas flow between \num{0} and
 \SI{0.03}{\liter\per\minute}. As zero air I used ambient lab air
 together with a zero air cartridge.
 
@@ -36,10 +37,9 @@ together with a zero air cartridge.
   \label{fig:no-setup}
 \end{figure}
 
-In order to be able to compare the measured \ch{NO} concentration to the
-actual concentration in the air stream, I had to convert the applied
-\ch{NO} flow to a concentration, too. I was able to do this using the
-following formula
+In order to compare the measured \ch{NO} concentration to the actual
+concentration in the air stream,the applied \ch{NO} flow was converted
+to a concentration using the following formula
 \begin{align}
   c_{\ch{NO}} = c \cdot \frac{\Phi_{\ch{NO}}}{\Phi_{\text{air}} +
   \Phi_{\ch{NO}}}. \label{eq:c-flow}
@@ -116,10 +116,10 @@ Figure~\ref{fig:no-calib} together with a linear regression. The
 regression formula yields
 
 \begin{align*}
-  y = \num{0.994 \pm 0.002}  \cdot x -\num{0.002 \pm 0.058}.
+  y = \num{0.994 \pm 0.002}  \cdot x -\num{0.002 \pm 0.058},
 \end{align*}
-Also, I end up with a Pearson's r of 0.994 which further underlines the high
-correlation between the measured and the computed data.
+with a Pearson's r of 0.994. This further underlines the high
+correlation between the measured and the calculated data.
 \begin{figure}[htbp]
   \centering
   \input{images/20160222_NO_fixI0_NO_ts}
@@ -148,7 +148,7 @@ correlation between the measured and the computed data.
   \label{fig:no-calib}
 \end{figure}
 
-Thus the deviation between the measured and computed concentration
+Thus, the deviation between the measured and computed concentration
 lies in the per mill regime. Under these controlled conditions the
 converter works and does not introduce tangible systematic
 errors. Figure~\ref{fig:ts} implies that a \SI{10}{\meter} reaction

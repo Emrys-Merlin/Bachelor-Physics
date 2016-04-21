@@ -377,11 +377,11 @@ computation of the dwell time of the gases.
 \subsubsection{Diffusion}
 \label{sec:diffusion}
 
-As was shown in the previous section, the gas flows laminarly
-throughout the instrument. Thus the only mechanism by which gas mixing
-can occur is \emph{diffusion}. Therefore I would like to get an
-estimate for the time it takes for diffusion to take place. This
-exposition drew inspiration from~\cite{fluid}.
+As shown in the previous section, the gas flows laminarly throughout
+the instrument. Thus, the only mechanism by which gas mixing can occur
+is \emph{diffusion}. Therefore I would like to get an estimate for the
+time it takes for diffusion to take place. This exposition drew
+inspiration from~\cite{fluid}.
 
 In order to understand diffusion of a species, the evolution of its
 concentration $n$ (in \SI{1}{\per\cubic\meter}) has to be
@@ -469,7 +469,7 @@ the \emph{mean squared displacement} the following relation holds
 \end{align}
 where $\langle x \rangle = 0$ was needed. This mean squared
 displacement can now be used as a measure to gauge the distance
-travelled by a molecule. I will apply it to gauge the time needed for
+travelled by a molecule. I will apply it to determine the time needed for
 a new gas species (in this case ozone) to fill a volume sufficiently
 for the chemical reactions to take place.
 
@@ -539,7 +539,7 @@ length has to be added between the ozone generation chamber and the
 silica gel filter, such that the conversion from \ch{N2O} to \ch{NO2}
 can be completed.
 
-The next restriction is that a nigh \SI{100}{\%} conversion of \ch{NO}
+The next requirement a nigh \SI{100}{\%} conversion of \ch{NO}
 to \ch{NO2} is necessary. This leads to three considerations. First,
 there needs to be enough time for the mixing of the ozone with the
 sample air to take place. Secondly, there needs to be enough time for
@@ -597,18 +597,17 @@ of the produced \ch{NO3} will (as described in Section~\ref{sec:o-no})
 quickly degrade to \ch{NO2} and the ozone concentration is likely to
 be underestimated.
 
-As a last step I would like to translate the needed mixing and reaction
-time
+As a last step I the length of the reaction tube is calculated from
+the needed mixing and reaction time
 \begin{align*}
-  t = t_{\text{mix}} + t_{\text{react}} = \SI{5.3}{\second}
+  t = t_{\text{mix}} + t_{\text{react}} = \SI{5.3}{\second}.
 \end{align*}
-to its associated tube length. Using the applied flow of
-$\Phi = \SI{2}{\liter\per\minute}$, the average velocity of the gas
-can be computed to be
+Using the applied flow of $\Phi = \SI{2}{\liter\per\minute}$, the
+average velocity of the gas can be computed to be
 \begin{align*}
   \bar v = \frac{\Phi}{\pi r^2} = \SI{2.7}{\meter\per\second}. 
 \end{align*}
-As was described in Section~\ref{sec:cylinder} this corresponds to a
+As described in Section~\ref{sec:cylinder} this corresponds to a
 maximum velocity at the center of the tube of
 
 \begin{align*}
@@ -682,10 +681,10 @@ calld \emph{absorption cross section}. For the above formula to be
 useful to determine the concentration of the trace gases, a very
 homogenous air sample is required, so that the average concentration
 is meaningful. As will be seen, this assumption is sensible for
-CE-DOAS.\@{}If Longpath-DOAS measurements are performed other
+CE-DOAS and ICAD.\@{}If Longpath-DOAS measurements are performed other
 parameters, e.\,g.\ the column density, have to be used.
 
-Equations~\eqref{eq:lb-easy} and~\eqref{eq:lb-abs} now contain the
+Equations~\eqref{eq:lb-easy} and~\eqref{eq:lb-abs} contain the
 central idea for the spectroscopic method. The intensity spectra $I$
 and $I_0$ can be measured, the pathlength $L$ can also be
 determined. So the only thing left for the computation of the trace
@@ -753,7 +752,7 @@ formula becomes
   f(\lambda) = - \sum_{i=1}^n c_i \cdot L \cdot \sigma'_i(\lambda) +
   \sum_k a_k \lambda^k \label{eq:doas-fit},
 \end{align}
-which is fitted to the Optical Density, where the concentrations $c_i$
+which is fitted to the optical density, where the concentrations $c_i$
 and the polynomial coefficients $a_k$ are to be determined. The degree
 of the polynomial is generally fixed to \num{4}.
 
@@ -939,14 +938,17 @@ Equation~\eqref{eq:i-1} leads to
 \begin{align}
   \delta \cdot L_0 = \frac{I_0}{I} - 1 \eqqcolon D_{\text{eff}}, \label{eq:ce-central}
 \end{align}
-where $D_{\text{eff}}$ is calle \emph{Effective Optical Density}.This
-is the central equation for the CE-DOAS evaluation. $I$ and $I_0$ are
-measured and $L_0$ only depends on the geometry, so the only place, where
-the trace gas concentrations enter into the equation is via $\delta$, which makes
-it very easy to fit the concentrations.
+where $D_{\text{eff}}$ is called \emph{Effective Optical
+  Density}. This is the central equation for the CE-DOAS
+evaluation. $I$ and $I_0$ are measured and $L_0$ only depends on the
+geometry, so the only place, where the trace gas concentrations enter
+into the equation is via $\delta$, which makes it very easy to fit the
+concentrations. However, this algorithm can be improved. The new
+method is called \emph{Iterative Cavity DOAS} (ICAD) and will be
+described below.
 
 In addition, this equation also allows for the determination of the
-pathlength $L_0$. Using Helium as sample air there is a rather large
+pathlength $L_0$. Using helium as sample air there is a rather large
 difference and well known $\delta$, which can then be used to determine
 $L_0$.
 
@@ -961,10 +963,10 @@ $D_{\text{eff}}$. This is done using the least square method. The
 polynomial is again added to compensate for residual broadband
 structure and its degree is fixed to \num{4}.
 
-In the application an improved CE-DOAS will be used, the so called
-Iterative Cavity DOAS method (ICAD). It fits $D_{\text{CE}}$
-iteratively computing $L_{\text{eff}}$ starting from $L_0$. An
-schematic overview of the algorithm can befound in Figure~\ref{fig:icad}
+In the application an improved CE-DOAS will be used, the above
+mentioned ICAD method. It fits $D_{\text{CE}}$ iteratively computing
+$L_{\text{eff}}$ starting from $L_0$. An schematic overview of the
+algorithm can befound in Figure~\ref{fig:icad}
 
 \begin{figure}[htbp]
   \centering

@@ -43,23 +43,23 @@ desired reactions have enough time to proceed while simultaneously
 suppressing unwanted reactions. Of course this is only possible if
 the desired reactions run faster than the unwanted ones.
 
-With this motivation in mind, I would like to introduce a measure for
-the reaction speed. Thinking of speed in this setting means to think
-of the change of compound concentration. In this section I will use
-$c$ (in \si{\per\cubic\centi\meter}) to denote concentrations. Using
-the above mentioned prototypic equation, it is possible to see that
-the change of concentration, i.\,e. $\dot c$, of the different species
-are related by:
+With this motivation in mind, a measure for the reaction speed is
+introduced. Thinking of speed in this setting means to think of the
+change of compound concentration. In this section concentrations will
+be denoted by $d$ (in \si{\per\cubic\centi\meter}). Using the above
+mentioned prototypic equation, it is possible to see that the change
+of concentration, i.\,e. $\dot c$, of the different species are
+related by:
 \begin{align*}
   -\dot c(A) = - \dot c(B) = \dot c(C) = \dot c(D).
 \end{align*}
 Naturally, this is only true if Reaction~\eqref{eq:prototype} is the
 only reaction concerned with the above mentioned species.
 
-Next, I need a relation between these derivatives and the educt
-concentrations. The probability for a reaction to take place should be
-proportional to both $c(A)$ and $c(B)$ as the two molecules need to
-`meet'. Thus it seems plausible to expect
+Next, these derivatives are related to the educt concentrations. The
+probability for a reaction to take place should be proportional to
+both $c(A)$ and $c(B)$ as the two molecules need to `meet'. Thus it
+seems plausible to expect
 \begin{align}
   -\dot c(A) = - \dot c(B) = k \cdot c(A) \cdot c(B), \label{eq:rate}
 \end{align}
@@ -164,7 +164,7 @@ output of the lamp is at \SI{254}{\nano\meter}, the ratio will be
 small. However, there is around \SI{20}{\%} oxygen in ambient air,
 such that in absolute terms there will still be a considerable surplus
 of ozone. The expected ozone value can be computed exactly using the
-photolysis coefficients of the reactions and this has been done
+photolysis coefficients of the reactions as done
 in~\cite{bsc}. Using this specific lamp leads to a value of
 $c(\ch{O3}) = \SI{300}{ppm}$. Of course this value will vary for
 different electric currents at the lamp, but, since the exact value is

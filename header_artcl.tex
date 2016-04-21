@@ -15,7 +15,9 @@
 
 \usepackage[style=alphabetic,backend=biber]{biblatex}
 \addbibresource{biblio.bib}
-
+\apptocmd{\UrlBreaks}{\do\f\do\m}{}{}
+\setcounter{biburllcpenalty}{9000}% Kleinbuchstaben
+\setcounter{biburlucpenalty}{9000}% Großbuchstaben
 % \usepackage{makeidx}
 
 % \NewDocumentCommand\init{m}{\emph{#1}\index{#1}}

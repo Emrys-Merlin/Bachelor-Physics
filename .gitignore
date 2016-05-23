@@ -152,3 +152,6 @@ _region_*
 # *.ttt
 # *.fff
 /Bachelor.ps
+*.tex.bak
+/Vortrag.nav
+/Vortrag.snm

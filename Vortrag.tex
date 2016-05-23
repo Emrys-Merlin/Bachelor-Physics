@@ -1,0 +1,465 @@
+\documentclass[english]{beamer}
+
+\usepackage{amssymb}
+\usepackage[]{babel}
+\usepackage[]{amsmath}
+\usepackage{xparse}
+%\usepackage[colorlinks=true,linkcolor=blue,pdfborder={0 0 0}]{hyperref}
+%\usepackage{microtype}
+\usepackage{amsthm}
+\usepackage{mathtools}
+%\usepackage{todonotes}
+
+\usepackage{chemformula}
+\usepackage[exponent-product = \cdot]{siunitx}
+\usepackage{booktabs}
+
+\usetheme{Madrid}
+\setbeamertemplate{bibliography item}[text]
+
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+\usepackage{xcolor}
+
+\usepackage[backend=biber,url=false]{biblatex}
+\addbibresource{Vortrag.bib}
+
+\graphicspath{ {images/} }
+
+\title[Improvement of a \ch{NO} converter]{Further improvement of a \ch{NO}
+  to \ch{NO2} converter for CE-DOAS measurements}
+\subtitle{Bachelor thesis}
+\institute[]{Institute of Environmental Physics\\Heidelberg University}
+\author{Tim Adler}
+\date{May 23, 2016}
+
+\makeatletter
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/unilogo.png}
+    \hspace{1.5cm}
+    \includegraphics[width=0.2\textwidth]{images/LogoIUP.eps}
+  \end{figure}
+\end{frame}
+
+\section{Motivation}
+
+\begin{frame}
+  \frametitle{Motivation}
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.55\textwidth]{vehicle_principle.jpg}
+    \caption{Provided by \cite{denis}}
+  \end{figure}
+
+  \begin{itemize}
+  \item In EU standards: \ch{NO_x\,=\ NO + NO2}
+  \item \ch{NO} adsorption in deep UV
+    \begin{itemize}
+    \item No optical components
+    \end{itemize}
+  \item Solution: Indirect measurement
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview}
+  \tableofcontents
+\end{frame}
+
+\section{Theory}
+
+\begin{frame}
+  \frametitle{Theory}
+  \framesubtitle{Nitrogen monoxide conversion}
+  \begin{itemize}
+  \item Desired reaction:
+    \begin{align*}
+      \ch{NO + O3 & -> NO2 + O2}\\
+      \intertext{\item Side effects:}
+      \ch{NO2 + O3 & -> NO3 + O2}\\
+      \ch{NO + NO3 & -> 2 NO2}\\
+      \ch{NO2 + NO3 + M & <=> N2O5 + M}
+    \end{align*}
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Theory}
+  \framesubtitle{Ozone generation}
+  \begin{itemize}
+  \item Generation:
+    \begin{align*}
+      \ch{O2 + h}\nu &\ch{-> 2 O(^3P)} && \lambda < \SI{240}{\nano\meter}\\
+      \ch{O(^3 P) + O2 + M} &\ch{-> O3 + M}\\
+      \intertext{\item Dissociation:}
+      \ch{O3 + h}\nu \ch{&-> O(^1 D) + O2} && \lambda < \SI{310}{\nano\meter}\\
+      \ch{O(^1 D) + M & -> O(^3 P) + M}\\
+      \intertext{\item Destruction:}
+      \ch{O(^3 P) + O3 & -> 2 O2}
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Theory} \framesubtitle{Ozone generation}
+  \begin{figure}[htbp] \centering
+    \includegraphics[]{hg.jpg}
+    \caption{Spectrum of the Pen-Ray mercury lamp. The plot was taken
+      out of~\cite{lamp}.}
+    \label{fig:hg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Theory}
+  \framesubtitle{Laughing gas conversion}
+  \begin{itemize}
+  \item Primary decay reaction:
+    \begin{align*}
+      \ch{N2O + h}\nu \ch{& -> N2 + O(^1 D)} && \SI{185}{\nano\meter}
+                                                \leq \lambda \leq
+                         \SI{230}{\nano\meter}\\
+      \intertext{\item Secondary decay reactions:}
+      \ch{N2O + O(^1 D) & -> 2 NO}\\
+      \ch{N2O + O(^1 D) & -> N2 + O2}
+    \end{align*}
+  \item \ch{N2O} passes filter barriers
+    \begin{itemize}
+    \item Filter \ch{NO}/\ch{NO2} after conversion
+    \item Silica suitable as \ch{O3} can pass
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Theory}
+  \framesubtitle{CE-DOAS}
+  \begin{itemize}
+  \item Absorption spectroscopy
+    \begin{itemize}
+    \item Lambert-Beer law
+    \end{itemize}
+
+  \item Comparison of \(I_0\) and \(I\)
+  \end{itemize}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=.5]{images/reflection.eps}
+    \caption{Simplified schematic overview of a cavity.}
+    \label{fig:cavity}
+  \end{figure}
+  \begin{align*}
+    I_{\text{out}} = I_{\text{in}} \cdot \frac{T_1 T_2 T_g}{1 - R_1 R_2 {T_g}^2}
+  \end{align*}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Theory}
+  \framesubtitle{CE-DOAS}
+  
+  The central equations for the evaluation are:
+
+  \begin{align*}
+    D_{CE} & = \ln\left(\frac{I_0}{I}\right) \stackrel{!}{=}
+             L_{\text{eff}} \cdot \left (\sum_i \sigma_i \cdot c_i
+             + \Delta \varepsilon_{\text{Rayleigh}} \right)\\
+    L_{\text{eff}} &  = \frac{D_{CE}}{\exp(D_{CE}) - 1} \cdot L_0 \\
+    L_0 & = \frac{d}{1 - R + d\varepsilon_0}\\
+    \frac{I_0}{I} & = 1 +  L_0 \cdot \left (\sum_i \sigma_i \cdot c_i
+             + \Delta \varepsilon_{\text{Rayleigh}} \right)
+  \end{align*}
+  % \begin{description}
+  % \item[\(D_{CE}\):] Cavity enhanced optical density
+  % \item[\(L_{\text{eff}}\):] Effective pathlength
+  % \item[\(L_0\):] Vacuum pathlength
+  % \end{description}
+\end{frame}
+
+\section{Setup}
+
+\begin{frame}
+  \frametitle{Setup}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/envimes_setup.eps}
+    \caption{Measurement setup}
+    \label{fig:setup}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Setup}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/envimes_up.jpg}
+    \caption{Measurement setup}
+    \label{fig:setup}
+  \end{figure}
+\end{frame}
+
+
+\section{Measurements}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{\ch{NO2} contamination of \ch{O3} enriched air}
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.7}{
+      \input{images/NO2}
+    }
+    \hspace{1cm}
+    \scalebox{.7}{
+      \input{images/O3}
+    }
+    \caption{\ch{NO2} and \ch{O3} concentration at different flows
+      with (f) and without (nf) the silica gel filter.}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Pure \ch{NO} measurements in synthetic air}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{no_setup.eps}
+    \caption{Setup of the pure \ch{NO} measurement.}
+    \label{fig:no-setup}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Pure \ch{NO} measurements in synthetic air}
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.7}{
+      \input{images/20160222_NO_fixI0_NO_ts}
+    }
+    \hspace{1cm}
+    \scalebox{.7}{
+      \input{images/20160222_NO_fixI0_O3_ts}
+    }
+    \caption{\ch{NO2} and \ch{O3} time series at different set \ch{NO}
+      flows and different reaction tube length.}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Pure \ch{NO} measurements in synthetic air}
+  \begin{align*}
+    y = \num{0.994\pm 0.002} \cdot x - \num{0.002 \pm 0.058}
+  \end{align*}
+
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.6}{
+      \input{images/20160222_NO_fixI0}
+    }
+    \caption{Correlation plot between the measured and the calculated
+      \ch{NO} concentration.}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Tuning behavior after Ozone switches}
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.6}{
+      \input{images/20160223_15_equil_fixI0_ts}
+    }
+    \caption{Time series of the \ch{NO2} concentration at a fixed
+      \ch{NO} flow while turning the \ch{O3} on and off. Reaction tube
+    length \(l= \SI{15}{\meter}\).}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Tuning behavior after Ozone switches}
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.6}{
+      \input{images/20160223_equil_fixI0_fall_fit}
+    }
+    \caption{Time series of the \ch{NO2} concentration after the
+      \ch{O3} had been turned off.}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Comparison of the alternating measurement mode to a
+    chemiluminescence display}
+    \begin{figure}[htbp]
+    \centering
+    \scalebox{.7}{
+      \input{images/correlation_ts01}
+    }
+    \hspace{1cm}
+    \scalebox{.7}{
+      \input{images/correlation_ts02}
+    }
+    \caption{\ch{NO} time series as determined by the ICAD instrument
+      and the chemiluminescence display.}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Comparison of the alternating measurement mode to a
+    chemiluminescence display}
+  \begin{align*}
+    y & = 1.38\text{ ppb}^{-1} \cdot x + 3.8 && \text{uncorrected}\\
+    y & = 1.38\text{ ppb}^{-1} \cdot x + 1.67 && \text{`naively' tail corrected} 
+  \end{align*}
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.55}{
+      \input{images/Correlation_corrected}
+    }
+    \caption{Correlation between the ICAD instrument and the
+      CLD.}
+    \label{fig:flow}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Measurements}
+%   \begin{align*}
+%     y & = \num{0.99 \pm 0.01} \cdot x + \num{0.6\pm0.3}\\
+%   \end{align*}
+%   \begin{figure}[htbp]
+%     \centering
+%     \scalebox{.6}{
+%       \input{images/vehicle_corr}
+%     }
+%     \caption{Correlation between the two used ICAD instruments during
+%       the Heidelberg vehicle measurement. The data points depict
+%       \SI{1}{\minute} averages.}
+%     \label{fig:flow}
+%   \end{figure}
+% \end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Vehicle Measurements}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{mercedes.jpg}
+    \hfill  
+    \includegraphics[width=0.45\textwidth]{bus.jpg}
+    \caption{Picture of the measured bus and Mercedes B180 CDI. Please note that
+      the printed time is in utc.}
+    \label{fig:bus}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Measurements}
+  \framesubtitle{Vehicle Measurements}
+  \begin{figure}[htbp]
+    \centering
+    \scalebox{.42}{
+      \input{images/mercedes}
+    }
+    \hfill
+    \scalebox{.42}{
+      \input{images/bus}
+    }
+    \caption{Time series of the uncorrected \ch{NO2}, \ch{NO_x} and
+      \ch{CO2} concentrations in the plume of a Mercedes B180 CDI and
+      a bus.}
+    \label{fig:mercedes-ts}
+  \end{figure}
+  \begin{itemize}
+  \item \ch{NO} saturation effects might have to be considered
+  \end{itemize}
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Measurements}
+%   \framesubtitle{Vehicle Measurements}
+
+%   \begin{table}[hbtp]
+%     \sisetup{table-auto-round}
+%     \centering
+%     \scalebox{.8}{
+%       \begin{tabular}{lS[table-format=1.1(1)e-1]
+%         S[table-format=1.3(1)]
+%         S[table-format=1.1(1)e-1]
+%         S[table-format=1.2(1)]
+%         }
+%         \toprule
+%         & {\ch{NO2}/\ch{CO2}} & {\ch{NO2} emission} & {\ch{NO_x}/\ch{CO2}} &
+%                                                                              {\ch{NO_x}
+%                                                                              emission}\\
+%         & & {\si{\gram\per\kilo\meter}} & & {\si{\gram\per\kilo\meter}}\\
+%         \midrule
+%         Mercedes & 2.2(3)e-4 & 0.034(5) & 5.0(7)e-3 & 0.53(7)\\
+%         Bus &  6(2)e-4 & 0.7(2) & 6(1)e-3 & 4.6(8)\\
+%         \bottomrule
+%       \end{tabular}
+%     }
+%     \caption{\ch{NO2} and \ch{NO_x} to \ch{CO2} ratios together with the
+%       extrapolated emissions for the two vehicles.}
+%     \label{tab:mercedes-bus}
+%   \end{table}
+% \end{frame}
+
+\begin{frame}
+  \frametitle{Conclusion \& Outlook}
+  \begin{itemize}
+  \item Silica gel filter in Ozone generator works
+  \item Pure \ch{NO} measurements work
+  \item \ch{NO_x} vehicle measurements work
+    \begin{itemize}
+    \item Ozone flow increase should be considered
+    \end{itemize}
+  \item Alternating measurement mode needs more work
+    \begin{itemize}
+    \item Ozone concentration decays slowly
+    \item Adsorption at tube walls should be researched
+    \item Alternatively, two ICAD cells can be used
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Thank you}
+  \centering
+  Further questions?
+\end{frame}
+
+\nocite{*}
+\begin{frame}
+  \frametitle{Bibliography}
+  \framesubtitle{Extract}
+  \printbibliography{}
+\end{frame}
+
+\end{document}

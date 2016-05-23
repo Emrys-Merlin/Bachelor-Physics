@@ -45,7 +45,7 @@ and can be easily fitted by a linear regression, but the line has an
 offset and a slope, which is differing from unity:
 
 \begin{align*}
-  y = \SI{1.38}{{ppb}\tothe{-1}} \cdot x + 3.8.
+  y = \num{1.38} \cdot x + \SI{3.8}{ppb}.
 \end{align*}
 
 There were two avenues I followed in an attempt to understand these
@@ -81,7 +81,7 @@ data. This \emph{tail corrected} data set was then again correlated
 with the chemiluminescence data. The result can also be found in
 Figure~\ref{fig:cld-corr}. The linear regression follows the formula
 \begin{align*}
-  y = \SI{1.38}{ppb\tothe{-1}} \cdot x + 1.67.
+  y = \num{1.38} \cdot x + \SI{1.67}{ppb}.
 \end{align*}
 So the tail correction has only an effect on the intercept of the
 regression. This is expected as the constant lowering of the \ch{NO2}

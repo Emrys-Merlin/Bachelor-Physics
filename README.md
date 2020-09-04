@@ -12,6 +12,16 @@ The thesis covers the basic principle for DOAS measurements, the
 chemical background needed for the conversion and some calibration
 measurements including the evaluations.
 
+Abstract
+--------
+This bachelor thesis aims at a further improvement of a nitrogen monoxide (NO) to nitrogen dioxide (NO2) converter, which will be used in conjunction with a NO 2 ICAD instrument to measure the nitrogen oxide (NOx) pollution in urban areas. The main component
+of this converter is an ozone generator. This work succeeded in making its output NO2 free,
+thus making its use in the converter possible. Next, a characterization of the converter was
+performed and the possible NO measurement accuracy was determined. Moreover, first
+productive applications were tested by performing live vehicle measurements in Heidelberg. There are still further investigations necessary to reach the full potential of this setup.
+First and foremost, the adsorption behavior of ozone at the teflon walls of the tubes has to
+be investigated in order to allow for more practical measurement modes.
+
 Building the thesis
 -------------------
 

@@ -11,3 +11,16 @@ converter.
 The thesis covers the basic principle for DOAS measurements, the
 chemical background needed for the conversion and some calibration
 measurements including the evaluations.
+
+Building the thesis
+-------------------
+
+This thesis was built on a linux system using the `tex-live-full` package. The packages I used make it necessary to use `xelatex` to build it (`pdflatex` will fail). The following commands should build the thesis:
+```bash
+git clone git@github.com:Emrys-Merlin/Bachelor-Physics.git .
+cd Bachelor-Physics
+xelatex Bachelor.tex
+biber Bachelor
+xelatex Bachelor.tex
+```
+Afterwards you should find a `Bachelor.pdf` file in your working directory.
